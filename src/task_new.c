@@ -16,7 +16,10 @@ $Date: 2009-11-02 00:45:07-08 $
 ******************************************************************************/
 #include "main.h"
 #include "task_new.h"
-#include "task_test.h"
+//#include "task_test.h"
+#include "task_supmcu_qa.h"
+#include "task_gps_qa.h"
+
 
 // Pumpkin CubeSat Kit headers
 #include "csk_uart.h"
@@ -86,13 +89,13 @@ void task_new(void) {
     OS_Delay(250);
     OS_Delay(250);    
     OS_Delay(250);
-    gps_led_on(FALSE);
+    sup_led_on(FALSE);
     user_debug_msg(STR_TASK_NEW "GPS LED should be ON.");
     OS_Delay(250);
 	OS_Delay(250);
     OS_Delay(250);    
     OS_Delay(250);
-	gps_led_flash(FALSE);
+	sup_led_flash(FALSE);
     user_debug_msg(STR_TASK_NEW "GPS LED should be blinking.");
 
     new_prop_Vinti(TRUE);

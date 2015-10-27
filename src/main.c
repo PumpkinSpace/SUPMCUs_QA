@@ -21,7 +21,9 @@ $Date: 2010-03-28 19:40:15-08 $
 #include "task_cmd.h"
 #include "task_monitor.h"
 #include "task_new.h"
-#include "task_test.h"
+//#include "task_test.h"
+#include "task_supmcu_qa.h"
+#include "task_gps_qa.h"
 #include "tasks.h"
 
 // Pumpkin Salvo headers
@@ -56,7 +58,9 @@ int main() {
   // Create tasks.
   OSCreateTask(task_cmd_do,    TASK_CMD_DO_P,    1);
   OSCreateTask(task_5sec,      TASK_5SEC_P,      4);
-  OSCreateTask(task_test,      TASK_TEST_P,      7);
+  //OSCreateTask(task_test,      TASK_TEST_P,      7);
+  OSCreateTask(task_supmcu_qa,  TASK_SUPMCU_QA_P, 6);
+  OSCreateTask(task_supmcu_qa,  TASK_GPS_QA_P,    7);
   OSCreateTask(task_monitor,   TASK_MONITOR_P,   2);
   OSCreateTask(task_new,       TASK_NEW_P,       3); // test task   
  

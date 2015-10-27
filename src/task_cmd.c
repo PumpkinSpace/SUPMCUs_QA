@@ -9,7 +9,9 @@
 #include "csk_uart.h"
 #include "csk_wdt.h"
 
-#include "task_test.h"
+//#include "task_test.h"
+#include "task_gps_qa.h"
+#include "task_supmcu_qa.h"
 
 
 #include "salvo.h"
@@ -95,11 +97,11 @@ void task_cmd_do(void) {
         case '7':
         case '8':
         case '9':
-          gps_sup_clk_on(TRUE, tolower(cmd)-'0');
+          sup_clk_on(TRUE, tolower(cmd)-'0');
           break;
 
         case 'x':
-          gps_sup_clk_off(TRUE);
+          sup_clk_off(TRUE);
           break;
         
         // Reset via WDT
@@ -130,15 +132,15 @@ void task_cmd_do(void) {
           csk_uart2_puts("UNLOGALL COM1 TRUE\r\n");
           csk_uart3_puts("UNLOGALL COM1 TRUE\r\n");
           // Stop the two tasks that are actively engaged with the OEM615.
-          OSStopTask(TASK_TEST_P);
+          OSStopTask(TASK_GPS_QA_P);
           OSStopTask(TASK_MONITOR_P);
           // Shut down power to the OEM615 ... lave the Sup. MCU LED on.
           gps_res_off(FALSE);
           gps_pow_off(FALSE);
-          gps_led_off(FALSE);
+          sup_led_off(FALSE);
           gps_pass_off(FALSE);
           gps_log_off(FALSE);
-          gps_sup_clk_off(FALSE);
+          sup_clk_off(FALSE);
           gps_res_on(FALSE); // This takes -RESET LOW, therefore minimizes
                              //  voltages at OEM615 pins
 		  user_debug_msg(STR_TASK_CMD_DO "f: Powered down OEM615.");

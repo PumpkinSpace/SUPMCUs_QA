@@ -16,8 +16,9 @@ $Date: 2010-01-29 20:04:19-08 $
 ******************************************************************************/
 #define TASK_CMD_DO_P                           OSTCBP(1) // needs to be cmd #1 (see task_cmd_do())
 #define TASK_5SEC_P                             OSTCBP(2)
-#define TASK_TEST_P                             OSTCBP(3)
-#define TASK_MONITOR_P                          OSTCBP(4)
-#define TASK_NEW_P                              OSTCBP(5)
+#define TASK_SUPMCU_QA_P                        OSTCBP(3)
+#define TASK_GPS_QA_P                           OSTCBP(4)
+#define TASK_MONITOR_P                          OSTCBP(5)
+#define TASK_NEW_P                              OSTCBP(6)
 
 

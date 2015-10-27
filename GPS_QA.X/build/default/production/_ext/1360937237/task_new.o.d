@@ -2,8 +2,9 @@ build/default/production/_ext/1360937237/task_new.o:  \
 ../src/task_new.c  \
  ../inc/main.h  \
 ../inc/task_new.h  \
-../inc/task_test.h  \
- C:/Pumpkin/CubeSatKit/PIC24/inc/csk_uart.h  \
+../inc/task_supmcu_qa.h  \
+ ../inc/task_gps_qa.h  \
+C:/Pumpkin/CubeSatKit/PIC24/inc/csk_uart.h  \
  C:/Pumpkin/Library/PIC24/Inc/pic24_uart.h  \
 ../inc/config.h  \
  C:/Pumpkin/Library/PIC24/Inc/pic24_uart_msg.h  \

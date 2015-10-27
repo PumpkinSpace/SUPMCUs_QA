@@ -13,15 +13,16 @@ C:/Pumpkin/CubeSatKit/PIC24/inc/csk_hw.h  \
  C:/Pumpkin/Library/PIC24/Inc/pic24_uart_msg_ts.h  \
  C:/Pumpkin/Library/PIC24/Inc/pic24_uart_msg_hhmmsstt.h  \
  C:/Pumpkin/CubeSatKit/PIC24/inc/csk_wdt.h  \
-../inc/task_test.h  \
- C:/Pumpkin/Salvo/Inc/salvo.h  \
-C:/Pumpkin/Salvo/Inc/salvover.h  \
- C:/Pumpkin/Salvo/Inc/salvodef.h  \
-C:/Pumpkin/Salvo/Inc/salvoadc.h  \
- ../inc/salvocfg.h  \
-C:/Pumpkin/Salvo/Inc/salvolbo.h  \
- C:/Pumpkin/Salvo/Inc/salvolib.h  \
-C:/Pumpkin/Salvo/Inc/salvopsh.h  \
+../inc/task_gps_qa.h  \
+ ../inc/task_supmcu_qa.h  \
+C:/Pumpkin/Salvo/Inc/salvo.h  \
+ C:/Pumpkin/Salvo/Inc/salvover.h  \
+C:/Pumpkin/Salvo/Inc/salvodef.h  \
+ C:/Pumpkin/Salvo/Inc/salvoadc.h  \
+../inc/salvocfg.h  \
+ C:/Pumpkin/Salvo/Inc/salvolbo.h  \
+C:/Pumpkin/Salvo/Inc/salvolib.h  \
+ C:/Pumpkin/Salvo/Inc/salvopsh.h  \
  C:/Pumpkin/Salvo/Inc/MCC30/salvoportmcc30.h  \
  C:/Pumpkin/Salvo/Inc/salvoscb.h  \
 C:/Pumpkin/Salvo/Inc/salvoocp.h  \

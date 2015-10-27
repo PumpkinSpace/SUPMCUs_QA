@@ -7,16 +7,17 @@ build/default/production/_ext/1360937237/main.o:  \
  ../inc/task_cmd.h  \
 ../inc/task_monitor.h  \
 ../inc/task_new.h  \
- ../inc/task_test.h  \
+ ../inc/task_supmcu_qa.h  \
+../inc/task_gps_qa.h  \
 ../inc/tasks.h  \
-C:/Pumpkin/Salvo/Inc/salvo.h  \
- C:/Pumpkin/Salvo/Inc/salvover.h  \
-C:/Pumpkin/Salvo/Inc/salvodef.h  \
- C:/Pumpkin/Salvo/Inc/salvoadc.h  \
-../inc/salvocfg.h  \
- C:/Pumpkin/Salvo/Inc/salvolbo.h  \
-C:/Pumpkin/Salvo/Inc/salvolib.h  \
- C:/Pumpkin/Salvo/Inc/salvopsh.h  \
+ C:/Pumpkin/Salvo/Inc/salvo.h  \
+C:/Pumpkin/Salvo/Inc/salvover.h  \
+ C:/Pumpkin/Salvo/Inc/salvodef.h  \
+C:/Pumpkin/Salvo/Inc/salvoadc.h  \
+ ../inc/salvocfg.h  \
+C:/Pumpkin/Salvo/Inc/salvolbo.h  \
+ C:/Pumpkin/Salvo/Inc/salvolib.h  \
+C:/Pumpkin/Salvo/Inc/salvopsh.h  \
  C:/Pumpkin/Salvo/Inc/MCC30/salvoportmcc30.h  \
  C:/Pumpkin/Salvo/Inc/salvoscb.h  \
 C:/Pumpkin/Salvo/Inc/salvoocp.h  \

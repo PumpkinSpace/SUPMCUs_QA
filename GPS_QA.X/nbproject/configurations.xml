@@ -10,9 +10,10 @@
         <itemPath>../inc/main.h</itemPath>
         <itemPath>../inc/task_cmd.h</itemPath>
         <itemPath>../inc/task_new.h</itemPath>
-        <itemPath>../inc/task_test.h</itemPath>
         <itemPath>../inc/tasks.h</itemPath>
         <itemPath>C:/Users/Sonja/Desktop/GPS_QA/inc/salvocfg.h</itemPath>
+        <itemPath>../inc/task_gps_qa.h</itemPath>
+        <itemPath>../inc/task_supmcu_qa.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="Pumpkin CubeSatKit" projectFiles="true">
         <itemPath>C:/Pumpkin/CubeSatKit/PIC24/inc/csk_uart.h</itemPath>
@@ -43,8 +44,9 @@
         <itemPath>../src/task_cmd.c</itemPath>
         <itemPath>../src/task_monitor.c</itemPath>
         <itemPath>../src/task_new.c</itemPath>
-        <itemPath>../src/task_test.c</itemPath>
         <itemPath>C:/Pumpkin/Library/PIC24/Src/pic24_i2c1.c</itemPath>
+        <itemPath>../src/task_gps_qa.c</itemPath>
+        <itemPath>../src/task_supmcu_qa.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Pumpkin CubeSatKit" projectFiles="true">
         <itemPath>C:/Pumpkin/CubeSatKit/PIC24/src/csk_io.c</itemPath>
@@ -163,7 +165,7 @@
         <property key="optimization-level" value="0"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
-        <property key="preprocessor-macros" value=""/>
+        <property key="preprocessor-macros" value="SUPMCU_GPSRM1_REVC=1"/>
         <property key="scalar-model" value="default"/>
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
