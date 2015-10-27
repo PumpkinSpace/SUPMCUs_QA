@@ -88,6 +88,8 @@ C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoportmcc30.o)
                               C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosched.o) (OSDispatch)
 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotick.o)
                               build/default/production/_ext/2044256807/salvotime.o (OSGetTicks)
+C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask.o)
+                              build/default/production/_ext/1360937237/task_supmcu_qa.o (OSStartTask)
 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoevent.o)
                               C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosem.o) (OSWaitEvent)
 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqins.o)
@@ -275,12 +277,12 @@ Program Memory  [Origin = 0x200, Length = 0x2a9f8]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200              0x1df4          0x2cee  (11502)
-.const                      0x1ff4              0x130c          0x1c92  (7314)
-.text                       0x3300              0x1056          0x1881  (6273)
-.dinit                      0x4356               0x30c           0x492  (1170)
-.text                       0x4662              0x177c          0x233a  (9018)
+.const                      0x1ff4              0x1322          0x1cb3  (7347)
+.text                       0x3316              0x1062          0x1893  (6291)
+.dinit                      0x4378               0x30c           0x492  (1170)
+.text                       0x4684              0x17be          0x239d  (9117)
 
-                     Total program memory used (bytes):         0x89cd  (35277) 13%
+                     Total program memory used (bytes):         0x8a63  (35427) 13%
 
 
 Data Memory  [Origin = 0x800, Length = 0x4000]
@@ -533,14 +535,14 @@ External Symbols in Program Memory (by address):
                   0x0005a6                  ___divdi3
                   0x0005d6                  ___moddi3
                   0x0006aa                  ___muldi3
+                  0x0006fc                  ___mulp32peds3
                   0x0006fc                  ___mulsi3
                   0x0006fc                  ___mulp32eds3
-                  0x0006fc                  ___mulp32peds3
                   0x000708                  ___extendsfdf2
                   0x000746                  ___floatsisf
-                  0x00074c                  ___ltsf2
                   0x00074c                  ___lesf2
                   0x00074c                  ___eqsf2
+                  0x00074c                  ___ltsf2
                   0x000750                  ___divsf3
                   0x0007d4                  ___mulsf3
                   0x00083c                  ___gesf2
@@ -597,15 +599,15 @@ External Symbols in Program Memory (by address):
                   0x000ff0                  _fputs
                   0x00100c                  _puts
                   0x001020                  _strlen
-                  0x00102e                  __sprintf_0
                   0x00102e                  __sprintf_cdnopsuxX
                   0x00102e                  __sprintf_s
+                  0x00102e                  __sprintf_0
                   0x00102e                  __sprintf_cdnopuxX
                   0x0010be                  __vfscanf_cdfFnopuxX
-                  0x0014b2                  __vfprintf_s
-                  0x0014b2                  __vfprintf_cdnopuxX
-                  0x0014b2                  __vfprintf_cdnopsuxX
                   0x0014b2                  __vfprintf_0
+                  0x0014b2                  __vfprintf_cdnopuxX
+                  0x0014b2                  __vfprintf_s
+                  0x0014b2                  __vfprintf_cdnopsuxX
                   0x001baa                  _fgetc
                   0x001c10                  _ungetc
                   0x001c4e                  _strtof
@@ -614,254 +616,255 @@ External Symbols in Program Memory (by address):
                   0x001e42                  _atoi
                   0x001f04                  __filbuf
                   0x001fa0                  _fflush
-                  0x003300                  _bim_tini_enab
-                  0x00331a                  _bim_tini_dis
-                  0x003334                  _bim_tini_arm
-                  0x00334e                  _bim_tini_unarm
-                  0x003368                  _bim_uart1_on
-                  0x003382                  _bim_uart1_off
-                  0x00339c                  _bim_uart2_on
-                  0x0033b6                  _bim_uart2_off
-                  0x0033d0                  _bim_uart3_on
-                  0x0033ea                  _bim_uart3_off
-                  0x003404                  _bim_eth1_on
-                  0x00341e                  _bim_eth1_off
-                  0x003438                  _bim_eth2_on
-                  0x003452                  _bim_eth2_off
-                  0x00346c                  _bim_eth3_on
-                  0x003486                  _bim_eth3_off
-                  0x0034a0                  _bim_eth_i2c_on
-                  0x0034ba                  _bim_eth_i2c_off
-                  0x0034d4                  _bim_eth_res
-                  0x0034ee                  _bim_eth_mode1
-                  0x003508                  _bim_eth_mode0
-                  0x003522                  _bim_eth_mode2
-                  0x00353c                  _bim_eth_mode3
-                  0x003556                  _bim_eth_mode_off
-                  0x003570                  _bim_temp_on
-                  0x00358a                  _bim_temp_off
-                  0x0035a4                  _bim_ttest_on
-                  0x0035be                  _bim_ttest_off
-                  0x0035d8                  _bim_ee_i2c_on
-                  0x0035f2                  _bim_ee_i2c_off
-                  0x00360c                  _bim_sky_on
-                  0x003626                  _bim_sky_off
-                  0x003640                  _bim_imu_on
-                  0x00365a                  _bim_imu_off
-                  0x003674                  _bim_wdt_force
-                  0x00368e                  _task_bim_qa
-                  0x0039fa                  _csk_io0_high
-                  0x003a08                  _csk_io0_low
-                  0x003a16                  _csk_io1_high
-                  0x003a24                  _csk_io1_low
-                  0x003a32                  _csk_io2_high
-                  0x003a40                  _csk_io2_low
-                  0x003a4e                  _csk_io3_high
-                  0x003a5c                  _csk_io3_low
-                  0x003a6a                  _csk_io4_high
-                  0x003a76                  _csk_io4_low
-                  0x003a84                  _csk_io5_high
-                  0x003a90                  _csk_io5_low
-                  0x003a9e                  _csk_io6_high
-                  0x003aac                  _csk_io6_low
-                  0x003aba                  _csk_io7_high
-                  0x003ac6                  _csk_io7_low
-                  0x003ad4                  _csk_io8_high
-                  0x003ae2                  _csk_io8_low
-                  0x003af0                  _csk_io9_high
-                  0x003afe                  _csk_io9_low
-                  0x003b0c                  _csk_io10_high
-                  0x003b1a                  _csk_io10_low
-                  0x003b28                  _csk_io11_high
-                  0x003b36                  _csk_io11_low
-                  0x003b44                  _csk_io12_high
-                  0x003b52                  _csk_io12_low
-                  0x003b60                  _csk_io13_high
-                  0x003b6e                  _csk_io13_low
-                  0x003b7c                  _csk_io14_high
-                  0x003b8a                  _csk_io14_low
-                  0x003b98                  _csk_io15_high
-                  0x003ba6                  _csk_io15_low
-                  0x003bb4                  _csk_io16_high
-                  0x003bc2                  _csk_io16_low
-                  0x003bd0                  _csk_io17_high
-                  0x003bdc                  _csk_io17_low
-                  0x003bea                  _csk_io18_high
-                  0x003bf8                  _csk_io18_low
-                  0x003c06                  _csk_io19_high
-                  0x003c12                  _csk_io19_low
-                  0x003c20                  _csk_io20_high
-                  0x003c2c                  _csk_io20_low
-                  0x003c3a                  _csk_io21_high
-                  0x003c46                  _csk_io21_low
-                  0x003c54                  _csk_io22_high
-                  0x003c62                  _csk_io22_low
-                  0x003c70                  _csk_io23_high
-                  0x003c7e                  _csk_io23_low
-                  0x003c8c                  _csk_io24_high
-                  0x003c98                  _csk_io24_low
-                  0x003ca6                  _csk_io25_high
-                  0x003cb2                  _csk_io25_low
-                  0x003cc0                  _csk_io26_high
-                  0x003ccc                  _csk_io26_low
-                  0x003cda                  _csk_io27_high
-                  0x003ce6                  _csk_io27_low
-                  0x003cf4                  _csk_io28_high
-                  0x003d02                  _csk_io28_low
-                  0x003d10                  _csk_io29_high
-                  0x003d1e                  _csk_io29_low
-                  0x003d2c                  _csk_io30_high
-                  0x003d3a                  _csk_io30_low
-                  0x003d48                  _csk_io31_high
-                  0x003d56                  _csk_io31_low
-                  0x003d64                  _csk_io32_high
-                  0x003d72                  _csk_io32_low
-                  0x003d80                  _csk_io33_high
-                  0x003d8c                  _csk_io33_low
-                  0x003d9a                  _csk_io34_high
-                  0x003da6                  _csk_io34_low
-                  0x003db4                  _csk_io35_high
-                  0x003dc0                  _csk_io35_low
-                  0x003dce                  _csk_io36_high
-                  0x003dda                  _csk_io36_low
-                  0x003de8                  _csk_io37_high
-                  0x003df4                  _csk_io37_low
-                  0x003e02                  _csk_io38_high
-                  0x003e10                  _csk_io38_low
-                  0x003e1e                  _csk_io39_high
-                  0x003e2c                  _csk_io39_low
-                  0x003e3a                  _csk_io40_high
-                  0x003e48                  _csk_io40_low
-                  0x003e56                  _csk_io41_high
-                  0x003e64                  _csk_io41_low
-                  0x003e72                  _csk_io42_high
-                  0x003e80                  _csk_io42_low
-                  0x003e8e                  _csk_io43_high
-                  0x003e9c                  _csk_io43_low
-                  0x003eaa                  _csk_io44_high
-                  0x003eb8                  _csk_io44_low
-                  0x003ec6                  _csk_io45_high
-                  0x003ed4                  _csk_io45_low
-                  0x003ee2                  _csk_io46_high
-                  0x003ef0                  _csk_io46_low
-                  0x003efe                  _csk_io47_high
-                  0x003f0c                  _csk_io47_low
-                  0x003f1a                  _gps_open
-                  0x003f56                  _gps_init
-                  0x003fd4                  _gps_NMEA_GMT_time_hhmmss
-                  0x003ff4                  _gps_enabled
-                  0x004000                  _gps_NMEA_str
-                  0x004040                  _gps_NMEA_rcv
-                  0x004106                  _gps_update
-                  0x004344                  _gps_read
-                  0x004662                  _init
-                  0x004746                  __T2Interrupt
-                  0x004764                  __U1TXInterrupt
-                  0x004780                  __U1RXInterrupt
-                  0x0047aa                  __U2TXInterrupt
-                  0x0047c6                  __U2RXInterrupt
-                  0x004800                  __U3TXInterrupt
-                  0x00481c                  __U3RXInterrupt
-                  0x004856                  __U4TXInterrupt
-                  0x004872                  __U4RXInterrupt
-                  0x0048ac                  _uart1_open
-                  0x0048e0                  _uart1_close
-                  0x0048e8                  _uart1_peek_rx
-                  0x004932                  _uart1_rx_count
-                  0x00493c                  _uart1_tx_free
-                  0x00494a                  _uart1_getchar
-                  0x004986                  _uart1_get_byte
-                  0x0049c4                  _uart1_putchar
-                  0x004a04                  _uart1_puts
-                  0x004a26                  _uart1_outchar
-                  0x004a64                  _uart1_inchar
-                  0x004a94                  _uart2_open
-                  0x004ac8                  _uart2_close
-                  0x004ad0                  _uart2_peek_rx
-                  0x004b1a                  _uart2_rx_count
-                  0x004b24                  _uart2_tx_free
-                  0x004b32                  _uart2_getchar
-                  0x004b6e                  _uart2_get_byte
-                  0x004bac                  _uart2_putchar
-                  0x004bec                  _uart2_puts
-                  0x004c0e                  _uart2_outchar
-                  0x004c4c                  _uart2_inchar
-                  0x004c7c                  _uart3_open
-                  0x004cb0                  _uart3_close
-                  0x004cb8                  _uart3_peek_rx
-                  0x004d02                  _uart3_rx_count
-                  0x004d0c                  _uart3_tx_free
-                  0x004d1a                  _uart3_getchar
-                  0x004d56                  _uart3_get_byte
-                  0x004d94                  _uart3_putchar
-                  0x004dd4                  _uart3_puts
-                  0x004df6                  _uart3_outchar
-                  0x004e34                  _uart3_inchar
-                  0x004e64                  _uart4_open
-                  0x004e98                  _uart4_close
-                  0x004ea0                  _uart4_peek_rx
-                  0x004eea                  _uart4_rx_count
-                  0x004ef4                  _uart4_tx_free
-                  0x004f02                  _uart4_getchar
-                  0x004f3e                  _uart4_get_byte
-                  0x004f7c                  _uart4_putchar
-                  0x004fbc                  _uart4_puts
-                  0x004fde                  _uart4_outchar
-                  0x00501c                  _uart4_inchar
-                  0x00504c                  _power
-                  0x005074                  _sup_led_off
-                  0x00508e                  _sup_led_on
-                  0x0050a8                  _sup_led_flash
-                  0x0050c2                  _sup_clk_off
-                  0x0050dc                  _sup_clk_on
-                  0x00512e                  _task_supmcu_qa
-                  0x0051f6                  _OSSched
-                  0x005346                  _cmd_explain
-                  0x0053a8                  _task_cmd_do
-                  0x005468                  _OSInsPrioQ
-                  0x0054dc                  _OSInsDelayQ
-                  0x00557a                  _OSElapsedTime
-                  0x005676                  _OSDelPrioQ
-                  0x0056e6                  _OSDelDelayQ
-                  0x00575c                  _OSWaitEvent
-                  0x005834                  _OSCreateSem
-                  0x005856                  _OSWaitSem
-                  0x00588e                  _OSSignalSem
-                  0x0058f8                  _OSCreateTask
-                  0x00594e                  _OSInitPrioTask
-                  0x00597e                  _csk_mhx_open
-                  0x0059aa                  _csk_mhx_close
-                  0x0059d2                  _csk_mhx_pwr_on
-                  0x0059e8                  _csk_mhx_pwr_off
-                  0x0059fc                  _csk_power_shutdown
-                  0x005a68                  _OSDelay
-                  0x005acc                  _csk_usb_open
-                  0x005af8                  _csk_usb_close
-                  0x005b20                  _csk_usb_present
-                  0x005b2a                  _OSDispatch
-                  0x005b4e                  _OSCtxSw
-                  0x005b6a                  _OSReturn
-                  0x005b78                  _csk_led_status_open
-                  0x005b8e                  _csk_led_status_close
-                  0x005ba4                  _csk_led_status_on
-                  0x005bb2                  _csk_led_status_off
-                  0x005bc0                  _uart1_msg_hhmmsstt
-                  0x005c02                  _uart2_msg_hhmmsstt
-                  0x005c44                  _uart4_msg_hhmmsstt
-                  0x005c86                  _uart3_msg_hhmmsstt
-                  0x005cc8                  _main
-                  0x005cfa                  _csk_rand
-                  0x005d24                  _OSTimer
-                  0x005d4e                  _OSInit
-                  0x005d72                  _OSGetTicks
-                  0x005d84                  _OSSetTicks
-                  0x005d96                  _task_5sec
-                  0x005dae                  _csk_wdt_force
-                  0x005db6                  _csk_wdt_off
-                  0x005dc0                  _OSDisableHook
-                  0x005dc8                  _OSEnableHook
-                  0x005dd0                  _OSClrWDTHook
-                  0x005dd8                  _OSIdlingHook
+                  0x003316                  _bim_tini_enab
+                  0x003330                  _bim_tini_dis
+                  0x00334a                  _bim_tini_arm
+                  0x003364                  _bim_tini_unarm
+                  0x00337e                  _bim_uart1_on
+                  0x003398                  _bim_uart1_off
+                  0x0033b2                  _bim_uart2_on
+                  0x0033cc                  _bim_uart2_off
+                  0x0033e6                  _bim_uart3_on
+                  0x003400                  _bim_uart3_off
+                  0x00341a                  _bim_eth1_on
+                  0x003434                  _bim_eth1_off
+                  0x00344e                  _bim_eth2_on
+                  0x003468                  _bim_eth2_off
+                  0x003482                  _bim_eth3_on
+                  0x00349c                  _bim_eth3_off
+                  0x0034b6                  _bim_eth_i2c_on
+                  0x0034d0                  _bim_eth_i2c_off
+                  0x0034ea                  _bim_eth_res
+                  0x003504                  _bim_eth_mode1
+                  0x00351e                  _bim_eth_mode0
+                  0x003538                  _bim_eth_mode2
+                  0x003552                  _bim_eth_mode3
+                  0x00356c                  _bim_eth_mode_off
+                  0x003586                  _bim_temp_on
+                  0x0035a0                  _bim_temp_off
+                  0x0035ba                  _bim_ttest_on
+                  0x0035d4                  _bim_ttest_off
+                  0x0035ee                  _bim_ee_i2c_on
+                  0x003608                  _bim_ee_i2c_off
+                  0x003622                  _bim_sky_on
+                  0x00363c                  _bim_sky_off
+                  0x003656                  _bim_imu_on
+                  0x003670                  _bim_imu_off
+                  0x00368a                  _bim_wdt_force
+                  0x0036a4                  _task_bim_qa
+                  0x003a1c                  _csk_io0_high
+                  0x003a2a                  _csk_io0_low
+                  0x003a38                  _csk_io1_high
+                  0x003a46                  _csk_io1_low
+                  0x003a54                  _csk_io2_high
+                  0x003a62                  _csk_io2_low
+                  0x003a70                  _csk_io3_high
+                  0x003a7e                  _csk_io3_low
+                  0x003a8c                  _csk_io4_high
+                  0x003a98                  _csk_io4_low
+                  0x003aa6                  _csk_io5_high
+                  0x003ab2                  _csk_io5_low
+                  0x003ac0                  _csk_io6_high
+                  0x003ace                  _csk_io6_low
+                  0x003adc                  _csk_io7_high
+                  0x003ae8                  _csk_io7_low
+                  0x003af6                  _csk_io8_high
+                  0x003b04                  _csk_io8_low
+                  0x003b12                  _csk_io9_high
+                  0x003b20                  _csk_io9_low
+                  0x003b2e                  _csk_io10_high
+                  0x003b3c                  _csk_io10_low
+                  0x003b4a                  _csk_io11_high
+                  0x003b58                  _csk_io11_low
+                  0x003b66                  _csk_io12_high
+                  0x003b74                  _csk_io12_low
+                  0x003b82                  _csk_io13_high
+                  0x003b90                  _csk_io13_low
+                  0x003b9e                  _csk_io14_high
+                  0x003bac                  _csk_io14_low
+                  0x003bba                  _csk_io15_high
+                  0x003bc8                  _csk_io15_low
+                  0x003bd6                  _csk_io16_high
+                  0x003be4                  _csk_io16_low
+                  0x003bf2                  _csk_io17_high
+                  0x003bfe                  _csk_io17_low
+                  0x003c0c                  _csk_io18_high
+                  0x003c1a                  _csk_io18_low
+                  0x003c28                  _csk_io19_high
+                  0x003c34                  _csk_io19_low
+                  0x003c42                  _csk_io20_high
+                  0x003c4e                  _csk_io20_low
+                  0x003c5c                  _csk_io21_high
+                  0x003c68                  _csk_io21_low
+                  0x003c76                  _csk_io22_high
+                  0x003c84                  _csk_io22_low
+                  0x003c92                  _csk_io23_high
+                  0x003ca0                  _csk_io23_low
+                  0x003cae                  _csk_io24_high
+                  0x003cba                  _csk_io24_low
+                  0x003cc8                  _csk_io25_high
+                  0x003cd4                  _csk_io25_low
+                  0x003ce2                  _csk_io26_high
+                  0x003cee                  _csk_io26_low
+                  0x003cfc                  _csk_io27_high
+                  0x003d08                  _csk_io27_low
+                  0x003d16                  _csk_io28_high
+                  0x003d24                  _csk_io28_low
+                  0x003d32                  _csk_io29_high
+                  0x003d40                  _csk_io29_low
+                  0x003d4e                  _csk_io30_high
+                  0x003d5c                  _csk_io30_low
+                  0x003d6a                  _csk_io31_high
+                  0x003d78                  _csk_io31_low
+                  0x003d86                  _csk_io32_high
+                  0x003d94                  _csk_io32_low
+                  0x003da2                  _csk_io33_high
+                  0x003dae                  _csk_io33_low
+                  0x003dbc                  _csk_io34_high
+                  0x003dc8                  _csk_io34_low
+                  0x003dd6                  _csk_io35_high
+                  0x003de2                  _csk_io35_low
+                  0x003df0                  _csk_io36_high
+                  0x003dfc                  _csk_io36_low
+                  0x003e0a                  _csk_io37_high
+                  0x003e16                  _csk_io37_low
+                  0x003e24                  _csk_io38_high
+                  0x003e32                  _csk_io38_low
+                  0x003e40                  _csk_io39_high
+                  0x003e4e                  _csk_io39_low
+                  0x003e5c                  _csk_io40_high
+                  0x003e6a                  _csk_io40_low
+                  0x003e78                  _csk_io41_high
+                  0x003e86                  _csk_io41_low
+                  0x003e94                  _csk_io42_high
+                  0x003ea2                  _csk_io42_low
+                  0x003eb0                  _csk_io43_high
+                  0x003ebe                  _csk_io43_low
+                  0x003ecc                  _csk_io44_high
+                  0x003eda                  _csk_io44_low
+                  0x003ee8                  _csk_io45_high
+                  0x003ef6                  _csk_io45_low
+                  0x003f04                  _csk_io46_high
+                  0x003f12                  _csk_io46_low
+                  0x003f20                  _csk_io47_high
+                  0x003f2e                  _csk_io47_low
+                  0x003f3c                  _gps_open
+                  0x003f78                  _gps_init
+                  0x003ff6                  _gps_NMEA_GMT_time_hhmmss
+                  0x004016                  _gps_enabled
+                  0x004022                  _gps_NMEA_str
+                  0x004062                  _gps_NMEA_rcv
+                  0x004128                  _gps_update
+                  0x004366                  _gps_read
+                  0x004684                  _init
+                  0x004768                  __T2Interrupt
+                  0x004786                  __U1TXInterrupt
+                  0x0047a2                  __U1RXInterrupt
+                  0x0047cc                  __U2TXInterrupt
+                  0x0047e8                  __U2RXInterrupt
+                  0x004822                  __U3TXInterrupt
+                  0x00483e                  __U3RXInterrupt
+                  0x004878                  __U4TXInterrupt
+                  0x004894                  __U4RXInterrupt
+                  0x0048ce                  _uart1_open
+                  0x004902                  _uart1_close
+                  0x00490a                  _uart1_peek_rx
+                  0x004954                  _uart1_rx_count
+                  0x00495e                  _uart1_tx_free
+                  0x00496c                  _uart1_getchar
+                  0x0049a8                  _uart1_get_byte
+                  0x0049e6                  _uart1_putchar
+                  0x004a26                  _uart1_puts
+                  0x004a48                  _uart1_outchar
+                  0x004a86                  _uart1_inchar
+                  0x004ab6                  _uart2_open
+                  0x004aea                  _uart2_close
+                  0x004af2                  _uart2_peek_rx
+                  0x004b3c                  _uart2_rx_count
+                  0x004b46                  _uart2_tx_free
+                  0x004b54                  _uart2_getchar
+                  0x004b90                  _uart2_get_byte
+                  0x004bce                  _uart2_putchar
+                  0x004c0e                  _uart2_puts
+                  0x004c30                  _uart2_outchar
+                  0x004c6e                  _uart2_inchar
+                  0x004c9e                  _uart3_open
+                  0x004cd2                  _uart3_close
+                  0x004cda                  _uart3_peek_rx
+                  0x004d24                  _uart3_rx_count
+                  0x004d2e                  _uart3_tx_free
+                  0x004d3c                  _uart3_getchar
+                  0x004d78                  _uart3_get_byte
+                  0x004db6                  _uart3_putchar
+                  0x004df6                  _uart3_puts
+                  0x004e18                  _uart3_outchar
+                  0x004e56                  _uart3_inchar
+                  0x004e86                  _uart4_open
+                  0x004eba                  _uart4_close
+                  0x004ec2                  _uart4_peek_rx
+                  0x004f0c                  _uart4_rx_count
+                  0x004f16                  _uart4_tx_free
+                  0x004f24                  _uart4_getchar
+                  0x004f60                  _uart4_get_byte
+                  0x004f9e                  _uart4_putchar
+                  0x004fde                  _uart4_puts
+                  0x005000                  _uart4_outchar
+                  0x00503e                  _uart4_inchar
+                  0x00506e                  _power
+                  0x005096                  _sup_led_off
+                  0x0050b0                  _sup_led_on
+                  0x0050ca                  _sup_led_flash
+                  0x0050e4                  _sup_clk_off
+                  0x0050fe                  _sup_clk_on
+                  0x005150                  _task_supmcu_qa
+                  0x005224                  _OSSched
+                  0x005374                  _cmd_explain
+                  0x0053d6                  _task_cmd_do
+                  0x005496                  _OSInsPrioQ
+                  0x00550a                  _OSInsDelayQ
+                  0x0055a8                  _OSElapsedTime
+                  0x0056a4                  _OSDelPrioQ
+                  0x005714                  _OSDelDelayQ
+                  0x00578a                  _OSWaitEvent
+                  0x005862                  _OSCreateSem
+                  0x005884                  _OSWaitSem
+                  0x0058bc                  _OSSignalSem
+                  0x005926                  _OSCreateTask
+                  0x00597c                  _OSInitPrioTask
+                  0x0059ac                  _csk_mhx_open
+                  0x0059d8                  _csk_mhx_close
+                  0x005a00                  _csk_mhx_pwr_on
+                  0x005a16                  _csk_mhx_pwr_off
+                  0x005a2a                  _csk_power_shutdown
+                  0x005a96                  _OSDelay
+                  0x005afa                  _csk_usb_open
+                  0x005b26                  _csk_usb_close
+                  0x005b4e                  _csk_usb_present
+                  0x005b58                  _OSDispatch
+                  0x005b7c                  _OSCtxSw
+                  0x005b98                  _OSReturn
+                  0x005ba6                  _csk_led_status_open
+                  0x005bbc                  _csk_led_status_close
+                  0x005bd2                  _csk_led_status_on
+                  0x005be0                  _csk_led_status_off
+                  0x005bee                  _uart1_msg_hhmmsstt
+                  0x005c30                  _uart2_msg_hhmmsstt
+                  0x005c72                  _uart4_msg_hhmmsstt
+                  0x005cb4                  _uart3_msg_hhmmsstt
+                  0x005cf6                  _OSStartTask
+                  0x005d2c                  _main
+                  0x005d5e                  _csk_rand
+                  0x005d88                  _OSTimer
+                  0x005db2                  _OSInit
+                  0x005dd6                  _OSGetTicks
+                  0x005de8                  _OSSetTicks
+                  0x005dfa                  _task_5sec
+                  0x005e12                  _csk_wdt_force
+                  0x005e1a                  _csk_wdt_off
+                  0x005e24                  _OSDisableHook
+                  0x005e2c                  _OSEnableHook
+                  0x005e34                  _OSClrWDTHook
+                  0x005e3c                  _OSIdlingHook
 
 External Symbols in Program Memory (by name):
 
@@ -886,30 +889,31 @@ External Symbols in Program Memory (by name):
                   0x000b34                  _IdleI2C1
                   0x000b6e                  _MasterWriteI2C1
                   0x000b96                  _MastergetsI2C1
-                  0x005dd0                  _OSClrWDTHook
-                  0x005834                  _OSCreateSem
-                  0x0058f8                  _OSCreateTask
-                  0x005b4e                  _OSCtxSw
-                  0x0056e6                  _OSDelDelayQ
-                  0x005676                  _OSDelPrioQ
-                  0x005a68                  _OSDelay
-                  0x005dc0                  _OSDisableHook
-                  0x005b2a                  _OSDispatch
-                  0x00557a                  _OSElapsedTime
-                  0x005dc8                  _OSEnableHook
-                  0x005d72                  _OSGetTicks
-                  0x005dd8                  _OSIdlingHook
-                  0x005d4e                  _OSInit
-                  0x00594e                  _OSInitPrioTask
-                  0x0054dc                  _OSInsDelayQ
-                  0x005468                  _OSInsPrioQ
-                  0x005b6a                  _OSReturn
-                  0x0051f6                  _OSSched
-                  0x005d84                  _OSSetTicks
-                  0x00588e                  _OSSignalSem
-                  0x005d24                  _OSTimer
-                  0x00575c                  _OSWaitEvent
-                  0x005856                  _OSWaitSem
+                  0x005e34                  _OSClrWDTHook
+                  0x005862                  _OSCreateSem
+                  0x005926                  _OSCreateTask
+                  0x005b7c                  _OSCtxSw
+                  0x005714                  _OSDelDelayQ
+                  0x0056a4                  _OSDelPrioQ
+                  0x005a96                  _OSDelay
+                  0x005e24                  _OSDisableHook
+                  0x005b58                  _OSDispatch
+                  0x0055a8                  _OSElapsedTime
+                  0x005e2c                  _OSEnableHook
+                  0x005dd6                  _OSGetTicks
+                  0x005e3c                  _OSIdlingHook
+                  0x005db2                  _OSInit
+                  0x00597c                  _OSInitPrioTask
+                  0x00550a                  _OSInsDelayQ
+                  0x005496                  _OSInsPrioQ
+                  0x005b98                  _OSReturn
+                  0x005224                  _OSSched
+                  0x005de8                  _OSSetTicks
+                  0x0058bc                  _OSSignalSem
+                  0x005cf6                  _OSStartTask
+                  0x005d88                  _OSTimer
+                  0x00578a                  _OSWaitEvent
+                  0x005884                  _OSWaitSem
                   0x000b1a                  _OpenI2C1
                   0x000a1c                  _OpenTimer2
                   0x000cac                  _OpenUART1
@@ -928,15 +932,15 @@ External Symbols in Program Memory (by name):
                   0x000f88                  _WriteUART4
                   0x00034c                  __DefaultInterrupt
                   0x0002aa                  __MI2C1Interrupt
-                  0x004746                  __T2Interrupt
-                  0x004780                  __U1RXInterrupt
-                  0x004764                  __U1TXInterrupt
-                  0x0047c6                  __U2RXInterrupt
-                  0x0047aa                  __U2TXInterrupt
-                  0x00481c                  __U3RXInterrupt
-                  0x004800                  __U3TXInterrupt
-                  0x004872                  __U4RXInterrupt
-                  0x004856                  __U4TXInterrupt
+                  0x004768                  __T2Interrupt
+                  0x0047a2                  __U1RXInterrupt
+                  0x004786                  __U1TXInterrupt
+                  0x0047e8                  __U2RXInterrupt
+                  0x0047cc                  __U2TXInterrupt
+                  0x00483e                  __U3RXInterrupt
+                  0x004822                  __U3TXInterrupt
+                  0x004894                  __U4RXInterrupt
+                  0x004878                  __U4TXInterrupt
                   0x0005a6                  ___divdi3
                   0x000750                  ___divsf3
                   0x00045e                  ___divsi3
@@ -984,236 +988,236 @@ External Symbols in Program Memory (by name):
                   0x0010be                  __vfscanf_cdfFnopuxX
                   0x001e3e                  _atof
                   0x001e42                  _atoi
-                  0x0035f2                  _bim_ee_i2c_off
-                  0x0035d8                  _bim_ee_i2c_on
-                  0x00341e                  _bim_eth1_off
-                  0x003404                  _bim_eth1_on
-                  0x003452                  _bim_eth2_off
-                  0x003438                  _bim_eth2_on
-                  0x003486                  _bim_eth3_off
-                  0x00346c                  _bim_eth3_on
-                  0x0034ba                  _bim_eth_i2c_off
-                  0x0034a0                  _bim_eth_i2c_on
-                  0x003508                  _bim_eth_mode0
-                  0x0034ee                  _bim_eth_mode1
-                  0x003522                  _bim_eth_mode2
-                  0x00353c                  _bim_eth_mode3
-                  0x003556                  _bim_eth_mode_off
-                  0x0034d4                  _bim_eth_res
-                  0x00365a                  _bim_imu_off
-                  0x003640                  _bim_imu_on
-                  0x003626                  _bim_sky_off
-                  0x00360c                  _bim_sky_on
-                  0x00358a                  _bim_temp_off
-                  0x003570                  _bim_temp_on
-                  0x003334                  _bim_tini_arm
-                  0x00331a                  _bim_tini_dis
-                  0x003300                  _bim_tini_enab
-                  0x00334e                  _bim_tini_unarm
-                  0x0035be                  _bim_ttest_off
-                  0x0035a4                  _bim_ttest_on
-                  0x003382                  _bim_uart1_off
-                  0x003368                  _bim_uart1_on
-                  0x0033b6                  _bim_uart2_off
-                  0x00339c                  _bim_uart2_on
-                  0x0033ea                  _bim_uart3_off
-                  0x0033d0                  _bim_uart3_on
-                  0x003674                  _bim_wdt_force
-                  0x005346                  _cmd_explain
-                  0x0039fa                  _csk_io0_high
-                  0x003a08                  _csk_io0_low
-                  0x003b0c                  _csk_io10_high
-                  0x003b1a                  _csk_io10_low
-                  0x003b28                  _csk_io11_high
-                  0x003b36                  _csk_io11_low
-                  0x003b44                  _csk_io12_high
-                  0x003b52                  _csk_io12_low
-                  0x003b60                  _csk_io13_high
-                  0x003b6e                  _csk_io13_low
-                  0x003b7c                  _csk_io14_high
-                  0x003b8a                  _csk_io14_low
-                  0x003b98                  _csk_io15_high
-                  0x003ba6                  _csk_io15_low
-                  0x003bb4                  _csk_io16_high
-                  0x003bc2                  _csk_io16_low
-                  0x003bd0                  _csk_io17_high
-                  0x003bdc                  _csk_io17_low
-                  0x003bea                  _csk_io18_high
-                  0x003bf8                  _csk_io18_low
-                  0x003c06                  _csk_io19_high
-                  0x003c12                  _csk_io19_low
-                  0x003a16                  _csk_io1_high
-                  0x003a24                  _csk_io1_low
-                  0x003c20                  _csk_io20_high
-                  0x003c2c                  _csk_io20_low
-                  0x003c3a                  _csk_io21_high
-                  0x003c46                  _csk_io21_low
-                  0x003c54                  _csk_io22_high
-                  0x003c62                  _csk_io22_low
-                  0x003c70                  _csk_io23_high
-                  0x003c7e                  _csk_io23_low
-                  0x003c8c                  _csk_io24_high
-                  0x003c98                  _csk_io24_low
-                  0x003ca6                  _csk_io25_high
-                  0x003cb2                  _csk_io25_low
-                  0x003cc0                  _csk_io26_high
-                  0x003ccc                  _csk_io26_low
-                  0x003cda                  _csk_io27_high
-                  0x003ce6                  _csk_io27_low
-                  0x003cf4                  _csk_io28_high
-                  0x003d02                  _csk_io28_low
-                  0x003d10                  _csk_io29_high
-                  0x003d1e                  _csk_io29_low
-                  0x003a32                  _csk_io2_high
-                  0x003a40                  _csk_io2_low
-                  0x003d2c                  _csk_io30_high
-                  0x003d3a                  _csk_io30_low
-                  0x003d48                  _csk_io31_high
-                  0x003d56                  _csk_io31_low
-                  0x003d64                  _csk_io32_high
-                  0x003d72                  _csk_io32_low
-                  0x003d80                  _csk_io33_high
-                  0x003d8c                  _csk_io33_low
-                  0x003d9a                  _csk_io34_high
-                  0x003da6                  _csk_io34_low
-                  0x003db4                  _csk_io35_high
-                  0x003dc0                  _csk_io35_low
-                  0x003dce                  _csk_io36_high
-                  0x003dda                  _csk_io36_low
-                  0x003de8                  _csk_io37_high
-                  0x003df4                  _csk_io37_low
-                  0x003e02                  _csk_io38_high
-                  0x003e10                  _csk_io38_low
-                  0x003e1e                  _csk_io39_high
-                  0x003e2c                  _csk_io39_low
-                  0x003a4e                  _csk_io3_high
-                  0x003a5c                  _csk_io3_low
-                  0x003e3a                  _csk_io40_high
-                  0x003e48                  _csk_io40_low
-                  0x003e56                  _csk_io41_high
-                  0x003e64                  _csk_io41_low
-                  0x003e72                  _csk_io42_high
-                  0x003e80                  _csk_io42_low
-                  0x003e8e                  _csk_io43_high
-                  0x003e9c                  _csk_io43_low
-                  0x003eaa                  _csk_io44_high
-                  0x003eb8                  _csk_io44_low
-                  0x003ec6                  _csk_io45_high
-                  0x003ed4                  _csk_io45_low
-                  0x003ee2                  _csk_io46_high
-                  0x003ef0                  _csk_io46_low
-                  0x003efe                  _csk_io47_high
-                  0x003f0c                  _csk_io47_low
-                  0x003a6a                  _csk_io4_high
-                  0x003a76                  _csk_io4_low
-                  0x003a84                  _csk_io5_high
-                  0x003a90                  _csk_io5_low
-                  0x003a9e                  _csk_io6_high
-                  0x003aac                  _csk_io6_low
-                  0x003aba                  _csk_io7_high
-                  0x003ac6                  _csk_io7_low
-                  0x003ad4                  _csk_io8_high
-                  0x003ae2                  _csk_io8_low
-                  0x003af0                  _csk_io9_high
-                  0x003afe                  _csk_io9_low
-                  0x005b8e                  _csk_led_status_close
-                  0x005bb2                  _csk_led_status_off
-                  0x005ba4                  _csk_led_status_on
-                  0x005b78                  _csk_led_status_open
-                  0x0059aa                  _csk_mhx_close
-                  0x00597e                  _csk_mhx_open
-                  0x0059e8                  _csk_mhx_pwr_off
-                  0x0059d2                  _csk_mhx_pwr_on
-                  0x0059fc                  _csk_power_shutdown
-                  0x005cfa                  _csk_rand
-                  0x005af8                  _csk_usb_close
-                  0x005acc                  _csk_usb_open
-                  0x005b20                  _csk_usb_present
-                  0x005dae                  _csk_wdt_force
-                  0x005db6                  _csk_wdt_off
+                  0x003608                  _bim_ee_i2c_off
+                  0x0035ee                  _bim_ee_i2c_on
+                  0x003434                  _bim_eth1_off
+                  0x00341a                  _bim_eth1_on
+                  0x003468                  _bim_eth2_off
+                  0x00344e                  _bim_eth2_on
+                  0x00349c                  _bim_eth3_off
+                  0x003482                  _bim_eth3_on
+                  0x0034d0                  _bim_eth_i2c_off
+                  0x0034b6                  _bim_eth_i2c_on
+                  0x00351e                  _bim_eth_mode0
+                  0x003504                  _bim_eth_mode1
+                  0x003538                  _bim_eth_mode2
+                  0x003552                  _bim_eth_mode3
+                  0x00356c                  _bim_eth_mode_off
+                  0x0034ea                  _bim_eth_res
+                  0x003670                  _bim_imu_off
+                  0x003656                  _bim_imu_on
+                  0x00363c                  _bim_sky_off
+                  0x003622                  _bim_sky_on
+                  0x0035a0                  _bim_temp_off
+                  0x003586                  _bim_temp_on
+                  0x00334a                  _bim_tini_arm
+                  0x003330                  _bim_tini_dis
+                  0x003316                  _bim_tini_enab
+                  0x003364                  _bim_tini_unarm
+                  0x0035d4                  _bim_ttest_off
+                  0x0035ba                  _bim_ttest_on
+                  0x003398                  _bim_uart1_off
+                  0x00337e                  _bim_uart1_on
+                  0x0033cc                  _bim_uart2_off
+                  0x0033b2                  _bim_uart2_on
+                  0x003400                  _bim_uart3_off
+                  0x0033e6                  _bim_uart3_on
+                  0x00368a                  _bim_wdt_force
+                  0x005374                  _cmd_explain
+                  0x003a1c                  _csk_io0_high
+                  0x003a2a                  _csk_io0_low
+                  0x003b2e                  _csk_io10_high
+                  0x003b3c                  _csk_io10_low
+                  0x003b4a                  _csk_io11_high
+                  0x003b58                  _csk_io11_low
+                  0x003b66                  _csk_io12_high
+                  0x003b74                  _csk_io12_low
+                  0x003b82                  _csk_io13_high
+                  0x003b90                  _csk_io13_low
+                  0x003b9e                  _csk_io14_high
+                  0x003bac                  _csk_io14_low
+                  0x003bba                  _csk_io15_high
+                  0x003bc8                  _csk_io15_low
+                  0x003bd6                  _csk_io16_high
+                  0x003be4                  _csk_io16_low
+                  0x003bf2                  _csk_io17_high
+                  0x003bfe                  _csk_io17_low
+                  0x003c0c                  _csk_io18_high
+                  0x003c1a                  _csk_io18_low
+                  0x003c28                  _csk_io19_high
+                  0x003c34                  _csk_io19_low
+                  0x003a38                  _csk_io1_high
+                  0x003a46                  _csk_io1_low
+                  0x003c42                  _csk_io20_high
+                  0x003c4e                  _csk_io20_low
+                  0x003c5c                  _csk_io21_high
+                  0x003c68                  _csk_io21_low
+                  0x003c76                  _csk_io22_high
+                  0x003c84                  _csk_io22_low
+                  0x003c92                  _csk_io23_high
+                  0x003ca0                  _csk_io23_low
+                  0x003cae                  _csk_io24_high
+                  0x003cba                  _csk_io24_low
+                  0x003cc8                  _csk_io25_high
+                  0x003cd4                  _csk_io25_low
+                  0x003ce2                  _csk_io26_high
+                  0x003cee                  _csk_io26_low
+                  0x003cfc                  _csk_io27_high
+                  0x003d08                  _csk_io27_low
+                  0x003d16                  _csk_io28_high
+                  0x003d24                  _csk_io28_low
+                  0x003d32                  _csk_io29_high
+                  0x003d40                  _csk_io29_low
+                  0x003a54                  _csk_io2_high
+                  0x003a62                  _csk_io2_low
+                  0x003d4e                  _csk_io30_high
+                  0x003d5c                  _csk_io30_low
+                  0x003d6a                  _csk_io31_high
+                  0x003d78                  _csk_io31_low
+                  0x003d86                  _csk_io32_high
+                  0x003d94                  _csk_io32_low
+                  0x003da2                  _csk_io33_high
+                  0x003dae                  _csk_io33_low
+                  0x003dbc                  _csk_io34_high
+                  0x003dc8                  _csk_io34_low
+                  0x003dd6                  _csk_io35_high
+                  0x003de2                  _csk_io35_low
+                  0x003df0                  _csk_io36_high
+                  0x003dfc                  _csk_io36_low
+                  0x003e0a                  _csk_io37_high
+                  0x003e16                  _csk_io37_low
+                  0x003e24                  _csk_io38_high
+                  0x003e32                  _csk_io38_low
+                  0x003e40                  _csk_io39_high
+                  0x003e4e                  _csk_io39_low
+                  0x003a70                  _csk_io3_high
+                  0x003a7e                  _csk_io3_low
+                  0x003e5c                  _csk_io40_high
+                  0x003e6a                  _csk_io40_low
+                  0x003e78                  _csk_io41_high
+                  0x003e86                  _csk_io41_low
+                  0x003e94                  _csk_io42_high
+                  0x003ea2                  _csk_io42_low
+                  0x003eb0                  _csk_io43_high
+                  0x003ebe                  _csk_io43_low
+                  0x003ecc                  _csk_io44_high
+                  0x003eda                  _csk_io44_low
+                  0x003ee8                  _csk_io45_high
+                  0x003ef6                  _csk_io45_low
+                  0x003f04                  _csk_io46_high
+                  0x003f12                  _csk_io46_low
+                  0x003f20                  _csk_io47_high
+                  0x003f2e                  _csk_io47_low
+                  0x003a8c                  _csk_io4_high
+                  0x003a98                  _csk_io4_low
+                  0x003aa6                  _csk_io5_high
+                  0x003ab2                  _csk_io5_low
+                  0x003ac0                  _csk_io6_high
+                  0x003ace                  _csk_io6_low
+                  0x003adc                  _csk_io7_high
+                  0x003ae8                  _csk_io7_low
+                  0x003af6                  _csk_io8_high
+                  0x003b04                  _csk_io8_low
+                  0x003b12                  _csk_io9_high
+                  0x003b20                  _csk_io9_low
+                  0x005bbc                  _csk_led_status_close
+                  0x005be0                  _csk_led_status_off
+                  0x005bd2                  _csk_led_status_on
+                  0x005ba6                  _csk_led_status_open
+                  0x0059d8                  _csk_mhx_close
+                  0x0059ac                  _csk_mhx_open
+                  0x005a16                  _csk_mhx_pwr_off
+                  0x005a00                  _csk_mhx_pwr_on
+                  0x005a2a                  _csk_power_shutdown
+                  0x005d5e                  _csk_rand
+                  0x005b26                  _csk_usb_close
+                  0x005afa                  _csk_usb_open
+                  0x005b4e                  _csk_usb_present
+                  0x005e12                  _csk_wdt_force
+                  0x005e1a                  _csk_wdt_off
                   0x001fa0                  _fflush
                   0x001baa                  _fgetc
                   0x000ff0                  _fputs
-                  0x003fd4                  _gps_NMEA_GMT_time_hhmmss
-                  0x004040                  _gps_NMEA_rcv
-                  0x004000                  _gps_NMEA_str
-                  0x003ff4                  _gps_enabled
-                  0x003f56                  _gps_init
-                  0x003f1a                  _gps_open
-                  0x004344                  _gps_read
-                  0x004106                  _gps_update
+                  0x003ff6                  _gps_NMEA_GMT_time_hhmmss
+                  0x004062                  _gps_NMEA_rcv
+                  0x004022                  _gps_NMEA_str
+                  0x004016                  _gps_enabled
+                  0x003f78                  _gps_init
+                  0x003f3c                  _gps_open
+                  0x004366                  _gps_read
+                  0x004128                  _gps_update
                   0x0002b2                  _i2c1_open
                   0x00031a                  _i2c1_read
                   0x0002d4                  _i2c1_write
-                  0x004662                  _init
+                  0x004684                  _init
                   0x00037a                  _isalpha
                   0x00035e                  _isspace
                   0x00036e                  _isupper
-                  0x005cc8                  _main
-                  0x00504c                  _power
+                  0x005d2c                  _main
+                  0x00506e                  _power
                   0x00100c                  _puts
                   0x001020                  _strlen
                   0x000fb2                  _strncmp
                   0x001e3c                  _strtod
                   0x001c4e                  _strtof
-                  0x0050c2                  _sup_clk_off
-                  0x0050dc                  _sup_clk_on
-                  0x0050a8                  _sup_led_flash
-                  0x005074                  _sup_led_off
-                  0x00508e                  _sup_led_on
-                  0x005d96                  _task_5sec
-                  0x00368e                  _task_bim_qa
-                  0x0053a8                  _task_cmd_do
-                  0x00512e                  _task_supmcu_qa
+                  0x0050e4                  _sup_clk_off
+                  0x0050fe                  _sup_clk_on
+                  0x0050ca                  _sup_led_flash
+                  0x005096                  _sup_led_off
+                  0x0050b0                  _sup_led_on
+                  0x005dfa                  _task_5sec
+                  0x0036a4                  _task_bim_qa
+                  0x0053d6                  _task_cmd_do
+                  0x005150                  _task_supmcu_qa
                   0x000350                  _tolower
-                  0x0048e0                  _uart1_close
-                  0x004986                  _uart1_get_byte
-                  0x00494a                  _uart1_getchar
-                  0x004a64                  _uart1_inchar
-                  0x005bc0                  _uart1_msg_hhmmsstt
-                  0x0048ac                  _uart1_open
-                  0x004a26                  _uart1_outchar
-                  0x0048e8                  _uart1_peek_rx
-                  0x0049c4                  _uart1_putchar
-                  0x004a04                  _uart1_puts
-                  0x004932                  _uart1_rx_count
-                  0x00493c                  _uart1_tx_free
-                  0x004ac8                  _uart2_close
-                  0x004b6e                  _uart2_get_byte
-                  0x004b32                  _uart2_getchar
-                  0x004c4c                  _uart2_inchar
-                  0x005c02                  _uart2_msg_hhmmsstt
-                  0x004a94                  _uart2_open
-                  0x004c0e                  _uart2_outchar
-                  0x004ad0                  _uart2_peek_rx
-                  0x004bac                  _uart2_putchar
-                  0x004bec                  _uart2_puts
-                  0x004b1a                  _uart2_rx_count
-                  0x004b24                  _uart2_tx_free
-                  0x004cb0                  _uart3_close
-                  0x004d56                  _uart3_get_byte
-                  0x004d1a                  _uart3_getchar
-                  0x004e34                  _uart3_inchar
-                  0x005c86                  _uart3_msg_hhmmsstt
-                  0x004c7c                  _uart3_open
-                  0x004df6                  _uart3_outchar
-                  0x004cb8                  _uart3_peek_rx
-                  0x004d94                  _uart3_putchar
-                  0x004dd4                  _uart3_puts
-                  0x004d02                  _uart3_rx_count
-                  0x004d0c                  _uart3_tx_free
-                  0x004e98                  _uart4_close
-                  0x004f3e                  _uart4_get_byte
-                  0x004f02                  _uart4_getchar
-                  0x00501c                  _uart4_inchar
-                  0x005c44                  _uart4_msg_hhmmsstt
-                  0x004e64                  _uart4_open
-                  0x004fde                  _uart4_outchar
-                  0x004ea0                  _uart4_peek_rx
-                  0x004f7c                  _uart4_putchar
-                  0x004fbc                  _uart4_puts
-                  0x004eea                  _uart4_rx_count
-                  0x004ef4                  _uart4_tx_free
+                  0x004902                  _uart1_close
+                  0x0049a8                  _uart1_get_byte
+                  0x00496c                  _uart1_getchar
+                  0x004a86                  _uart1_inchar
+                  0x005bee                  _uart1_msg_hhmmsstt
+                  0x0048ce                  _uart1_open
+                  0x004a48                  _uart1_outchar
+                  0x00490a                  _uart1_peek_rx
+                  0x0049e6                  _uart1_putchar
+                  0x004a26                  _uart1_puts
+                  0x004954                  _uart1_rx_count
+                  0x00495e                  _uart1_tx_free
+                  0x004aea                  _uart2_close
+                  0x004b90                  _uart2_get_byte
+                  0x004b54                  _uart2_getchar
+                  0x004c6e                  _uart2_inchar
+                  0x005c30                  _uart2_msg_hhmmsstt
+                  0x004ab6                  _uart2_open
+                  0x004c30                  _uart2_outchar
+                  0x004af2                  _uart2_peek_rx
+                  0x004bce                  _uart2_putchar
+                  0x004c0e                  _uart2_puts
+                  0x004b3c                  _uart2_rx_count
+                  0x004b46                  _uart2_tx_free
+                  0x004cd2                  _uart3_close
+                  0x004d78                  _uart3_get_byte
+                  0x004d3c                  _uart3_getchar
+                  0x004e56                  _uart3_inchar
+                  0x005cb4                  _uart3_msg_hhmmsstt
+                  0x004c9e                  _uart3_open
+                  0x004e18                  _uart3_outchar
+                  0x004cda                  _uart3_peek_rx
+                  0x004db6                  _uart3_putchar
+                  0x004df6                  _uart3_puts
+                  0x004d24                  _uart3_rx_count
+                  0x004d2e                  _uart3_tx_free
+                  0x004eba                  _uart4_close
+                  0x004f60                  _uart4_get_byte
+                  0x004f24                  _uart4_getchar
+                  0x00503e                  _uart4_inchar
+                  0x005c72                  _uart4_msg_hhmmsstt
+                  0x004e86                  _uart4_open
+                  0x005000                  _uart4_outchar
+                  0x004ec2                  _uart4_peek_rx
+                  0x004f9e                  _uart4_putchar
+                  0x004fde                  _uart4_puts
+                  0x004f0c                  _uart4_rx_count
+                  0x004f16                  _uart4_tx_free
                   0x001c10                  _ungetc
 
 Memory Configuration
@@ -1551,12 +1555,12 @@ __CONFIG1         0x02abfe          0x2
                   0x00001c          0x4 LONG 0x34c DEFINED (__Interrupt4)?ABSOLUTE (__Interrupt4):ABSOLUTE (__DefaultInterrupt)
                   0x00001e          0x4 LONG 0x34c DEFINED (__IC2Interrupt)?ABSOLUTE (__IC2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000020          0x4 LONG 0x34c DEFINED (__OC2Interrupt)?ABSOLUTE (__OC2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000022          0x4 LONG 0x4746 DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000022          0x4 LONG 0x4768 DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000024          0x4 LONG 0x34c DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000026          0x4 LONG 0x34c DEFINED (__SPI1ErrInterrupt)?ABSOLUTE (__SPI1ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000028          0x4 LONG 0x34c DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00002a          0x4 LONG 0x4780 DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00002c          0x4 LONG 0x4764 DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00002a          0x4 LONG 0x47a2 DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00002c          0x4 LONG 0x4786 DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00002e          0x4 LONG 0x34c DEFINED (__ADC1Interrupt)?ABSOLUTE (__ADC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000030          0x4 LONG 0x34c DEFINED (__Interrupt14)?ABSOLUTE (__Interrupt14):ABSOLUTE (__DefaultInterrupt)
                   0x000032          0x4 LONG 0x34c DEFINED (__Interrupt15)?ABSOLUTE (__Interrupt15):ABSOLUTE (__DefaultInterrupt)
@@ -1574,8 +1578,8 @@ __CONFIG1         0x02abfe          0x2
                   0x00004a          0x4 LONG 0x34c DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00004c          0x4 LONG 0x34c DEFINED (__T5Interrupt)?ABSOLUTE (__T5Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00004e          0x4 LONG 0x34c DEFINED (__INT2Interrupt)?ABSOLUTE (__INT2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000050          0x4 LONG 0x47c6 DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000052          0x4 LONG 0x47aa DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000050          0x4 LONG 0x47e8 DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000052          0x4 LONG 0x47cc DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000054          0x4 LONG 0x34c DEFINED (__SPI2ErrInterrupt)?ABSOLUTE (__SPI2ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000056          0x4 LONG 0x34c DEFINED (__SPI2Interrupt)?ABSOLUTE (__SPI2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000058          0x4 LONG 0x34c DEFINED (__Interrupt34)?ABSOLUTE (__Interrupt34):ABSOLUTE (__DefaultInterrupt)
@@ -1626,14 +1630,14 @@ __CONFIG1         0x02abfe          0x2
                   0x0000b2          0x4 LONG 0x34c DEFINED (__Interrupt79)?ABSOLUTE (__Interrupt79):ABSOLUTE (__DefaultInterrupt)
                   0x0000b4          0x4 LONG 0x34c DEFINED (__Interrupt80)?ABSOLUTE (__Interrupt80):ABSOLUTE (__DefaultInterrupt)
                   0x0000b6          0x4 LONG 0x34c DEFINED (__U3ErrInterrupt)?ABSOLUTE (__U3ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000b8          0x4 LONG 0x481c DEFINED (__U3RXInterrupt)?ABSOLUTE (__U3RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000ba          0x4 LONG 0x4800 DEFINED (__U3TXInterrupt)?ABSOLUTE (__U3TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000b8          0x4 LONG 0x483e DEFINED (__U3RXInterrupt)?ABSOLUTE (__U3RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000ba          0x4 LONG 0x4822 DEFINED (__U3TXInterrupt)?ABSOLUTE (__U3TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000bc          0x4 LONG 0x34c DEFINED (__SI2C3Interrupt)?ABSOLUTE (__SI2C3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000be          0x4 LONG 0x34c DEFINED (__MI2C3Interrupt)?ABSOLUTE (__MI2C3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000c0          0x4 LONG 0x34c DEFINED (__Interrupt86)?ABSOLUTE (__Interrupt86):ABSOLUTE (__DefaultInterrupt)
                   0x0000c2          0x4 LONG 0x34c DEFINED (__U4ErrInterrupt)?ABSOLUTE (__U4ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000c4          0x4 LONG 0x4872 DEFINED (__U4RXInterrupt)?ABSOLUTE (__U4RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000c6          0x4 LONG 0x4856 DEFINED (__U4TXInterrupt)?ABSOLUTE (__U4TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000c4          0x4 LONG 0x4894 DEFINED (__U4RXInterrupt)?ABSOLUTE (__U4RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000c6          0x4 LONG 0x4878 DEFINED (__U4TXInterrupt)?ABSOLUTE (__U4TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000c8          0x4 LONG 0x34c DEFINED (__SPI3ErrInterrupt)?ABSOLUTE (__SPI3ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ca          0x4 LONG 0x34c DEFINED (__SPI3Interrupt)?ABSOLUTE (__SPI3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000cc          0x4 LONG 0x34c DEFINED (__OC9Interrupt)?ABSOLUTE (__OC9Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -1679,12 +1683,12 @@ __CONFIG1         0x02abfe          0x2
                   0x00011c          0x4 LONG 0x34c DEFINED (__AltInterrupt4)?ABSOLUTE (__AltInterrupt4):DEFINED (__Interrupt4)?ABSOLUTE (__Interrupt4):ABSOLUTE (__DefaultInterrupt)
                   0x00011e          0x4 LONG 0x34c DEFINED (__AltIC2Interrupt)?ABSOLUTE (__AltIC2Interrupt):DEFINED (__IC2Interrupt)?ABSOLUTE (__IC2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000120          0x4 LONG 0x34c DEFINED (__AltOC2Interrupt)?ABSOLUTE (__AltOC2Interrupt):DEFINED (__OC2Interrupt)?ABSOLUTE (__OC2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000122          0x4 LONG 0x4746 DEFINED (__AltT2Interrupt)?ABSOLUTE (__AltT2Interrupt):DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000122          0x4 LONG 0x4768 DEFINED (__AltT2Interrupt)?ABSOLUTE (__AltT2Interrupt):DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000124          0x4 LONG 0x34c DEFINED (__AltT3Interrupt)?ABSOLUTE (__AltT3Interrupt):DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000126          0x4 LONG 0x34c DEFINED (__AltSPI1ErrInterrupt)?ABSOLUTE (__AltSPI1ErrInterrupt):DEFINED (__SPI1ErrInterrupt)?ABSOLUTE (__SPI1ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000128          0x4 LONG 0x34c DEFINED (__AltSPI1Interrupt)?ABSOLUTE (__AltSPI1Interrupt):DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00012a          0x4 LONG 0x4780 DEFINED (__AltU1RXInterrupt)?ABSOLUTE (__AltU1RXInterrupt):DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00012c          0x4 LONG 0x4764 DEFINED (__AltU1TXInterrupt)?ABSOLUTE (__AltU1TXInterrupt):DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00012a          0x4 LONG 0x47a2 DEFINED (__AltU1RXInterrupt)?ABSOLUTE (__AltU1RXInterrupt):DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00012c          0x4 LONG 0x4786 DEFINED (__AltU1TXInterrupt)?ABSOLUTE (__AltU1TXInterrupt):DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00012e          0x4 LONG 0x34c DEFINED (__AltADC1Interrupt)?ABSOLUTE (__AltADC1Interrupt):DEFINED (__ADC1Interrupt)?ABSOLUTE (__ADC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000130          0x4 LONG 0x34c DEFINED (__AltInterrupt14)?ABSOLUTE (__AltInterrupt14):DEFINED (__Interrupt14)?ABSOLUTE (__Interrupt14):ABSOLUTE (__DefaultInterrupt)
                   0x000132          0x4 LONG 0x34c DEFINED (__AltInterrupt15)?ABSOLUTE (__AltInterrupt15):DEFINED (__Interrupt15)?ABSOLUTE (__Interrupt15):ABSOLUTE (__DefaultInterrupt)
@@ -1702,8 +1706,8 @@ __CONFIG1         0x02abfe          0x2
                   0x00014a          0x4 LONG 0x34c DEFINED (__AltT4Interrupt)?ABSOLUTE (__AltT4Interrupt):DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00014c          0x4 LONG 0x34c DEFINED (__AltT5Interrupt)?ABSOLUTE (__AltT5Interrupt):DEFINED (__T5Interrupt)?ABSOLUTE (__T5Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00014e          0x4 LONG 0x34c DEFINED (__AltINT2Interrupt)?ABSOLUTE (__AltINT2Interrupt):DEFINED (__INT2Interrupt)?ABSOLUTE (__INT2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000150          0x4 LONG 0x47c6 DEFINED (__AltU2RXInterrupt)?ABSOLUTE (__AltU2RXInterrupt):DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000152          0x4 LONG 0x47aa DEFINED (__AltU2TXInterrupt)?ABSOLUTE (__AltU2TXInterrupt):DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000150          0x4 LONG 0x47e8 DEFINED (__AltU2RXInterrupt)?ABSOLUTE (__AltU2RXInterrupt):DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000152          0x4 LONG 0x47cc DEFINED (__AltU2TXInterrupt)?ABSOLUTE (__AltU2TXInterrupt):DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000154          0x4 LONG 0x34c DEFINED (__AltSPI2ErrInterrupt)?ABSOLUTE (__AltSPI2ErrInterrupt):DEFINED (__SPI2ErrInterrupt)?ABSOLUTE (__SPI2ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000156          0x4 LONG 0x34c DEFINED (__AltSPI2Interrupt)?ABSOLUTE (__AltSPI2Interrupt):DEFINED (__SPI2Interrupt)?ABSOLUTE (__SPI2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000158          0x4 LONG 0x34c DEFINED (__AltInterrupt34)?ABSOLUTE (__AltInterrupt34):DEFINED (__Interrupt34)?ABSOLUTE (__Interrupt34):ABSOLUTE (__DefaultInterrupt)
@@ -1754,14 +1758,14 @@ __CONFIG1         0x02abfe          0x2
                   0x0001b2          0x4 LONG 0x34c DEFINED (__AltInterrupt79)?ABSOLUTE (__AltInterrupt79):DEFINED (__Interrupt79)?ABSOLUTE (__Interrupt79):ABSOLUTE (__DefaultInterrupt)
                   0x0001b4          0x4 LONG 0x34c DEFINED (__AltInterrupt80)?ABSOLUTE (__AltInterrupt80):DEFINED (__Interrupt80)?ABSOLUTE (__Interrupt80):ABSOLUTE (__DefaultInterrupt)
                   0x0001b6          0x4 LONG 0x34c DEFINED (__AltU3ErrInterrupt)?ABSOLUTE (__AltU3ErrInterrupt):DEFINED (__U3ErrInterrupt)?ABSOLUTE (__U3ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0001b8          0x4 LONG 0x481c DEFINED (__AltU3RXInterrupt)?ABSOLUTE (__AltU3RXInterrupt):DEFINED (__U3RXInterrupt)?ABSOLUTE (__U3RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0001ba          0x4 LONG 0x4800 DEFINED (__AltU3TXInterrupt)?ABSOLUTE (__AltU3TXInterrupt):DEFINED (__U3TXInterrupt)?ABSOLUTE (__U3TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0001b8          0x4 LONG 0x483e DEFINED (__AltU3RXInterrupt)?ABSOLUTE (__AltU3RXInterrupt):DEFINED (__U3RXInterrupt)?ABSOLUTE (__U3RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0001ba          0x4 LONG 0x4822 DEFINED (__AltU3TXInterrupt)?ABSOLUTE (__AltU3TXInterrupt):DEFINED (__U3TXInterrupt)?ABSOLUTE (__U3TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001bc          0x4 LONG 0x34c DEFINED (__AltSI2C3Interrupt)?ABSOLUTE (__AltSI2C3Interrupt):DEFINED (__SI2C3Interrupt)?ABSOLUTE (__SI2C3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001be          0x4 LONG 0x34c DEFINED (__AltMI2C3Interrupt)?ABSOLUTE (__AltMI2C3Interrupt):DEFINED (__MI2C3Interrupt)?ABSOLUTE (__MI2C3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001c0          0x4 LONG 0x34c DEFINED (__AltInterrupt86)?ABSOLUTE (__AltInterrupt86):DEFINED (__Interrupt86)?ABSOLUTE (__Interrupt86):ABSOLUTE (__DefaultInterrupt)
                   0x0001c2          0x4 LONG 0x34c DEFINED (__AltU4ErrInterrupt)?ABSOLUTE (__AltU4ErrInterrupt):DEFINED (__U4ErrInterrupt)?ABSOLUTE (__U4ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0001c4          0x4 LONG 0x4872 DEFINED (__AltU4RXInterrupt)?ABSOLUTE (__AltU4RXInterrupt):DEFINED (__U4RXInterrupt)?ABSOLUTE (__U4RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0001c6          0x4 LONG 0x4856 DEFINED (__AltU4TXInterrupt)?ABSOLUTE (__AltU4TXInterrupt):DEFINED (__U4TXInterrupt)?ABSOLUTE (__U4TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0001c4          0x4 LONG 0x4894 DEFINED (__AltU4RXInterrupt)?ABSOLUTE (__AltU4RXInterrupt):DEFINED (__U4RXInterrupt)?ABSOLUTE (__U4RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0001c6          0x4 LONG 0x4878 DEFINED (__AltU4TXInterrupt)?ABSOLUTE (__AltU4TXInterrupt):DEFINED (__U4TXInterrupt)?ABSOLUTE (__U4TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001c8          0x4 LONG 0x34c DEFINED (__AltSPI3ErrInterrupt)?ABSOLUTE (__AltSPI3ErrInterrupt):DEFINED (__SPI3ErrInterrupt)?ABSOLUTE (__SPI3ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001ca          0x4 LONG 0x34c DEFINED (__AltSPI3Interrupt)?ABSOLUTE (__AltSPI3Interrupt):DEFINED (__SPI3Interrupt)?ABSOLUTE (__SPI3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001cc          0x4 LONG 0x34c DEFINED (__AltOC9Interrupt)?ABSOLUTE (__AltOC9Interrupt):DEFINED (__OC9Interrupt)?ABSOLUTE (__OC9Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -2794,7 +2798,7 @@ LOAD data_init
 LOAD default_isr
 
 __c30_signature
-                  0x000000        0x2b8
+                  0x000000        0x2be
  __c30_signature
                   0x000000          0x6 build/default/production/_ext/1360937237/gps_nmea.o
  __c30_signature
@@ -2864,169 +2868,171 @@ __c30_signature
  __c30_signature
                   0x0000c6          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotick.o)
  __c30_signature
-                  0x0000cc          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoevent.o)
+                  0x0000cc          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask.o)
  __c30_signature
-                  0x0000d2          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqins.o)
+                  0x0000d2          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoevent.o)
  __c30_signature
-                  0x0000d8          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqdel.o)
+                  0x0000d8          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqins.o)
  __c30_signature
-                  0x0000de          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvohook_idle.o)
+                  0x0000de          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqdel.o)
  __c30_signature
-                  0x0000e4          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntTimer2.o)
+                  0x0000e4          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvohook_idle.o)
  __c30_signature
-                  0x0000ea          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenTimer2.o)
+                  0x0000ea          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntTimer2.o)
  __c30_signature
-                  0x0000f0          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART1.o)
+                  0x0000f0          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenTimer2.o)
  __c30_signature
-                  0x0000f6          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART2.o)
+                  0x0000f6          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART1.o)
  __c30_signature
-                  0x0000fc          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART3.o)
+                  0x0000fc          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART2.o)
  __c30_signature
-                  0x000102          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART4.o)
+                  0x000102          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART3.o)
  __c30_signature
-                  0x000108          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseI2C1.o)
+                  0x000108          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART4.o)
  __c30_signature
-                  0x00010e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntI2C1.o)
+                  0x00010e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseI2C1.o)
  __c30_signature
-                  0x000114          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenI2C1.o)
+                  0x000114          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntI2C1.o)
  __c30_signature
-                  0x00011a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(StartI2C1.o)
+                  0x00011a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenI2C1.o)
  __c30_signature
-                  0x000120          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(IdleI2C1.o)
+                  0x000120          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(StartI2C1.o)
  __c30_signature
-                  0x000126          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(MasterWriteI2C1.o)
+                  0x000126          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(IdleI2C1.o)
  __c30_signature
-                  0x00012c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(StopI2C1.o)
+                  0x00012c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(MasterWriteI2C1.o)
  __c30_signature
-                  0x000132          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(MastergetsI2C1.o)
+                  0x000132          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(StopI2C1.o)
  __c30_signature
-                  0x000138          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(EnableWDT.o)
+                  0x000138          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(MastergetsI2C1.o)
  __c30_signature
-                  0x00013e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseTimer2.o)
+                  0x00013e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(EnableWDT.o)
  __c30_signature
-                  0x000144          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART1.o)
+                  0x000144          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseTimer2.o)
  __c30_signature
-                  0x00014a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART1.o)
+                  0x00014a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART1.o)
  __c30_signature
-                  0x000150          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART1.o)
+                  0x000150          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART1.o)
  __c30_signature
-                  0x000156          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART1.o)
+                  0x000156          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART1.o)
  __c30_signature
-                  0x00015c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART1.o)
+                  0x00015c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART1.o)
  __c30_signature
-                  0x000162          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART2.o)
+                  0x000162          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART1.o)
  __c30_signature
-                  0x000168          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART2.o)
+                  0x000168          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART2.o)
  __c30_signature
-                  0x00016e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART2.o)
+                  0x00016e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART2.o)
  __c30_signature
-                  0x000174          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART2.o)
+                  0x000174          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART2.o)
  __c30_signature
-                  0x00017a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART2.o)
+                  0x00017a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART2.o)
  __c30_signature
-                  0x000180          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART3.o)
+                  0x000180          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART2.o)
  __c30_signature
-                  0x000186          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART3.o)
+                  0x000186          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART3.o)
  __c30_signature
-                  0x00018c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART3.o)
+                  0x00018c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART3.o)
  __c30_signature
-                  0x000192          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART3.o)
+                  0x000192          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART3.o)
  __c30_signature
-                  0x000198          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART3.o)
+                  0x000198          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART3.o)
  __c30_signature
-                  0x00019e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART4.o)
+                  0x00019e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART3.o)
  __c30_signature
-                  0x0001a4          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART4.o)
+                  0x0001a4          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART4.o)
  __c30_signature
-                  0x0001aa          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART4.o)
+                  0x0001aa          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART4.o)
  __c30_signature
-                  0x0001b0          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART4.o)
+                  0x0001b0          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART4.o)
  __c30_signature
-                  0x0001b6          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART4.o)
+                  0x0001b6          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART4.o)
  __c30_signature
-                  0x0001bc          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(DataRdyI2C1.o)
+                  0x0001bc          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART4.o)
  __c30_signature
-                  0x0001c2          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(crt0_standard.o)
+                  0x0001c2          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(DataRdyI2C1.o)
  __c30_signature
-                  0x0001c8          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(data_init_standard.o)
+                  0x0001c8          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(crt0_standard.o)
  __c30_signature
-                  0x0001ce          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(divsi3.o)
+                  0x0001ce          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(data_init_standard.o)
  __c30_signature
-                  0x0001d4          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(udivsi3.o)
+                  0x0001d4          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(divsi3.o)
  __c30_signature
-                  0x0001da          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(strncmp.o)
+                  0x0001da          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(udivsi3.o)
  __c30_signature
-                  0x0001e0          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sscanf_cdfFnopuxX.XXo)
+                  0x0001e0          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(strncmp.o)
  __c30_signature
-                  0x0001e6          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(puts.o)
+                  0x0001e6          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sscanf_cdfFnopuxX.XXo)
  __c30_signature
-                  0x0001ec          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(strlen.o)
+                  0x0001ec          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(puts.o)
  __c30_signature
-                  0x0001f2          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sprintf_cdnopsuxX.XXo)
+                  0x0001f2          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(strlen.o)
  __c30_signature
-                  0x0001f8          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo)
+                  0x0001f8          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sprintf_cdnopsuxX.XXo)
  __c30_signature
-                  0x0001fe          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fputc.o)
+                  0x0001fe          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo)
  __c30_signature
-                  0x000204          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(_iob.o)
+                  0x000204          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fputc.o)
  __c30_signature
-                  0x00020a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doprnt_cdnopsuxX.XXo)
+                  0x00020a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(_iob.o)
  __c30_signature
-                  0x000210          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fgetc.o)
+                  0x000210          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doprnt_cdnopsuxX.XXo)
  __c30_signature
-                  0x000216          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(ungetc.o)
+                  0x000216          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fgetc.o)
  __c30_signature
-                  0x00021c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atof.o)
+                  0x00021c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(ungetc.o)
  __c30_signature
-                  0x000222          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atoi.o)
+                  0x000222          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atof.o)
  __c30_signature
-                  0x000228          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(flsbuf.o)
+                  0x000228          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atoi.o)
  __c30_signature
-                  0x00022e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(filbuf.o)
+                  0x00022e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(flsbuf.o)
  __c30_signature
-                  0x000234          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(errno.o)
+                  0x000234          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(filbuf.o)
  __c30_signature
-                  0x00023a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fflush.o)
+                  0x00023a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(errno.o)
  __c30_signature
-                  0x000240          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(write.o)
+                  0x000240          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fflush.o)
  __c30_signature
-                  0x000246          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(read.o)
+                  0x000246          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(write.o)
  __c30_signature
-                  0x00024c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(c30_uart.o)
+                  0x00024c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(read.o)
  __c30_signature
-                  0x000252          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(divmoddi3.o)
+                  0x000252          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(c30_uart.o)
  __c30_signature
-                  0x000258          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(muldi3.o)
+                  0x000258          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(divmoddi3.o)
  __c30_signature
-                  0x00025e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(mulsi3.o)
+                  0x00025e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(muldi3.o)
  __c30_signature
-                  0x000264          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(extendsfdf.o)
+                  0x000264          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(mulsi3.o)
  __c30_signature
-                  0x00026a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(floatsisf.o)
+                  0x00026a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(extendsfdf.o)
  __c30_signature
-                  0x000270          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(feqltle.o)
+                  0x000270          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(floatsisf.o)
  __c30_signature
-                  0x000276          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(divsf3.o)
+                  0x000276          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(feqltle.o)
  __c30_signature
-                  0x00027c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(mulsf3.o)
+                  0x00027c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(divsf3.o)
  __c30_signature
-                  0x000282          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(fgtge.o)
+                  0x000282          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(mulsf3.o)
  __c30_signature
-                  0x000288          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(umuldi3.o)
+                  0x000288          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(fgtge.o)
  __c30_signature
-                  0x00028e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(funpack.o)
+                  0x00028e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(umuldi3.o)
  __c30_signature
-                  0x000294          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(floatdisf.o)
+                  0x000294          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(funpack.o)
  __c30_signature
-                  0x00029a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(fcompare.o)
+                  0x00029a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(floatdisf.o)
  __c30_signature
-                  0x0002a0          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(funpack2.o)
+                  0x0002a0          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(fcompare.o)
  __c30_signature
-                  0x0002a6          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(futil.o)
+                  0x0002a6          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(funpack2.o)
  __c30_signature
-                  0x0002ac          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(fpack.o)
+                  0x0002ac          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(futil.o)
  __c30_signature
-                  0x0002b2          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(floatundisf.o)
+                  0x0002b2          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(fpack.o)
+ __c30_signature
+                  0x0002b8          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(floatundisf.o)
 
 .ndata              0x0800        0x284
  .ndata             0x0800        0x284 build/default/production/_ext/1360937237/task_bim_qa.o
@@ -3176,307 +3182,309 @@ __c30_signature
                     0x1742          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(c30_uart.o)
                     0x1742                  __C30_UART
 
-.const              0x9ff4       0x130c load address 0x001ff4  
- .const             0x9ff4        0xac2 build/default/production/_ext/1360937237/task_bim_qa.o
- .const             0xaab6        0x432 build/default/production/_ext/1360937237/task_cmd.o
- .const             0xaee8        0x26e build/default/production/_ext/1360937237/task_supmcu_qa.o
- .const             0xb156         0xb6 build/default/production/_ext/1360937237/gps_nmea.o
- .const             0xb20c         0x9c build/default/production/_ext/1360937237/init.o
- .const             0xb2a8         0x1a build/default/production/_ext/2044256807/salvotime.o
- .const             0xb2c2         0x16 build/default/production/_ext/1360937237/task_5sec.o
- .const             0xb2d8          0xa build/default/production/_ext/1655478246/pic24_uart1_msg_hhmmsstt.o
- .const             0xb2e2          0xa build/default/production/_ext/1655478246/pic24_uart2_msg_hhmmsstt.o
- .const             0xb2ec          0xa build/default/production/_ext/1655478246/pic24_uart3_msg_hhmmsstt.o
- .const             0xb2f6          0xa build/default/production/_ext/1655478246/pic24_uart4_msg_hhmmsstt.o
+.const              0x9ff4       0x1322 load address 0x001ff4  
+ .const             0x9ff4        0xad8 build/default/production/_ext/1360937237/task_bim_qa.o
+ .const             0xaacc        0x432 build/default/production/_ext/1360937237/task_cmd.o
+ .const             0xaefe        0x26e build/default/production/_ext/1360937237/task_supmcu_qa.o
+ .const             0xb16c         0xb6 build/default/production/_ext/1360937237/gps_nmea.o
+ .const             0xb222         0x9c build/default/production/_ext/1360937237/init.o
+ .const             0xb2be         0x1a build/default/production/_ext/2044256807/salvotime.o
+ .const             0xb2d8         0x16 build/default/production/_ext/1360937237/task_5sec.o
+ .const             0xb2ee          0xa build/default/production/_ext/1655478246/pic24_uart1_msg_hhmmsstt.o
+ .const             0xb2f8          0xa build/default/production/_ext/1655478246/pic24_uart2_msg_hhmmsstt.o
+ .const             0xb302          0xa build/default/production/_ext/1655478246/pic24_uart3_msg_hhmmsstt.o
+ .const             0xb30c          0xa build/default/production/_ext/1655478246/pic24_uart4_msg_hhmmsstt.o
 
-.text             0x003300       0x1056
- .text            0x003300        0x6fa build/default/production/_ext/1360937237/task_bim_qa.o
-                  0x003300                  bim_tini_enab
-                  0x00331a                  bim_tini_dis
-                  0x003334                  bim_tini_arm
-                  0x00334e                  bim_tini_unarm
-                  0x003368                  bim_uart1_on
-                  0x003382                  bim_uart1_off
-                  0x00339c                  bim_uart2_on
-                  0x0033b6                  bim_uart2_off
-                  0x0033d0                  bim_uart3_on
-                  0x0033ea                  bim_uart3_off
-                  0x003404                  bim_eth1_on
-                  0x00341e                  bim_eth1_off
-                  0x003438                  bim_eth2_on
-                  0x003452                  bim_eth2_off
-                  0x00346c                  bim_eth3_on
-                  0x003486                  bim_eth3_off
-                  0x0034a0                  bim_eth_i2c_on
-                  0x0034ba                  bim_eth_i2c_off
-                  0x0034d4                  bim_eth_res
-                  0x0034ee                  bim_eth_mode1
-                  0x003508                  bim_eth_mode0
-                  0x003522                  bim_eth_mode2
-                  0x00353c                  bim_eth_mode3
-                  0x003556                  bim_eth_mode_off
-                  0x003570                  bim_temp_on
-                  0x00358a                  bim_temp_off
-                  0x0035a4                  bim_ttest_on
-                  0x0035be                  bim_ttest_off
-                  0x0035d8                  bim_ee_i2c_on
-                  0x0035f2                  bim_ee_i2c_off
-                  0x00360c                  bim_sky_on
-                  0x003626                  bim_sky_off
-                  0x003640                  bim_imu_on
-                  0x00365a                  bim_imu_off
-                  0x003674                  bim_wdt_force
-                  0x00368e                  task_bim_qa
- .text            0x0039fa        0x520 build/default/production/_ext/1810884970/csk_io.o
-                  0x0039fa                  csk_io0_high
-                  0x003a08                  csk_io0_low
-                  0x003a16                  csk_io1_high
-                  0x003a24                  csk_io1_low
-                  0x003a32                  csk_io2_high
-                  0x003a40                  csk_io2_low
-                  0x003a4e                  csk_io3_high
-                  0x003a5c                  csk_io3_low
-                  0x003a6a                  csk_io4_high
-                  0x003a76                  csk_io4_low
-                  0x003a84                  csk_io5_high
-                  0x003a90                  csk_io5_low
-                  0x003a9e                  csk_io6_high
-                  0x003aac                  csk_io6_low
-                  0x003aba                  csk_io7_high
-                  0x003ac6                  csk_io7_low
-                  0x003ad4                  csk_io8_high
-                  0x003ae2                  csk_io8_low
-                  0x003af0                  csk_io9_high
-                  0x003afe                  csk_io9_low
-                  0x003b0c                  csk_io10_high
-                  0x003b1a                  csk_io10_low
-                  0x003b28                  csk_io11_high
-                  0x003b36                  csk_io11_low
-                  0x003b44                  csk_io12_high
-                  0x003b52                  csk_io12_low
-                  0x003b60                  csk_io13_high
-                  0x003b6e                  csk_io13_low
-                  0x003b7c                  csk_io14_high
-                  0x003b8a                  csk_io14_low
-                  0x003b98                  csk_io15_high
-                  0x003ba6                  csk_io15_low
-                  0x003bb4                  csk_io16_high
-                  0x003bc2                  csk_io16_low
-                  0x003bd0                  csk_io17_high
-                  0x003bdc                  csk_io17_low
-                  0x003bea                  csk_io18_high
-                  0x003bf8                  csk_io18_low
-                  0x003c06                  csk_io19_high
-                  0x003c12                  csk_io19_low
-                  0x003c20                  csk_io20_high
-                  0x003c2c                  csk_io20_low
-                  0x003c3a                  csk_io21_high
-                  0x003c46                  csk_io21_low
-                  0x003c54                  csk_io22_high
-                  0x003c62                  csk_io22_low
-                  0x003c70                  csk_io23_high
-                  0x003c7e                  csk_io23_low
-                  0x003c8c                  csk_io24_high
-                  0x003c98                  csk_io24_low
-                  0x003ca6                  csk_io25_high
-                  0x003cb2                  csk_io25_low
-                  0x003cc0                  csk_io26_high
-                  0x003ccc                  csk_io26_low
-                  0x003cda                  csk_io27_high
-                  0x003ce6                  csk_io27_low
-                  0x003cf4                  csk_io28_high
-                  0x003d02                  csk_io28_low
-                  0x003d10                  csk_io29_high
-                  0x003d1e                  csk_io29_low
-                  0x003d2c                  csk_io30_high
-                  0x003d3a                  csk_io30_low
-                  0x003d48                  csk_io31_high
-                  0x003d56                  csk_io31_low
-                  0x003d64                  csk_io32_high
-                  0x003d72                  csk_io32_low
-                  0x003d80                  csk_io33_high
-                  0x003d8c                  csk_io33_low
-                  0x003d9a                  csk_io34_high
-                  0x003da6                  csk_io34_low
-                  0x003db4                  csk_io35_high
-                  0x003dc0                  csk_io35_low
-                  0x003dce                  csk_io36_high
-                  0x003dda                  csk_io36_low
-                  0x003de8                  csk_io37_high
-                  0x003df4                  csk_io37_low
-                  0x003e02                  csk_io38_high
-                  0x003e10                  csk_io38_low
-                  0x003e1e                  csk_io39_high
-                  0x003e2c                  csk_io39_low
-                  0x003e3a                  csk_io40_high
-                  0x003e48                  csk_io40_low
-                  0x003e56                  csk_io41_high
-                  0x003e64                  csk_io41_low
-                  0x003e72                  csk_io42_high
-                  0x003e80                  csk_io42_low
-                  0x003e8e                  csk_io43_high
-                  0x003e9c                  csk_io43_low
-                  0x003eaa                  csk_io44_high
-                  0x003eb8                  csk_io44_low
-                  0x003ec6                  csk_io45_high
-                  0x003ed4                  csk_io45_low
-                  0x003ee2                  csk_io46_high
-                  0x003ef0                  csk_io46_low
-                  0x003efe                  csk_io47_high
-                  0x003f0c                  csk_io47_low
- .text            0x003f1a        0x43c build/default/production/_ext/1360937237/gps_nmea.o
-                  0x003f1a                  gps_open
-                  0x003f56                  gps_init
-                  0x003fd4                  gps_NMEA_GMT_time_hhmmss
-                  0x003ff4                  gps_enabled
-                  0x004000                  gps_NMEA_str
-                  0x004040                  gps_NMEA_rcv
-                  0x004106                  gps_update
-                  0x004344                  gps_read
+.text             0x003316       0x1062
+ .text            0x003316        0x706 build/default/production/_ext/1360937237/task_bim_qa.o
+                  0x003316                  bim_tini_enab
+                  0x003330                  bim_tini_dis
+                  0x00334a                  bim_tini_arm
+                  0x003364                  bim_tini_unarm
+                  0x00337e                  bim_uart1_on
+                  0x003398                  bim_uart1_off
+                  0x0033b2                  bim_uart2_on
+                  0x0033cc                  bim_uart2_off
+                  0x0033e6                  bim_uart3_on
+                  0x003400                  bim_uart3_off
+                  0x00341a                  bim_eth1_on
+                  0x003434                  bim_eth1_off
+                  0x00344e                  bim_eth2_on
+                  0x003468                  bim_eth2_off
+                  0x003482                  bim_eth3_on
+                  0x00349c                  bim_eth3_off
+                  0x0034b6                  bim_eth_i2c_on
+                  0x0034d0                  bim_eth_i2c_off
+                  0x0034ea                  bim_eth_res
+                  0x003504                  bim_eth_mode1
+                  0x00351e                  bim_eth_mode0
+                  0x003538                  bim_eth_mode2
+                  0x003552                  bim_eth_mode3
+                  0x00356c                  bim_eth_mode_off
+                  0x003586                  bim_temp_on
+                  0x0035a0                  bim_temp_off
+                  0x0035ba                  bim_ttest_on
+                  0x0035d4                  bim_ttest_off
+                  0x0035ee                  bim_ee_i2c_on
+                  0x003608                  bim_ee_i2c_off
+                  0x003622                  bim_sky_on
+                  0x00363c                  bim_sky_off
+                  0x003656                  bim_imu_on
+                  0x003670                  bim_imu_off
+                  0x00368a                  bim_wdt_force
+                  0x0036a4                  task_bim_qa
+ .text            0x003a1c        0x520 build/default/production/_ext/1810884970/csk_io.o
+                  0x003a1c                  csk_io0_high
+                  0x003a2a                  csk_io0_low
+                  0x003a38                  csk_io1_high
+                  0x003a46                  csk_io1_low
+                  0x003a54                  csk_io2_high
+                  0x003a62                  csk_io2_low
+                  0x003a70                  csk_io3_high
+                  0x003a7e                  csk_io3_low
+                  0x003a8c                  csk_io4_high
+                  0x003a98                  csk_io4_low
+                  0x003aa6                  csk_io5_high
+                  0x003ab2                  csk_io5_low
+                  0x003ac0                  csk_io6_high
+                  0x003ace                  csk_io6_low
+                  0x003adc                  csk_io7_high
+                  0x003ae8                  csk_io7_low
+                  0x003af6                  csk_io8_high
+                  0x003b04                  csk_io8_low
+                  0x003b12                  csk_io9_high
+                  0x003b20                  csk_io9_low
+                  0x003b2e                  csk_io10_high
+                  0x003b3c                  csk_io10_low
+                  0x003b4a                  csk_io11_high
+                  0x003b58                  csk_io11_low
+                  0x003b66                  csk_io12_high
+                  0x003b74                  csk_io12_low
+                  0x003b82                  csk_io13_high
+                  0x003b90                  csk_io13_low
+                  0x003b9e                  csk_io14_high
+                  0x003bac                  csk_io14_low
+                  0x003bba                  csk_io15_high
+                  0x003bc8                  csk_io15_low
+                  0x003bd6                  csk_io16_high
+                  0x003be4                  csk_io16_low
+                  0x003bf2                  csk_io17_high
+                  0x003bfe                  csk_io17_low
+                  0x003c0c                  csk_io18_high
+                  0x003c1a                  csk_io18_low
+                  0x003c28                  csk_io19_high
+                  0x003c34                  csk_io19_low
+                  0x003c42                  csk_io20_high
+                  0x003c4e                  csk_io20_low
+                  0x003c5c                  csk_io21_high
+                  0x003c68                  csk_io21_low
+                  0x003c76                  csk_io22_high
+                  0x003c84                  csk_io22_low
+                  0x003c92                  csk_io23_high
+                  0x003ca0                  csk_io23_low
+                  0x003cae                  csk_io24_high
+                  0x003cba                  csk_io24_low
+                  0x003cc8                  csk_io25_high
+                  0x003cd4                  csk_io25_low
+                  0x003ce2                  csk_io26_high
+                  0x003cee                  csk_io26_low
+                  0x003cfc                  csk_io27_high
+                  0x003d08                  csk_io27_low
+                  0x003d16                  csk_io28_high
+                  0x003d24                  csk_io28_low
+                  0x003d32                  csk_io29_high
+                  0x003d40                  csk_io29_low
+                  0x003d4e                  csk_io30_high
+                  0x003d5c                  csk_io30_low
+                  0x003d6a                  csk_io31_high
+                  0x003d78                  csk_io31_low
+                  0x003d86                  csk_io32_high
+                  0x003d94                  csk_io32_low
+                  0x003da2                  csk_io33_high
+                  0x003dae                  csk_io33_low
+                  0x003dbc                  csk_io34_high
+                  0x003dc8                  csk_io34_low
+                  0x003dd6                  csk_io35_high
+                  0x003de2                  csk_io35_low
+                  0x003df0                  csk_io36_high
+                  0x003dfc                  csk_io36_low
+                  0x003e0a                  csk_io37_high
+                  0x003e16                  csk_io37_low
+                  0x003e24                  csk_io38_high
+                  0x003e32                  csk_io38_low
+                  0x003e40                  csk_io39_high
+                  0x003e4e                  csk_io39_low
+                  0x003e5c                  csk_io40_high
+                  0x003e6a                  csk_io40_low
+                  0x003e78                  csk_io41_high
+                  0x003e86                  csk_io41_low
+                  0x003e94                  csk_io42_high
+                  0x003ea2                  csk_io42_low
+                  0x003eb0                  csk_io43_high
+                  0x003ebe                  csk_io43_low
+                  0x003ecc                  csk_io44_high
+                  0x003eda                  csk_io44_low
+                  0x003ee8                  csk_io45_high
+                  0x003ef6                  csk_io45_low
+                  0x003f04                  csk_io46_high
+                  0x003f12                  csk_io46_low
+                  0x003f20                  csk_io47_high
+                  0x003f2e                  csk_io47_low
+ .text            0x003f3c        0x43c build/default/production/_ext/1360937237/gps_nmea.o
+                  0x003f3c                  gps_open
+                  0x003f78                  gps_init
+                  0x003ff6                  gps_NMEA_GMT_time_hhmmss
+                  0x004016                  gps_enabled
+                  0x004022                  gps_NMEA_str
+                  0x004062                  gps_NMEA_rcv
+                  0x004128                  gps_update
+                  0x004366                  gps_read
 
-.dinit            0x004356        0x30c
- .dinit           0x004356        0x30c data_init
+.dinit            0x004378        0x30c
+ .dinit           0x004378        0x30c data_init
 
-.text             0x004662       0x177c
- .text            0x004662        0x24a build/default/production/_ext/1360937237/init.o
-                  0x004662                  init
-                  0x004746                  _T2Interrupt
-                  0x004764                  _U1TXInterrupt
-                  0x004780                  _U1RXInterrupt
-                  0x0047aa                  _U2TXInterrupt
-                  0x0047c6                  _U2RXInterrupt
-                  0x004800                  _U3TXInterrupt
-                  0x00481c                  _U3RXInterrupt
-                  0x004856                  _U4TXInterrupt
-                  0x004872                  _U4RXInterrupt
- .text            0x0048ac        0x1e8 build/default/production/_ext/1655478246/pic24_uart1.o
-                  0x0048ac                  uart1_open
-                  0x0048e0                  uart1_close
-                  0x0048e8                  uart1_peek_rx
-                  0x004932                  uart1_rx_count
-                  0x00493c                  uart1_tx_free
-                  0x00494a                  uart1_getchar
-                  0x004986                  uart1_get_byte
-                  0x0049c4                  uart1_putchar
-                  0x004a04                  uart1_puts
-                  0x004a26                  uart1_outchar
-                  0x004a64                  uart1_inchar
- .text            0x004a94        0x1e8 build/default/production/_ext/1655478246/pic24_uart2.o
-                  0x004a94                  uart2_open
-                  0x004ac8                  uart2_close
-                  0x004ad0                  uart2_peek_rx
-                  0x004b1a                  uart2_rx_count
-                  0x004b24                  uart2_tx_free
-                  0x004b32                  uart2_getchar
-                  0x004b6e                  uart2_get_byte
-                  0x004bac                  uart2_putchar
-                  0x004bec                  uart2_puts
-                  0x004c0e                  uart2_outchar
-                  0x004c4c                  uart2_inchar
- .text            0x004c7c        0x1e8 build/default/production/_ext/1655478246/pic24_uart3.o
-                  0x004c7c                  uart3_open
-                  0x004cb0                  uart3_close
-                  0x004cb8                  uart3_peek_rx
-                  0x004d02                  uart3_rx_count
-                  0x004d0c                  uart3_tx_free
-                  0x004d1a                  uart3_getchar
-                  0x004d56                  uart3_get_byte
-                  0x004d94                  uart3_putchar
-                  0x004dd4                  uart3_puts
-                  0x004df6                  uart3_outchar
-                  0x004e34                  uart3_inchar
- .text            0x004e64        0x1e8 build/default/production/_ext/1655478246/pic24_uart4.o
-                  0x004e64                  uart4_open
-                  0x004e98                  uart4_close
-                  0x004ea0                  uart4_peek_rx
-                  0x004eea                  uart4_rx_count
-                  0x004ef4                  uart4_tx_free
-                  0x004f02                  uart4_getchar
-                  0x004f3e                  uart4_get_byte
-                  0x004f7c                  uart4_putchar
-                  0x004fbc                  uart4_puts
-                  0x004fde                  uart4_outchar
-                  0x00501c                  uart4_inchar
- .text            0x00504c        0x1aa build/default/production/_ext/1360937237/task_supmcu_qa.o
-                  0x00504c                  power
-                  0x005074                  sup_led_off
-                  0x00508e                  sup_led_on
-                  0x0050a8                  sup_led_flash
-                  0x0050c2                  sup_clk_off
-                  0x0050dc                  sup_clk_on
-                  0x00512e                  task_supmcu_qa
- .text            0x0051f6        0x150 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosched.o)
-                  0x0051f6                  OSSched
- .text            0x005346        0x122 build/default/production/_ext/1360937237/task_cmd.o
-                  0x005346                  cmd_explain
-                  0x0053a8                  task_cmd_do
- .text            0x005468        0x112 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqins.o)
-                  0x005468                  OSInsPrioQ
-                  0x0054dc                  OSInsDelayQ
- .text            0x00557a         0xfc build/default/production/_ext/2044256807/salvotime.o
-                  0x00557a                  OSElapsedTime
- .text            0x005676         0xe6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqdel.o)
-                  0x005676                  OSDelPrioQ
-                  0x0056e6                  OSDelDelayQ
- .text            0x00575c         0xd8 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoevent.o)
-                  0x00575c                  OSWaitEvent
- .text            0x005834         0xc4 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosem.o)
-                  0x005834                  OSCreateSem
-                  0x005856                  OSWaitSem
-                  0x00588e                  OSSignalSem
- .text            0x0058f8         0x86 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoinit2.o)
-                  0x0058f8                  OSCreateTask
-                  0x00594e                  OSInitPrioTask
- .text            0x00597e         0x7e build/default/production/_ext/1810884970/csk_mhx.o
-                  0x00597e                  csk_mhx_open
-                  0x0059aa                  csk_mhx_close
-                  0x0059d2                  csk_mhx_pwr_on
-                  0x0059e8                  csk_mhx_pwr_off
- .text            0x0059fc         0x6c build/default/production/_ext/1810884970/csk_power.o
-                  0x0059fc                  csk_power_shutdown
- .text            0x005a68         0x64 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvodelay.o)
-                  0x005a68                  OSDelay
- .text            0x005acc         0x5e build/default/production/_ext/1810884970/csk_usb.o
-                  0x005acc                  csk_usb_open
-                  0x005af8                  csk_usb_close
-                  0x005b20                  csk_usb_present
- .text            0x005b2a         0x4e C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoportmcc30.o)
-                  0x005b2a                  OSDispatch
-                  0x005b4e                  OSCtxSw
-                  0x005b6a                  OSReturn
- .text            0x005b78         0x48 build/default/production/_ext/1810884970/csk_led.o
-                  0x005b78                  csk_led_status_open
-                  0x005b8e                  csk_led_status_close
-                  0x005ba4                  csk_led_status_on
-                  0x005bb2                  csk_led_status_off
- .text            0x005bc0         0x42 build/default/production/_ext/1655478246/pic24_uart1_msg_hhmmsstt.o
-                  0x005bc0                  uart1_msg_hhmmsstt
- .text            0x005c02         0x42 build/default/production/_ext/1655478246/pic24_uart2_msg_hhmmsstt.o
-                  0x005c02                  uart2_msg_hhmmsstt
- .text            0x005c44         0x42 build/default/production/_ext/1655478246/pic24_uart3_msg_hhmmsstt.o
-                  0x005c44                  uart4_msg_hhmmsstt
- .text            0x005c86         0x42 build/default/production/_ext/1655478246/pic24_uart4_msg_hhmmsstt.o
-                  0x005c86                  uart3_msg_hhmmsstt
- .text            0x005cc8         0x32 build/default/production/_ext/1360937237/main.o
-                  0x005cc8                  main
- .text            0x005cfa         0x2a build/default/production/_ext/1810884970/csk_rand.o
-                  0x005cfa                  csk_rand
- .text            0x005d24         0x2a C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotimer.o)
-                  0x005d24                  OSTimer
- .text            0x005d4e         0x24 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoinit.o)
-                  0x005d4e                  OSInit
- .text            0x005d72         0x24 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotick.o)
-                  0x005d72                  OSGetTicks
-                  0x005d84                  OSSetTicks
- .text            0x005d96         0x18 build/default/production/_ext/1360937237/task_5sec.o
-                  0x005d96                  task_5sec
- .text            0x005dae         0x12 build/default/production/_ext/1810884970/csk_wdt.o
-                  0x005dae                  csk_wdt_force
-                  0x005db6                  csk_wdt_off
- .text            0x005dc0         0x10 build/default/production/_ext/1297474772/salvohook_interrupt_MCC30_IRQ.o
-                  0x005dc0                  OSDisableHook
-                  0x005dc8                  OSEnableHook
- .text            0x005dd0          0x8 build/default/production/_ext/1297474772/salvohook_wdt.o
-                  0x005dd0                  OSClrWDTHook
- .text            0x005dd8          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvohook_idle.o)
-                  0x005dd8                  OSIdlingHook
+.text             0x004684       0x17be
+ .text            0x004684        0x24a build/default/production/_ext/1360937237/init.o
+                  0x004684                  init
+                  0x004768                  _T2Interrupt
+                  0x004786                  _U1TXInterrupt
+                  0x0047a2                  _U1RXInterrupt
+                  0x0047cc                  _U2TXInterrupt
+                  0x0047e8                  _U2RXInterrupt
+                  0x004822                  _U3TXInterrupt
+                  0x00483e                  _U3RXInterrupt
+                  0x004878                  _U4TXInterrupt
+                  0x004894                  _U4RXInterrupt
+ .text            0x0048ce        0x1e8 build/default/production/_ext/1655478246/pic24_uart1.o
+                  0x0048ce                  uart1_open
+                  0x004902                  uart1_close
+                  0x00490a                  uart1_peek_rx
+                  0x004954                  uart1_rx_count
+                  0x00495e                  uart1_tx_free
+                  0x00496c                  uart1_getchar
+                  0x0049a8                  uart1_get_byte
+                  0x0049e6                  uart1_putchar
+                  0x004a26                  uart1_puts
+                  0x004a48                  uart1_outchar
+                  0x004a86                  uart1_inchar
+ .text            0x004ab6        0x1e8 build/default/production/_ext/1655478246/pic24_uart2.o
+                  0x004ab6                  uart2_open
+                  0x004aea                  uart2_close
+                  0x004af2                  uart2_peek_rx
+                  0x004b3c                  uart2_rx_count
+                  0x004b46                  uart2_tx_free
+                  0x004b54                  uart2_getchar
+                  0x004b90                  uart2_get_byte
+                  0x004bce                  uart2_putchar
+                  0x004c0e                  uart2_puts
+                  0x004c30                  uart2_outchar
+                  0x004c6e                  uart2_inchar
+ .text            0x004c9e        0x1e8 build/default/production/_ext/1655478246/pic24_uart3.o
+                  0x004c9e                  uart3_open
+                  0x004cd2                  uart3_close
+                  0x004cda                  uart3_peek_rx
+                  0x004d24                  uart3_rx_count
+                  0x004d2e                  uart3_tx_free
+                  0x004d3c                  uart3_getchar
+                  0x004d78                  uart3_get_byte
+                  0x004db6                  uart3_putchar
+                  0x004df6                  uart3_puts
+                  0x004e18                  uart3_outchar
+                  0x004e56                  uart3_inchar
+ .text            0x004e86        0x1e8 build/default/production/_ext/1655478246/pic24_uart4.o
+                  0x004e86                  uart4_open
+                  0x004eba                  uart4_close
+                  0x004ec2                  uart4_peek_rx
+                  0x004f0c                  uart4_rx_count
+                  0x004f16                  uart4_tx_free
+                  0x004f24                  uart4_getchar
+                  0x004f60                  uart4_get_byte
+                  0x004f9e                  uart4_putchar
+                  0x004fde                  uart4_puts
+                  0x005000                  uart4_outchar
+                  0x00503e                  uart4_inchar
+ .text            0x00506e        0x1b6 build/default/production/_ext/1360937237/task_supmcu_qa.o
+                  0x00506e                  power
+                  0x005096                  sup_led_off
+                  0x0050b0                  sup_led_on
+                  0x0050ca                  sup_led_flash
+                  0x0050e4                  sup_clk_off
+                  0x0050fe                  sup_clk_on
+                  0x005150                  task_supmcu_qa
+ .text            0x005224        0x150 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosched.o)
+                  0x005224                  OSSched
+ .text            0x005374        0x122 build/default/production/_ext/1360937237/task_cmd.o
+                  0x005374                  cmd_explain
+                  0x0053d6                  task_cmd_do
+ .text            0x005496        0x112 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqins.o)
+                  0x005496                  OSInsPrioQ
+                  0x00550a                  OSInsDelayQ
+ .text            0x0055a8         0xfc build/default/production/_ext/2044256807/salvotime.o
+                  0x0055a8                  OSElapsedTime
+ .text            0x0056a4         0xe6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqdel.o)
+                  0x0056a4                  OSDelPrioQ
+                  0x005714                  OSDelDelayQ
+ .text            0x00578a         0xd8 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoevent.o)
+                  0x00578a                  OSWaitEvent
+ .text            0x005862         0xc4 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosem.o)
+                  0x005862                  OSCreateSem
+                  0x005884                  OSWaitSem
+                  0x0058bc                  OSSignalSem
+ .text            0x005926         0x86 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoinit2.o)
+                  0x005926                  OSCreateTask
+                  0x00597c                  OSInitPrioTask
+ .text            0x0059ac         0x7e build/default/production/_ext/1810884970/csk_mhx.o
+                  0x0059ac                  csk_mhx_open
+                  0x0059d8                  csk_mhx_close
+                  0x005a00                  csk_mhx_pwr_on
+                  0x005a16                  csk_mhx_pwr_off
+ .text            0x005a2a         0x6c build/default/production/_ext/1810884970/csk_power.o
+                  0x005a2a                  csk_power_shutdown
+ .text            0x005a96         0x64 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvodelay.o)
+                  0x005a96                  OSDelay
+ .text            0x005afa         0x5e build/default/production/_ext/1810884970/csk_usb.o
+                  0x005afa                  csk_usb_open
+                  0x005b26                  csk_usb_close
+                  0x005b4e                  csk_usb_present
+ .text            0x005b58         0x4e C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoportmcc30.o)
+                  0x005b58                  OSDispatch
+                  0x005b7c                  OSCtxSw
+                  0x005b98                  OSReturn
+ .text            0x005ba6         0x48 build/default/production/_ext/1810884970/csk_led.o
+                  0x005ba6                  csk_led_status_open
+                  0x005bbc                  csk_led_status_close
+                  0x005bd2                  csk_led_status_on
+                  0x005be0                  csk_led_status_off
+ .text            0x005bee         0x42 build/default/production/_ext/1655478246/pic24_uart1_msg_hhmmsstt.o
+                  0x005bee                  uart1_msg_hhmmsstt
+ .text            0x005c30         0x42 build/default/production/_ext/1655478246/pic24_uart2_msg_hhmmsstt.o
+                  0x005c30                  uart2_msg_hhmmsstt
+ .text            0x005c72         0x42 build/default/production/_ext/1655478246/pic24_uart3_msg_hhmmsstt.o
+                  0x005c72                  uart4_msg_hhmmsstt
+ .text            0x005cb4         0x42 build/default/production/_ext/1655478246/pic24_uart4_msg_hhmmsstt.o
+                  0x005cb4                  uart3_msg_hhmmsstt
+ .text            0x005cf6         0x36 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask.o)
+                  0x005cf6                  OSStartTask
+ .text            0x005d2c         0x32 build/default/production/_ext/1360937237/main.o
+                  0x005d2c                  main
+ .text            0x005d5e         0x2a build/default/production/_ext/1810884970/csk_rand.o
+                  0x005d5e                  csk_rand
+ .text            0x005d88         0x2a C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotimer.o)
+                  0x005d88                  OSTimer
+ .text            0x005db2         0x24 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoinit.o)
+                  0x005db2                  OSInit
+ .text            0x005dd6         0x24 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotick.o)
+                  0x005dd6                  OSGetTicks
+                  0x005de8                  OSSetTicks
+ .text            0x005dfa         0x18 build/default/production/_ext/1360937237/task_5sec.o
+                  0x005dfa                  task_5sec
+ .text            0x005e12         0x12 build/default/production/_ext/1810884970/csk_wdt.o
+                  0x005e12                  csk_wdt_force
+                  0x005e1a                  csk_wdt_off
+ .text            0x005e24         0x10 build/default/production/_ext/1297474772/salvohook_interrupt_MCC30_IRQ.o
+                  0x005e24                  OSDisableHook
+                  0x005e2c                  OSEnableHook
+ .text            0x005e34          0x8 build/default/production/_ext/1297474772/salvohook_wdt.o
+                  0x005e34                  OSClrWDTHook
+ .text            0x005e3c          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvohook_idle.o)
+                  0x005e3c                  OSIdlingHook

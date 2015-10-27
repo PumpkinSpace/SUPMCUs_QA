@@ -192,14 +192,15 @@ Interfaces to the GPSRM 1 as part of test.
 ****                                                                       ****
 ******************************************************************************/
 void task_gps_qa(void) {
+  
+  user_debug_msg(STR_TASK_GPS_QA "Stopped.");
+  OS_Stop();
 
   user_debug_msg(STR_TASK_GPS_QA  "Starting.");
 
 #if 1
   OS_Delay(250); OS_Delay(250);
-  OS_Delay(250); OS_Delay(250);
-  OS_Delay(250); OS_Delay(250);
-  OS_Delay(250); OS_Delay(250);
+
   // Init -- don't show messages yet
   gps_res_off(FALSE);
   gps_pow_off(FALSE);

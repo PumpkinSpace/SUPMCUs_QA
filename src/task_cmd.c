@@ -9,11 +9,9 @@
 #include "csk_uart.h"
 #include "csk_wdt.h"
 
-//#include "task_test.h"
+#include "task_supmcu_qa.h"
 #include "task_gps_qa.h"
 #include "task_bim_qa.h"
-#include "task_supmcu_qa.h"
-
 
 #include "salvo.h"
 #include "config.h"
@@ -47,12 +45,15 @@ void   cmd_explain ( void ) {
   printf("\t\t\t\tf:   finish test.\r\n");
   printf("\t\t\t\tr:   restart application.\r\n");
   printf("\t\t\t\tv:   display firmware version.\r\n");
+  //printf("\t\t\t\tb:   Perform BIM QA.\r\n");
+  //printf("\t\t\t\tp:   Perform PIM QA.\r\n");
+  //printf("\t\t\t\tg:   Perform GPSRM QA.\r\n");
   printf("\t\t\t\tt:   disable all OEM615 COM1 logging.\r\n");
   printf("\t\t\t\ty:   enable OEM615 COM1 GGA logging.\r\n");
   printf("\t\t\t\tu:   enable OEM615 COM1 GSA logging.\r\n");
   printf("\t\t\t\ti:   enable OEM615 COM1 GSV logging.\r\n");
   printf("\t\t\t\to:   enable OEM615 COM1 RMC logging.\r\n");
-  printf("\t\t\t\tp:   enable OEM615 COM1 VTG logging.\r\n");
+  printf("\t\t\t\tl:   enable OEM615 COM1 VTG logging.\r\n");
   printf("\t\t\t\t0:   select Sup MCU CLK Out div = 2^0.\r\n");
   printf("\t\t\t\t1:   select Sup MCU CLK Out div = 2^1.\r\n");
   printf("\t\t\t\t2:   select Sup MCU CLK Out div = 2^2.\r\n");
@@ -101,6 +102,21 @@ void task_cmd_do(void) {
           sup_clk_on(TRUE, tolower(cmd)-'0');
           break;
 
+/*        case 'b':
+            user_debug_msg(STR_TASK_CMD_DO "b: Starting BIM QA.");
+            OSStartTask(TASK_BIM_QA_P);
+            break;
+        
+        case 'g':
+            user_debug_msg(STR_TASK_CMD_DO "g: Starting GPSRM QA.");
+            OSStartTask(TASK_GPS_QA_P);
+            break;
+        
+        case 'p':
+            user_debug_msg(STR_TASK_CMD_DO "p: Starting PIM QA.");
+            OSStartTask(TASK_PIM_QA_P);
+            break;
+         */   
         case 'x':
           sup_clk_off(TRUE);
           break;
@@ -126,7 +142,82 @@ void task_cmd_do(void) {
           break;
 
         // Finish test.
-                         
+        // First, shut down the GPS receiver and stop trying to talk to it
+#if defined(SUPMCU_GPSRM1_REVA) \
+  ||  defined(SUPMCU_GPSRM1_REVB) \
+  ||  defined(SUPMCU_GPSRM1_REVB)
+        case 'f':
+          // Stop all logging (not a bad idea before shutting down the OEM615)
+          csk_uart1_puts("UNLOGALL COM1 TRUE\r\n");
+          csk_uart2_puts("UNLOGALL COM1 TRUE\r\n");
+          csk_uart3_puts("UNLOGALL COM1 TRUE\r\n");
+          // Stop the two tasks that are actively engaged with the OEM615.
+          OSStopTask(TASK_GPS_QA_P);
+          OSStopTask(TASK_MONITOR_P);
+          // Shut down power to the OEM615 ... lave the Sup. MCU LED on.
+          gps_res_off(FALSE);
+          gps_pow_off(FALSE);
+          sup_led_off(FALSE);
+          gps_pass_off(FALSE);
+          gps_log_off(FALSE);
+          sup_clk_off(FALSE);
+          gps_res_on(FALSE); // This takes -RESET LOW, therefore minimizes
+                             //  voltages at OEM615 pins
+		  user_debug_msg(STR_TASK_CMD_DO "f: Powered down OEM615.");
+          printf("\t\t\t\tControl: Issue 'z' (sleep) command to GPSRM!\r\n");
+          user_debug_msg(STR_TASK_CMD_DO "Record: Current from supply.");
+          user_debug_msg(STR_TASK_CMD_DO "Record: GPS data.");
+          user_debug_msg(STR_TASK_CMD_DO "Record: Number of commands GPSRM has processed.");
+          break;
+
+        // Cancel all OEM615 logging on COM1
+        case 't':
+          csk_uart1_puts("UNLOGALL COM1 TRUE\r\n");
+          csk_uart2_puts("UNLOGALL COM1 TRUE\r\n");
+          csk_uart3_puts("UNLOGALL COM1 TRUE\r\n");
+          user_debug_msg(STR_TASK_CMD_DO "t: All OEM615 logging canceled.");
+          break;
+
+        // Enable OEM615 GPGGA logging on COM1 @ 1Hz
+        case 'y':
+          csk_uart1_puts("LOG COM1 GPGGA ONTIME 1\r\n");
+          csk_uart2_puts("LOG COM1 GPGGA ONTIME 1\r\n");
+          csk_uart3_puts("LOG COM1 GPGGA ONTIME 1\r\n");
+          user_debug_msg(STR_TASK_CMD_DO "y: OEM615 GGA logging enabled.");
+          break;
+
+        // Enable OEM615 GPGSA logging on COM1 @ 1Hz
+        case 'u':
+          csk_uart1_puts("LOG COM1 GPGSA ONTIME 1\r\n");
+          csk_uart2_puts("LOG COM1 GPGSA ONTIME 1\r\n");
+          csk_uart3_puts("LOG COM1 GPGSA ONTIME 1\r\n");
+          user_debug_msg(STR_TASK_CMD_DO "u: OEM615 GSA logging enabled.");
+          break;
+
+        // Enable OEM615 GPGSV logging on COM1 @ 1Hz
+        case 'i':
+          csk_uart1_puts("LOG COM1 GPGSV ONTIME 1\r\n");
+          csk_uart2_puts("LOG COM1 GPGSV ONTIME 1\r\n");
+          csk_uart3_puts("LOG COM1 GPGSV ONTIME 1\r\n");
+          user_debug_msg(STR_TASK_CMD_DO "i: OEM615 GSV logging enabled.");
+          break;
+
+        // Enable OEM615 GPRMC logging on COM1 @ 1Hz
+        case 'o':
+          csk_uart1_puts("LOG COM1 GPRMC ONTIME 1\r\n");
+          csk_uart2_puts("LOG COM1 GPRMC ONTIME 1\r\n");
+          csk_uart3_puts("LOG COM1 GPRMC ONTIME 1\r\n");
+          user_debug_msg(STR_TASK_CMD_DO "o: OEM615 RMC logging enabled.");
+          break;
+
+        // Enable OEM615 GPVTG logging on COM1 @ 1Hz
+        case 'l':
+          csk_uart1_puts("LOG COM1 GPVTG ONTIME 1\r\n");
+          csk_uart2_puts("LOG COM1 GPVTG ONTIME 1\r\n");
+          csk_uart3_puts("LOG COM1 GPVTG ONTIME 1\r\n");
+          user_debug_msg(STR_TASK_CMD_DO "l: OEM615 VTG logging enabled.");
+          break;
+#endif                  
         default:
           sprintf(strTmp, STR_TASK_CMD_DO "Unknown command: '%c' (0x%X).", cmd, cmd);
 		      user_debug_msg(strTmp);

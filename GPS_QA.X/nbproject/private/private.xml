@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Sonja/Desktop/GPS_QA/inc/main.h</file>
-            <file>file:/C:/Users/Sonja/Desktop/GPS_QA/src/init.c</file>
+            <file>file:/C:/Users/Sonja/Desktop/GPS_QA/inc/task_gps_qa.h</file>
+            <file>file:/C:/Users/Sonja/Desktop/GPS_QA/src/task_gps_qa.c</file>
             <file>file:/C:/Users/Sonja/Desktop/GPS_QA/src/main.c</file>
-            <file>file:/C:/Users/Sonja/Desktop/GPS_QA/inc/tasks.h</file>
+            <file>file:/C:/Users/Sonja/Desktop/GPS_QA/src/task_cmd.c</file>
+            <file>file:/C:/Users/Sonja/Desktop/GPS_QA/src/task_monitor.c</file>
+            <file>file:/C:/Users/Sonja/Desktop/GPS_QA/src/task_supmcu_qa.c</file>
         </group>
     </open-files>
 </project-private>

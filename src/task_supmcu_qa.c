@@ -178,7 +178,25 @@ void task_supmcu_qa(void) {
 
 
   user_debug_msg(STR_TASK_SUPMCU_QA "Record: Max. frequency of CLK Out (J6).");
+  OS_Delay(250);
+  
+#if defined(SUPMCU_GPSRM1_REVA) \
+    || defined(SUPMCU_GPSRM1_REVB) \
+   || defined(SUPMCU_GPSRM1_REVC) 
+  OSStartTask( TASK_GPS_QA_P);
 
+#elif defined(SUPMCU_BIM1_REVA) \
+     || defined(SUPMCU_BIM1_REVB)
+  OSStartTask( TASK_BIM_QA_P);
+
+#elif defined(SUPMCU_PIM1_REVA) \
+      || defined(SUPMCU_PIM1_REVB)
+  OSStartTask( TASK_BIM_QA_P);
+
+#elif defined(SUPMCU_SIM1_REVA) \
+      || defined(SUPMCU_SIM1_REVB)
+  OSStartTask( TASK_BIM_QA_P);
+#endif
   while(1) { 
     OS_Delay(250);
   }

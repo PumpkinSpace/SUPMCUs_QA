@@ -429,7 +429,9 @@ Interfaces to the GPSRM 1 as part of test.
 ****                                                                       ****
 ******************************************************************************/
 void task_bim_qa(void) {
-
+    
+  user_debug_msg(STR_TASK_BIM_QA "Stopped.");
+  OS_Stop();
   user_debug_msg(STR_TASK_BIM_QA  "Starting.");
 
 #if 1
