@@ -24,6 +24,7 @@ $Date: 2010-03-28 19:40:15-08 $
 //#include "task_test.h"
 #include "task_supmcu_qa.h"
 #include "task_gps_qa.h"
+#include "task_bim_qa.h"
 #include "tasks.h"
 
 // Pumpkin Salvo headers
@@ -56,13 +57,27 @@ int main() {
   OSInit();
 
   // Create tasks.
-  OSCreateTask(task_cmd_do,    TASK_CMD_DO_P,    1);
-  OSCreateTask(task_5sec,      TASK_5SEC_P,      4);
-  //OSCreateTask(task_test,      TASK_TEST_P,      7);
-  OSCreateTask(task_supmcu_qa,  TASK_SUPMCU_QA_P, 6);
-  OSCreateTask(task_supmcu_qa,  TASK_GPS_QA_P,    7);
-  OSCreateTask(task_monitor,   TASK_MONITOR_P,   2);
-  OSCreateTask(task_new,       TASK_NEW_P,       3); // test task   
+  OSCreateTask(task_cmd_do,      TASK_CMD_DO_P,    1);
+  OSCreateTask(task_5sec,        TASK_5SEC_P,      4);
+  OSCreateTask(task_supmcu_qa,   TASK_SUPMCU_QA_P, 3);
+
+#if defined(SUPMCU_GPSRM1_REVA) \
+   || defined(SUPMCU_GPSRM1_REVB) \
+   || defined(SUPMCU_GPSRM1_REVC) 
+  OSCreateTask(task_gps_qa,      TASK_GPS_QA_P,    7);
+
+#elif defined(SUPMCU_BIM1_REVA) \
+     || defined(SUPMCU_BIM1_REVB)
+  OSCreateTask(task_bim_qa,      TASK_BIM_QA_P,    7);
+
+#elif defined(SUPMCU_PIM1_REVA) \
+      || defined(SUPMCU_PIM1_REVB)
+  OSCreateTask(task_pim_qa,      TASK_PIM_QA_P,    7);
+
+#elif defined(SUPMCU_SIM1_REVA) \
+      || defined(SUPMCU_SIM1_REVB)
+  OSCreateTask(task_sim_qa,      TASK_SIM_QA_P,    7);
+#endif
  
   // Create events.
   OSCreateSem(SEM_CMD_CHAR_P,       0);    // No chars received yet

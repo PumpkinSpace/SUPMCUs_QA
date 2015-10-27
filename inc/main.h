@@ -19,7 +19,26 @@ $Date: 2011-09-17 22:12:29-07 $
 
 
 // Symbols, etc.
-#define STR_APP_NAME          "GPSRM 1 Test & Validation software"
+#if defined(SUPMCU_GPSRM1_REVA) \
+   || defined(SUPMCU_GPSRM1_REVB) \
+   || defined(SUPMCU_GPSRM1_REVC) 
+#define STR_APP_NAME   "GPSRM 1 Test & Validation software"
+
+#elif defined(SUPMCU_BIM1_REVA) \
+     || defined(SUPMCU_BIM1_REVB)
+#define STR_APP_NAME   "BIM 1 Test & Validation software"
+
+#elif defined(SUPMCU_PIM1_REVA) \
+      || defined(SUPMCU_PIM1_REVB)
+#define STR_APP_NAME   "PIM 1 Test & Validation software"
+
+#elif defined(SUPMCU_SIM1_REVA) \
+      || defined(SUPMCU_SIM1_REVB)
+#define STR_APP_NAME   "SIM 1 Test & Validation software"
+
+#endif
+
+
 #define STR_VERSION           "v1.0.5" " built on " __DATE__ " at " __TIME__
 #define STR_WARNING           "For use on Pumpkin CSK Dev Board"
 #define STR_BAUD_RATE         "57600"

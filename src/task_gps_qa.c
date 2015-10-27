@@ -196,6 +196,10 @@ void task_gps_qa(void) {
   user_debug_msg(STR_TASK_GPS_QA  "Starting.");
 
 #if 1
+  OS_Delay(250); OS_Delay(250);
+  OS_Delay(250); OS_Delay(250);
+  OS_Delay(250); OS_Delay(250);
+  OS_Delay(250); OS_Delay(250);
   // Init -- don't show messages yet
   gps_res_off(FALSE);
   gps_pow_off(FALSE);
@@ -254,7 +258,8 @@ void task_gps_qa(void) {
   //user_debug_msg(STR_TASK_TEST "OEM615 will now acquire GPS satellites ...");
   //user_debug_msg(STR_TASK_TEST "Connect NovAtel CDU software to GPSRM\r\n\t\t\t\t via GPS (micro) USB connector.");
   gps_pass_on(TRUE);
-
+  user_debug_msg(STR_TASK_GPS_QA  "Verify: GPS is talking.");
+  
   user_debug_msg(STR_TASK_GPS_QA  "Connect: CLK Out (J6) to freq. counter.");
   user_debug_msg(STR_TASK_GPS_QA  "Connect: PPS Out (J7) to oscilloscope.");
   user_debug_msg(STR_TASK_GPS_QA  "Connect: VARF Out (J8) to oscilloscope.");
@@ -263,8 +268,6 @@ void task_gps_qa(void) {
   // Now we're ready to see if GPS is talking ...
   // Firmware update to GPSRM 1 Rev C should allow us to know when lock has been achieved ...
   OSStartTask(TASK_MONITOR_P);
-
-  user_debug_msg(STR_TASK_GPS_QA  "Record: Max. frequency of CLK Out (J6).");
 
   while(1) { 
     OS_Delay(250);
