@@ -33,14 +33,14 @@ $Date: 2015-10-26 17:03:02-08 $
 // Note that we only send the string up to the LF (and not the terminating NULL), 
 //  therefore the -1 adjust to sizeof(string).
 // Supervisor MCU LED command strings
-unsigned char STR_LED_ON[]      =    {"SUP:LED ON\n"};
+unsigned char STR_LED_ON[]      =   {"SUP:LED ON\n"};
 unsigned char STR_LED_OFF[]     =   {"SUP:LED OFF\n"};
-unsigned char STR_LED_FLASH[]   = {"SUP:LED FLASh\n"};
+unsigned char STR_LED_FLASH[]   =   {"SUP:LED FLASh\n"};
 
 // Supervisor MCU CLK Out command strings
 // Default (roughly) (Internal) clock speed for PIC24EP256MC206
 #define MCLK 7372800L
-unsigned char STR_CLK_OFF[]     =   {"SUP:CLOCk OFF\n"};
+unsigned char STR_CLK_OFF[]     =    {"SUP:CLOCk OFF\n"};
 unsigned char STR_CLK_ON[]      =    {"SUP:CLOCk ON,  0\n"};
 
 
@@ -118,7 +118,8 @@ void sup_clk_on(unsigned int show, unsigned int divider) {
 } /* gps_sup_clk_on() */
 
 /******************************************************************************
-****                                                                       ****
+****                                            
+ ****
 **                                                                           **
 task_supmcu_qa()
 
@@ -128,13 +129,15 @@ task_supmcu_qa()
 ******************************************************************************/
 void task_supmcu_qa(void) {
   static int i;
+ // user_debug_msg(STR_TASK_SUPMCU_QA "Stopped.");
+  //OS_Stop();
+  user_debug_msg(STR_TASK_SUPMCU_QA  "Starting.");
 
-
-  user_debug_msg(STR_TASK_SUPMCU_QA "Starting.");
+  //user_debug_msg(STR_TASK_SUPMCU_QA "Starting.");
 
 #if 1
   // Init -- don't show messages yet
-  sup_led_off(FALSE);
+  //sup_led_off(FALSE);
   sup_clk_off(FALSE);
 
   // Instructions to technician
@@ -144,8 +147,7 @@ void task_supmcu_qa(void) {
   user_debug_msg(STR_TASK_SUPMCU_QA "Record: Minimum current from power supply.");
 
   // Verify Status LED can be OFF
-  sup_led_off(TRUE);
-  OS_Delay(250); OS_Delay(250);
+  sup_led_on(TRUE);
   OS_Delay(250); OS_Delay(250);
 
   // Verify Status LED can flash
@@ -153,10 +155,10 @@ void task_supmcu_qa(void) {
   OS_Delay(250); OS_Delay(250);
 
   // Verify Status LED can be ON
-  sup_led_on(TRUE);
+  sup_led_off(TRUE);
   OS_Delay(250); OS_Delay(250);
 
-
+  sup_led_flash(TRUE);
 
   // Test CLK Out signal on GPSRM 1.
   // By doing this test now, after all the other stuff is done, it gives the OEM615
@@ -191,11 +193,11 @@ void task_supmcu_qa(void) {
 
 #elif defined(SUPMCU_PIM1_REVA) \
       || defined(SUPMCU_PIM1_REVB)
-  OSStartTask( TASK_BIM_QA_P);
+  OSStartTask( TASK_PIM_QA_P);
 
 #elif defined(SUPMCU_SIM1_REVA) \
       || defined(SUPMCU_SIM1_REVB)
-  OSStartTask( TASK_BIM_QA_P);
+  OSStartTask( TASK_SIM_QA_P);
 #endif
   while(1) { 
     OS_Delay(250);

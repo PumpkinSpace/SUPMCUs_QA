@@ -41,12 +41,12 @@ unsigned char STR_TINI_ARM[]    =   {"BIM:TINI ARM\n"};
 unsigned char STR_TINI_UNARM[]  =   {"BIM:TINI UNAR\n"};
 
 // BIM uart commands
-unsigned char STR_UART1_ON[]    =   {"BIM:UARTPOW ON,1\n"};
-unsigned char STR_UART1_OFF[]   =   {"BIM:UARTPOW OFF,1\n"};
-unsigned char STR_UART2_ON[]    =   {"BIM:UARTPOW ON,2\n"};
-unsigned char STR_UART2_OFF[]   =   {"BIM:UARTPOW OFF,2\n"};
-unsigned char STR_UART3_ON[]    =   {"BIM:UARTPOW ON,3\n"};
-unsigned char STR_UART3_OFF[]   =   {"BIM:UARTPOW OFF,3\n"};
+unsigned char STR_UART1_ON[]    =   {"BIM:UART:POW ON,1\n"};
+unsigned char STR_UART1_OFF[]   =   {"BIM:UART:POW OFF,1\n"};
+unsigned char STR_UART2_ON[]    =   {"BIM:UART:POW ON,2\n"};
+unsigned char STR_UART2_OFF[]   =   {"BIM:UART:POW OFF,2\n"};
+unsigned char STR_UART3_ON[]    =   {"BIM:UART:POW ON,3\n"};
+unsigned char STR_UART3_OFF[]   =   {"BIM:UART:POW OFF,3\n"};
 
 // BIM ethernet commands
 unsigned char STR_ETH1_ON[]     =   {"BIM:ETH:POW ON,1\n"};

@@ -25,6 +25,7 @@ $Date: 2010-03-28 19:40:15-08 $
 #include "task_supmcu_qa.h"
 #include "task_gps_qa.h"
 #include "task_bim_qa.h"
+#include "task_pim_qa.h"
 #include "tasks.h"
 
 // Pumpkin Salvo headers
@@ -60,7 +61,9 @@ int main() {
   OSCreateTask(task_cmd_do,      TASK_CMD_DO_P,    1);
   OSCreateTask(task_5sec,        TASK_5SEC_P,      4);
   OSCreateTask(task_supmcu_qa,   TASK_SUPMCU_QA_P, 3);
-
+  //OSCreateTask(task_gps_qa,      TASK_GPS_QA_P,    7);
+    //OSCreateTask(task_bim_qa,      TASK_BIM_QA_P,    8);
+    
 #if defined(SUPMCU_GPSRM1_REVA) \
    || defined(SUPMCU_GPSRM1_REVB) \
    || defined(SUPMCU_GPSRM1_REVC) 

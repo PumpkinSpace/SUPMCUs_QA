@@ -21,13 +21,14 @@ Command:
   -Lc:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../support/dsPIC33E/gld \
   -Lc:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/dsPIC33F \
   -Lc:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../support/dsPIC33F/gld \
-  build/default/production/_ext/1360937237/gps_nmea.o \
   build/default/production/_ext/1360937237/init.o \
   build/default/production/_ext/1360937237/main.o \
   build/default/production/_ext/1360937237/task_5sec.o \
   build/default/production/_ext/1360937237/task_cmd.o \
   build/default/production/_ext/1360937237/task_supmcu_qa.o \
   build/default/production/_ext/1655478246/pic24_i2c1.o \
+  build/default/production/_ext/1360937237/task_bim_qa.o \
+  build/default/production/_ext/1360937237/gps_nmea.o \
   build/default/production/_ext/1810884970/csk_io.o \
   build/default/production/_ext/1810884970/csk_led.o \
   build/default/production/_ext/1810884970/csk_mhx.o \
@@ -47,7 +48,6 @@ Command:
   build/default/production/_ext/1297474772/salvohook_wdt.o \
   build/default/production/_ext/2044256807/salvomem.o \
   build/default/production/_ext/2044256807/salvotime.o \
-  build/default/production/_ext/1360937237/task_bim_qa.o \
   C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a \
   --defsym=__MPLAB_BUILD=1 \
   -Tp24FJ256GA110.gld.00 \
@@ -88,6 +88,8 @@ C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoportmcc30.o)
                               C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosched.o) (OSDispatch)
 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotick.o)
                               build/default/production/_ext/2044256807/salvotime.o (OSGetTicks)
+C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask2.o)
+                              build/default/production/_ext/1360937237/task_cmd.o (OSStopTask)
 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask.o)
                               build/default/production/_ext/1360937237/task_supmcu_qa.o (OSStartTask)
 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoevent.o)
@@ -98,6 +100,8 @@ C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqdel.o)
                               C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosched.o) (OSDelPrioQ)
 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvohook_idle.o)
                               C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosched.o) (OSIdlingHook)
+C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask7.o)
+                              C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask2.o) (OSTaskUsed)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntTimer2.o)
                               build/default/production/_ext/1360937237/init.o (ConfigIntTimer2)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenTimer2.o)
@@ -180,34 +184,36 @@ c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(divsi3
                               build/default/production/_ext/1360937237/task_supmcu_qa.o (__divsi3)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(udivsi3.o)
                               build/default/production/_ext/2044256807/salvotime.o (__udivsi3)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sprintf_cdnopuxX.XXo)
-                              build/default/production/_ext/1360937237/gps_nmea.o (_sprintf_cdnopuxX)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(strncmp.o)
-                              build/default/production/_ext/1360937237/gps_nmea.o (strncmp)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sscanf_cdfFnopuxX.XXo)
-                              build/default/production/_ext/1360937237/gps_nmea.o (_sscanf_cdfFnopuxX)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(puts.o)
                               build/default/production/_ext/1360937237/task_cmd.o (puts)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(tolower.so)
                               build/default/production/_ext/1360937237/task_cmd.o (tolower)
+c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sprintf_cdnopuxX.XXo)
+                              build/default/production/_ext/1360937237/task_cmd.o (_sprintf_cdnopuxX)
+c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(strncmp.o)
+                              build/default/production/_ext/1360937237/gps_nmea.o (strncmp)
+c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sscanf_cdfFnopuxX.XXo)
+                              build/default/production/_ext/1360937237/gps_nmea.o (_sscanf_cdfFnopuxX)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sprintf_s.XXo)
                               build/default/production/_ext/1655478246/pic24_uart1_msg_hhmmsstt.o (_sprintf_s)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(strlen.o)
                               build/default/production/_ext/1655478246/pic24_uart1_msg_hhmmsstt.o (strlen)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sprintf_cdnopsuxX.XXo)
                               (_sprintf_cdnopsuxX)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doprnt_cdnopuxX.XXo)
-                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sprintf_cdnopuxX.XXo) (_vfprintf_cdnopuxX)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo)
-                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sscanf_cdfFnopuxX.XXo) (_vfscanf_cdfFnopuxX)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fputc.o)
                               c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(puts.o) (fputc)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(_iob.o)
                               c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(puts.o) (_iob)
+c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doprnt_cdnopuxX.XXo)
+                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sprintf_cdnopuxX.XXo) (_vfprintf_cdnopuxX)
+c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo)
+                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sscanf_cdfFnopuxX.XXo) (_vfscanf_cdfFnopuxX)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doprnt_s.XXo)
                               c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sprintf_s.XXo) (_vfprintf_s)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doprnt_cdnopsuxX.XXo)
                               c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sprintf_cdnopsuxX.XXo) (_vfprintf_cdnopsuxX)
+c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(flsbuf.o)
+                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fputc.o) (_flsbuf)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fgetc.o)
                               c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo) (fgetc)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(isspace.so)
@@ -222,8 +228,6 @@ c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atof.o
                               c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo) (strtof)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atoi.o)
                               c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo) (atoi)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(flsbuf.o)
-                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fputc.o) (_flsbuf)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(filbuf.o)
                               c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fgetc.o) (_filbuf)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(errno.o)
@@ -279,33 +283,33 @@ section                    address   length (PC units)   length (bytes) (dec)
 .text                        0x200              0x1df4          0x2cee  (11502)
 .const                      0x1ff4              0x1322          0x1cb3  (7347)
 .text                       0x3316              0x1062          0x1893  (6291)
-.dinit                      0x4378               0x30c           0x492  (1170)
-.text                       0x4684              0x17be          0x239d  (9117)
+.dinit                      0x4378               0x310           0x498  (1176)
+.text                       0x4688              0x18c8          0x252c  (9516)
 
-                     Total program memory used (bytes):         0x8a63  (35427) 13%
+                     Total program memory used (bytes):         0x8bf8  (35832) 13%
 
 
 Data Memory  [Origin = 0x800, Length = 0x4000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.ndata                       0x800                   0           0x284  (644)
-.nbss                        0xa84                   0           0xb66  (2918)
-.ndata                      0x15ea                   0            0x4a  (74)
-.nbss                       0x1634                   0            0x12  (18)
-.ndata                      0x1646                   0             0x2  (2)
-.data.dpowers               0x1648                   0            0xa0  (160)
-.data                       0x16e8                   0            0x2a  (42)
-.data._iob                  0x1712                   0            0x24  (36)
-.bss.fp                     0x1736                   0             0x2  (2)
-.data._Files                0x1738                   0             0x2  (2)
-.bss._outdone               0x173a                   0             0x2  (2)
-.bss._sibuf                 0x173c                   0             0x2  (2)
-.bss._sobuf                 0x173e                   0             0x2  (2)
-.bss.errno                  0x1740                   0             0x2  (2)
-.data.__C30_UART            0x1742                   0             0x2  (2)
+.ndata                       0x800                   0           0x28a  (650)
+.nbss                        0xa8a                   0           0xb66  (2918)
+.ndata                      0x15f0                   0            0x4a  (74)
+.nbss                       0x163a                   0            0x12  (18)
+.ndata                      0x164c                   0             0x2  (2)
+.data.dpowers               0x164e                   0            0xa0  (160)
+.data                       0x16ee                   0            0x2a  (42)
+.data._iob                  0x1718                   0            0x24  (36)
+.data._Files                0x173c                   0             0x2  (2)
+.bss._outdone               0x173e                   0             0x2  (2)
+.bss._sibuf                 0x1740                   0             0x2  (2)
+.bss._sobuf                 0x1742                   0             0x2  (2)
+.bss.fp                     0x1744                   0             0x2  (2)
+.bss.errno                  0x1746                   0             0x2  (2)
+.data.__C30_UART            0x1748                   0             0x2  (2)
 
-                        Total data memory used (bytes):          0xf44  (3908) 23%
+                        Total data memory used (bytes):          0xf4a  (3914) 23%
 
 
 Dynamic Memory Usage
@@ -313,9 +317,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x1744                              0x30bc  (12476)
+stack                       0x174a                              0x30b6  (12470)
 
-                        Maximum dynamic memory (bytes):         0x30bc  (12476)
+                        Maximum dynamic memory (bytes):         0x30b6  (12470)
 
 
 External Symbols in Data Memory (by address):
@@ -325,192 +329,192 @@ External Symbols in Data Memory (by address):
                     0x081e                  _STR_TINI_ARM
                     0x082c                  _STR_TINI_UNARM
                     0x083b                  _STR_UART1_ON
-                    0x084d                  _STR_UART1_OFF
-                    0x0860                  _STR_UART2_ON
-                    0x0872                  _STR_UART2_OFF
-                    0x0885                  _STR_UART3_ON
-                    0x0897                  _STR_UART3_OFF
-                    0x08aa                  _STR_ETH1_ON
-                    0x08bc                  _STR_ETH1_OFF
-                    0x08cf                  _STR_ETH2_ON
-                    0x08e1                  _STR_ETH2_OFF
-                    0x08f4                  _STR_ETH3_ON
-                    0x0906                  _STR_ETH3_OFF
-                    0x0919                  _STR_ETH_RES
-                    0x0929                  _STR_ETH_MODEOFF
-                    0x093b                  _STR_ETH_MODE1
-                    0x094b                  _STR_ETH_MODE0
-                    0x095b                  _STR_ETH_MODE2
-                    0x096b                  _STR_ETH_MODE3
-                    0x097b                  _STR_ETH_I2CON
-                    0x098d                  _STR_ETH_I2COFF
-                    0x099e                  _STR_TEMP_ON
-                    0x09b1                  _STR_TEMP_OFF
-                    0x09c5                  _STR_TTEST_ON
-                    0x09da                  _STR_TTEST_OFF
-                    0x09ee                  _STR_TTEST_RES
-                    0x0a05                  _STR_EE_I2CON
-                    0x0a19                  _STR_EE_I2COFF
-                    0x0a2e                  _STR_SKY_ON
-                    0x0a3e                  _STR_SKY_OFF
-                    0x0a4f                  _STR_IMU_ON
-                    0x0a61                  _STR_IMU_OFF
-                    0x0a74                  _STR_WDT_RES
-                    0x0a84                  _rx1Count
-                    0x0a86                  _rx1InP
-                    0x0a88                  _rx1OutP
-                    0x0a8a                  _rx1Buff
-                    0x0b8a                  _tx1Count
-                    0x0b8c                  _tx1InP
-                    0x0b8e                  _tx1OutP
-                    0x0b90                  _tx1Buff
-                    0x0c90                  _rx2Count
-                    0x0c92                  _rx2InP
-                    0x0c94                  _rx2OutP
-                    0x0c96                  _rx2Buff
-                    0x0d96                  _tx2Count
-                    0x0d98                  _tx2InP
-                    0x0d9a                  _tx2OutP
-                    0x0d9c                  _tx2Buff
-                    0x0e9c                  _rx3Count
-                    0x0e9e                  _rx3InP
-                    0x0ea0                  _rx3OutP
-                    0x0ea2                  _rx3Buff
-                    0x0fa2                  _tx3Count
-                    0x0fa4                  _tx3InP
-                    0x0fa6                  _tx3OutP
-                    0x0fa8                  _tx3Buff
-                    0x10a8                  _rx4Count
-                    0x10aa                  _rx4InP
-                    0x10ac                  _rx4OutP
-                    0x10ae                  _rx4Buff
-                    0x11ae                  _tx4Count
-                    0x11b0                  _tx4InP
-                    0x11b2                  _tx4OutP
-                    0x11b4                  _tx4Buff
-                    0x12b4                  _NMEAStr
-                    0x13f2                  _OScTcbP
-                    0x13f4                  _OStcbArea
-                    0x1502                  _OSeligQP
-                    0x1504                  _OSecbArea
-                    0x1510                  _OSsigQinP
-                    0x1512                  _OSsigQoutP
-                    0x1514                  _OSdelayQP
-                    0x1516                  _OStimerTicks
-                    0x151a                  _OSlostTicks
-                    0x151c                  _OSframeP
-                    0x1520                  _csk_status
-                    0x1522                  _strTmp
-                    0x15ea                  _STR_LED_ON
-                    0x15f6                  _STR_LED_OFF
-                    0x1603                  _STR_LED_FLASH
-                    0x1612                  _STR_CLK_OFF
-                    0x1621                  _STR_CLK_ON
-                    0x1646                  _seed
-                    0x1712                  __iob
-                    0x1738                  __Files
-                    0x173a                  __outdone
-                    0x173c                  __sibuf
-                    0x173e                  __sobuf
-                    0x1740                  _errno
-                    0x1742                  ___C30_UART
+                    0x084e                  _STR_UART1_OFF
+                    0x0862                  _STR_UART2_ON
+                    0x0875                  _STR_UART2_OFF
+                    0x0889                  _STR_UART3_ON
+                    0x089c                  _STR_UART3_OFF
+                    0x08b0                  _STR_ETH1_ON
+                    0x08c2                  _STR_ETH1_OFF
+                    0x08d5                  _STR_ETH2_ON
+                    0x08e7                  _STR_ETH2_OFF
+                    0x08fa                  _STR_ETH3_ON
+                    0x090c                  _STR_ETH3_OFF
+                    0x091f                  _STR_ETH_RES
+                    0x092f                  _STR_ETH_MODEOFF
+                    0x0941                  _STR_ETH_MODE1
+                    0x0951                  _STR_ETH_MODE0
+                    0x0961                  _STR_ETH_MODE2
+                    0x0971                  _STR_ETH_MODE3
+                    0x0981                  _STR_ETH_I2CON
+                    0x0993                  _STR_ETH_I2COFF
+                    0x09a4                  _STR_TEMP_ON
+                    0x09b7                  _STR_TEMP_OFF
+                    0x09cb                  _STR_TTEST_ON
+                    0x09e0                  _STR_TTEST_OFF
+                    0x09f4                  _STR_TTEST_RES
+                    0x0a0b                  _STR_EE_I2CON
+                    0x0a1f                  _STR_EE_I2COFF
+                    0x0a34                  _STR_SKY_ON
+                    0x0a44                  _STR_SKY_OFF
+                    0x0a55                  _STR_IMU_ON
+                    0x0a67                  _STR_IMU_OFF
+                    0x0a7a                  _STR_WDT_RES
+                    0x0a8a                  _rx1Count
+                    0x0a8c                  _rx1InP
+                    0x0a8e                  _rx1OutP
+                    0x0a90                  _rx1Buff
+                    0x0b90                  _tx1Count
+                    0x0b92                  _tx1InP
+                    0x0b94                  _tx1OutP
+                    0x0b96                  _tx1Buff
+                    0x0c96                  _rx2Count
+                    0x0c98                  _rx2InP
+                    0x0c9a                  _rx2OutP
+                    0x0c9c                  _rx2Buff
+                    0x0d9c                  _tx2Count
+                    0x0d9e                  _tx2InP
+                    0x0da0                  _tx2OutP
+                    0x0da2                  _tx2Buff
+                    0x0ea2                  _rx3Count
+                    0x0ea4                  _rx3InP
+                    0x0ea6                  _rx3OutP
+                    0x0ea8                  _rx3Buff
+                    0x0fa8                  _tx3Count
+                    0x0faa                  _tx3InP
+                    0x0fac                  _tx3OutP
+                    0x0fae                  _tx3Buff
+                    0x10ae                  _rx4Count
+                    0x10b0                  _rx4InP
+                    0x10b2                  _rx4OutP
+                    0x10b4                  _rx4Buff
+                    0x11b4                  _tx4Count
+                    0x11b6                  _tx4InP
+                    0x11b8                  _tx4OutP
+                    0x11ba                  _tx4Buff
+                    0x12ba                  _NMEAStr
+                    0x13f8                  _OScTcbP
+                    0x13fa                  _OStcbArea
+                    0x1508                  _OSeligQP
+                    0x150a                  _OSecbArea
+                    0x1516                  _OSsigQinP
+                    0x1518                  _OSsigQoutP
+                    0x151a                  _OSdelayQP
+                    0x151c                  _OStimerTicks
+                    0x1520                  _OSlostTicks
+                    0x1522                  _OSframeP
+                    0x1526                  _csk_status
+                    0x1528                  _strTmp
+                    0x15f0                  _STR_LED_ON
+                    0x15fc                  _STR_LED_OFF
+                    0x1609                  _STR_LED_FLASH
+                    0x1618                  _STR_CLK_OFF
+                    0x1627                  _STR_CLK_ON
+                    0x164c                  _seed
+                    0x1718                  __iob
+                    0x173c                  __Files
+                    0x173e                  __outdone
+                    0x1740                  __sibuf
+                    0x1742                  __sobuf
+                    0x1746                  _errno
+                    0x1748                  ___C30_UART
 
 External Symbols in Data Memory (by name):
 
-                    0x12b4                  _NMEAStr
-                    0x13f2                  _OScTcbP
-                    0x1514                  _OSdelayQP
-                    0x1504                  _OSecbArea
-                    0x1502                  _OSeligQP
-                    0x151c                  _OSframeP
-                    0x151a                  _OSlostTicks
-                    0x1510                  _OSsigQinP
-                    0x1512                  _OSsigQoutP
-                    0x13f4                  _OStcbArea
-                    0x1516                  _OStimerTicks
-                    0x1612                  _STR_CLK_OFF
-                    0x1621                  _STR_CLK_ON
-                    0x0a19                  _STR_EE_I2COFF
-                    0x0a05                  _STR_EE_I2CON
-                    0x08bc                  _STR_ETH1_OFF
-                    0x08aa                  _STR_ETH1_ON
-                    0x08e1                  _STR_ETH2_OFF
-                    0x08cf                  _STR_ETH2_ON
-                    0x0906                  _STR_ETH3_OFF
-                    0x08f4                  _STR_ETH3_ON
-                    0x098d                  _STR_ETH_I2COFF
-                    0x097b                  _STR_ETH_I2CON
-                    0x094b                  _STR_ETH_MODE0
-                    0x093b                  _STR_ETH_MODE1
-                    0x095b                  _STR_ETH_MODE2
-                    0x096b                  _STR_ETH_MODE3
-                    0x0929                  _STR_ETH_MODEOFF
-                    0x0919                  _STR_ETH_RES
-                    0x0a61                  _STR_IMU_OFF
-                    0x0a4f                  _STR_IMU_ON
-                    0x1603                  _STR_LED_FLASH
-                    0x15f6                  _STR_LED_OFF
-                    0x15ea                  _STR_LED_ON
-                    0x0a3e                  _STR_SKY_OFF
-                    0x0a2e                  _STR_SKY_ON
-                    0x09b1                  _STR_TEMP_OFF
-                    0x099e                  _STR_TEMP_ON
+                    0x12ba                  _NMEAStr
+                    0x13f8                  _OScTcbP
+                    0x151a                  _OSdelayQP
+                    0x150a                  _OSecbArea
+                    0x1508                  _OSeligQP
+                    0x1522                  _OSframeP
+                    0x1520                  _OSlostTicks
+                    0x1516                  _OSsigQinP
+                    0x1518                  _OSsigQoutP
+                    0x13fa                  _OStcbArea
+                    0x151c                  _OStimerTicks
+                    0x1618                  _STR_CLK_OFF
+                    0x1627                  _STR_CLK_ON
+                    0x0a1f                  _STR_EE_I2COFF
+                    0x0a0b                  _STR_EE_I2CON
+                    0x08c2                  _STR_ETH1_OFF
+                    0x08b0                  _STR_ETH1_ON
+                    0x08e7                  _STR_ETH2_OFF
+                    0x08d5                  _STR_ETH2_ON
+                    0x090c                  _STR_ETH3_OFF
+                    0x08fa                  _STR_ETH3_ON
+                    0x0993                  _STR_ETH_I2COFF
+                    0x0981                  _STR_ETH_I2CON
+                    0x0951                  _STR_ETH_MODE0
+                    0x0941                  _STR_ETH_MODE1
+                    0x0961                  _STR_ETH_MODE2
+                    0x0971                  _STR_ETH_MODE3
+                    0x092f                  _STR_ETH_MODEOFF
+                    0x091f                  _STR_ETH_RES
+                    0x0a67                  _STR_IMU_OFF
+                    0x0a55                  _STR_IMU_ON
+                    0x1609                  _STR_LED_FLASH
+                    0x15fc                  _STR_LED_OFF
+                    0x15f0                  _STR_LED_ON
+                    0x0a44                  _STR_SKY_OFF
+                    0x0a34                  _STR_SKY_ON
+                    0x09b7                  _STR_TEMP_OFF
+                    0x09a4                  _STR_TEMP_ON
                     0x081e                  _STR_TINI_ARM
                     0x0800                  _STR_TINI_DIS
                     0x080f                  _STR_TINI_ENAB
                     0x082c                  _STR_TINI_UNARM
-                    0x09da                  _STR_TTEST_OFF
-                    0x09c5                  _STR_TTEST_ON
-                    0x09ee                  _STR_TTEST_RES
-                    0x084d                  _STR_UART1_OFF
+                    0x09e0                  _STR_TTEST_OFF
+                    0x09cb                  _STR_TTEST_ON
+                    0x09f4                  _STR_TTEST_RES
+                    0x084e                  _STR_UART1_OFF
                     0x083b                  _STR_UART1_ON
-                    0x0872                  _STR_UART2_OFF
-                    0x0860                  _STR_UART2_ON
-                    0x0897                  _STR_UART3_OFF
-                    0x0885                  _STR_UART3_ON
-                    0x0a74                  _STR_WDT_RES
-                    0x1738                  __Files
-                    0x1742                  ___C30_UART
-                    0x1712                  __iob
-                    0x173a                  __outdone
-                    0x173c                  __sibuf
-                    0x173e                  __sobuf
-                    0x1520                  _csk_status
-                    0x1740                  _errno
-                    0x0a8a                  _rx1Buff
-                    0x0a84                  _rx1Count
-                    0x0a86                  _rx1InP
-                    0x0a88                  _rx1OutP
-                    0x0c96                  _rx2Buff
-                    0x0c90                  _rx2Count
-                    0x0c92                  _rx2InP
-                    0x0c94                  _rx2OutP
-                    0x0ea2                  _rx3Buff
-                    0x0e9c                  _rx3Count
-                    0x0e9e                  _rx3InP
-                    0x0ea0                  _rx3OutP
-                    0x10ae                  _rx4Buff
-                    0x10a8                  _rx4Count
-                    0x10aa                  _rx4InP
-                    0x10ac                  _rx4OutP
-                    0x1646                  _seed
-                    0x1522                  _strTmp
-                    0x0b90                  _tx1Buff
-                    0x0b8a                  _tx1Count
-                    0x0b8c                  _tx1InP
-                    0x0b8e                  _tx1OutP
-                    0x0d9c                  _tx2Buff
-                    0x0d96                  _tx2Count
-                    0x0d98                  _tx2InP
-                    0x0d9a                  _tx2OutP
-                    0x0fa8                  _tx3Buff
-                    0x0fa2                  _tx3Count
-                    0x0fa4                  _tx3InP
-                    0x0fa6                  _tx3OutP
-                    0x11b4                  _tx4Buff
-                    0x11ae                  _tx4Count
-                    0x11b0                  _tx4InP
-                    0x11b2                  _tx4OutP
+                    0x0875                  _STR_UART2_OFF
+                    0x0862                  _STR_UART2_ON
+                    0x089c                  _STR_UART3_OFF
+                    0x0889                  _STR_UART3_ON
+                    0x0a7a                  _STR_WDT_RES
+                    0x173c                  __Files
+                    0x1748                  ___C30_UART
+                    0x1718                  __iob
+                    0x173e                  __outdone
+                    0x1740                  __sibuf
+                    0x1742                  __sobuf
+                    0x1526                  _csk_status
+                    0x1746                  _errno
+                    0x0a90                  _rx1Buff
+                    0x0a8a                  _rx1Count
+                    0x0a8c                  _rx1InP
+                    0x0a8e                  _rx1OutP
+                    0x0c9c                  _rx2Buff
+                    0x0c96                  _rx2Count
+                    0x0c98                  _rx2InP
+                    0x0c9a                  _rx2OutP
+                    0x0ea8                  _rx3Buff
+                    0x0ea2                  _rx3Count
+                    0x0ea4                  _rx3InP
+                    0x0ea6                  _rx3OutP
+                    0x10b4                  _rx4Buff
+                    0x10ae                  _rx4Count
+                    0x10b0                  _rx4InP
+                    0x10b2                  _rx4OutP
+                    0x164c                  _seed
+                    0x1528                  _strTmp
+                    0x0b96                  _tx1Buff
+                    0x0b90                  _tx1Count
+                    0x0b92                  _tx1InP
+                    0x0b94                  _tx1OutP
+                    0x0da2                  _tx2Buff
+                    0x0d9c                  _tx2Count
+                    0x0d9e                  _tx2InP
+                    0x0da0                  _tx2OutP
+                    0x0fae                  _tx3Buff
+                    0x0fa8                  _tx3Count
+                    0x0faa                  _tx3InP
+                    0x0fac                  _tx3OutP
+                    0x11ba                  _tx4Buff
+                    0x11b4                  _tx4Count
+                    0x11b6                  _tx4InP
+                    0x11b8                  _tx4OutP
 
 External Symbols in Program Memory (by address):
 
@@ -535,18 +539,18 @@ External Symbols in Program Memory (by address):
                   0x0005a6                  ___divdi3
                   0x0005d6                  ___moddi3
                   0x0006aa                  ___muldi3
-                  0x0006fc                  ___mulp32peds3
                   0x0006fc                  ___mulsi3
                   0x0006fc                  ___mulp32eds3
+                  0x0006fc                  ___mulp32peds3
                   0x000708                  ___extendsfdf2
                   0x000746                  ___floatsisf
                   0x00074c                  ___lesf2
-                  0x00074c                  ___eqsf2
                   0x00074c                  ___ltsf2
+                  0x00074c                  ___eqsf2
                   0x000750                  ___divsf3
                   0x0007d4                  ___mulsf3
-                  0x00083c                  ___gesf2
                   0x00083c                  ___gtsf2
+                  0x00083c                  ___gesf2
                   0x000840                  ___umuldi3
                   0x000884                  __funpack
                   0x0008ae                  ___floatdisf
@@ -594,26 +598,26 @@ External Symbols in Program Memory (by address):
                   0x000f70                  _BusyUART4
                   0x000f88                  _WriteUART4
                   0x000fa4                  _DataRdyI2C1
-                  0x000fb2                  _strncmp
-                  0x000fd4                  __sscanf_cdfFnopuxX
-                  0x000ff0                  _fputs
-                  0x00100c                  _puts
+                  0x000fb2                  _fputs
+                  0x000fce                  _puts
+                  0x000fe2                  _strncmp
+                  0x001004                  __sscanf_cdfFnopuxX
                   0x001020                  _strlen
-                  0x00102e                  __sprintf_cdnopsuxX
-                  0x00102e                  __sprintf_s
                   0x00102e                  __sprintf_0
+                  0x00102e                  __sprintf_cdnopsuxX
                   0x00102e                  __sprintf_cdnopuxX
-                  0x0010be                  __vfscanf_cdfFnopuxX
+                  0x00102e                  __sprintf_s
+                  0x001146                  __vfscanf_cdfFnopuxX
                   0x0014b2                  __vfprintf_0
-                  0x0014b2                  __vfprintf_cdnopuxX
                   0x0014b2                  __vfprintf_s
                   0x0014b2                  __vfprintf_cdnopsuxX
-                  0x001baa                  _fgetc
-                  0x001c10                  _ungetc
-                  0x001c4e                  _strtof
-                  0x001e3c                  _strtod
-                  0x001e3e                  _atof
-                  0x001e42                  _atoi
+                  0x0014b2                  __vfprintf_cdnopuxX
+                  0x001c2e                  _fgetc
+                  0x001c94                  _ungetc
+                  0x001cd2                  _strtof
+                  0x001ec0                  _strtod
+                  0x001ec2                  _atof
+                  0x001ec6                  _atoi
                   0x001f04                  __filbuf
                   0x001fa0                  _fflush
                   0x003316                  _bim_tini_enab
@@ -756,115 +760,118 @@ External Symbols in Program Memory (by address):
                   0x004062                  _gps_NMEA_rcv
                   0x004128                  _gps_update
                   0x004366                  _gps_read
-                  0x004684                  _init
-                  0x004768                  __T2Interrupt
-                  0x004786                  __U1TXInterrupt
-                  0x0047a2                  __U1RXInterrupt
-                  0x0047cc                  __U2TXInterrupt
-                  0x0047e8                  __U2RXInterrupt
-                  0x004822                  __U3TXInterrupt
-                  0x00483e                  __U3RXInterrupt
-                  0x004878                  __U4TXInterrupt
-                  0x004894                  __U4RXInterrupt
-                  0x0048ce                  _uart1_open
-                  0x004902                  _uart1_close
-                  0x00490a                  _uart1_peek_rx
-                  0x004954                  _uart1_rx_count
-                  0x00495e                  _uart1_tx_free
-                  0x00496c                  _uart1_getchar
-                  0x0049a8                  _uart1_get_byte
-                  0x0049e6                  _uart1_putchar
-                  0x004a26                  _uart1_puts
-                  0x004a48                  _uart1_outchar
-                  0x004a86                  _uart1_inchar
-                  0x004ab6                  _uart2_open
-                  0x004aea                  _uart2_close
-                  0x004af2                  _uart2_peek_rx
-                  0x004b3c                  _uart2_rx_count
-                  0x004b46                  _uart2_tx_free
-                  0x004b54                  _uart2_getchar
-                  0x004b90                  _uart2_get_byte
-                  0x004bce                  _uart2_putchar
-                  0x004c0e                  _uart2_puts
-                  0x004c30                  _uart2_outchar
-                  0x004c6e                  _uart2_inchar
-                  0x004c9e                  _uart3_open
-                  0x004cd2                  _uart3_close
-                  0x004cda                  _uart3_peek_rx
-                  0x004d24                  _uart3_rx_count
-                  0x004d2e                  _uart3_tx_free
-                  0x004d3c                  _uart3_getchar
-                  0x004d78                  _uart3_get_byte
-                  0x004db6                  _uart3_putchar
-                  0x004df6                  _uart3_puts
-                  0x004e18                  _uart3_outchar
-                  0x004e56                  _uart3_inchar
-                  0x004e86                  _uart4_open
-                  0x004eba                  _uart4_close
-                  0x004ec2                  _uart4_peek_rx
-                  0x004f0c                  _uart4_rx_count
-                  0x004f16                  _uart4_tx_free
-                  0x004f24                  _uart4_getchar
-                  0x004f60                  _uart4_get_byte
-                  0x004f9e                  _uart4_putchar
-                  0x004fde                  _uart4_puts
-                  0x005000                  _uart4_outchar
-                  0x00503e                  _uart4_inchar
-                  0x00506e                  _power
-                  0x005096                  _sup_led_off
-                  0x0050b0                  _sup_led_on
-                  0x0050ca                  _sup_led_flash
-                  0x0050e4                  _sup_clk_off
-                  0x0050fe                  _sup_clk_on
-                  0x005150                  _task_supmcu_qa
-                  0x005224                  _OSSched
-                  0x005374                  _cmd_explain
-                  0x0053d6                  _task_cmd_do
-                  0x005496                  _OSInsPrioQ
-                  0x00550a                  _OSInsDelayQ
-                  0x0055a8                  _OSElapsedTime
-                  0x0056a4                  _OSDelPrioQ
-                  0x005714                  _OSDelDelayQ
-                  0x00578a                  _OSWaitEvent
-                  0x005862                  _OSCreateSem
-                  0x005884                  _OSWaitSem
-                  0x0058bc                  _OSSignalSem
-                  0x005926                  _OSCreateTask
-                  0x00597c                  _OSInitPrioTask
-                  0x0059ac                  _csk_mhx_open
-                  0x0059d8                  _csk_mhx_close
-                  0x005a00                  _csk_mhx_pwr_on
-                  0x005a16                  _csk_mhx_pwr_off
-                  0x005a2a                  _csk_power_shutdown
-                  0x005a96                  _OSDelay
-                  0x005afa                  _csk_usb_open
-                  0x005b26                  _csk_usb_close
-                  0x005b4e                  _csk_usb_present
-                  0x005b58                  _OSDispatch
-                  0x005b7c                  _OSCtxSw
-                  0x005b98                  _OSReturn
-                  0x005ba6                  _csk_led_status_open
-                  0x005bbc                  _csk_led_status_close
-                  0x005bd2                  _csk_led_status_on
-                  0x005be0                  _csk_led_status_off
-                  0x005bee                  _uart1_msg_hhmmsstt
-                  0x005c30                  _uart2_msg_hhmmsstt
-                  0x005c72                  _uart4_msg_hhmmsstt
-                  0x005cb4                  _uart3_msg_hhmmsstt
-                  0x005cf6                  _OSStartTask
-                  0x005d2c                  _main
-                  0x005d5e                  _csk_rand
-                  0x005d88                  _OSTimer
-                  0x005db2                  _OSInit
-                  0x005dd6                  _OSGetTicks
-                  0x005de8                  _OSSetTicks
-                  0x005dfa                  _task_5sec
-                  0x005e12                  _csk_wdt_force
-                  0x005e1a                  _csk_wdt_off
-                  0x005e24                  _OSDisableHook
-                  0x005e2c                  _OSEnableHook
-                  0x005e34                  _OSClrWDTHook
-                  0x005e3c                  _OSIdlingHook
+                  0x004688                  _init
+                  0x00476c                  __T2Interrupt
+                  0x00478a                  __U1TXInterrupt
+                  0x0047a6                  __U1RXInterrupt
+                  0x0047d0                  __U2TXInterrupt
+                  0x0047ec                  __U2RXInterrupt
+                  0x004810                  __U3RXInterrupt
+                  0x004834                  __U3TXInterrupt
+                  0x004850                  __U4TXInterrupt
+                  0x00486c                  __U4RXInterrupt
+                  0x004890                  _uart1_open
+                  0x0048c4                  _uart1_close
+                  0x0048cc                  _uart1_peek_rx
+                  0x004916                  _uart1_rx_count
+                  0x004920                  _uart1_tx_free
+                  0x00492e                  _uart1_getchar
+                  0x00496a                  _uart1_get_byte
+                  0x0049a8                  _uart1_putchar
+                  0x0049e8                  _uart1_puts
+                  0x004a0a                  _uart1_outchar
+                  0x004a48                  _uart1_inchar
+                  0x004a78                  _uart2_open
+                  0x004aac                  _uart2_close
+                  0x004ab4                  _uart2_peek_rx
+                  0x004afe                  _uart2_rx_count
+                  0x004b08                  _uart2_tx_free
+                  0x004b16                  _uart2_getchar
+                  0x004b52                  _uart2_get_byte
+                  0x004b90                  _uart2_putchar
+                  0x004bd0                  _uart2_puts
+                  0x004bf2                  _uart2_outchar
+                  0x004c30                  _uart2_inchar
+                  0x004c60                  _uart3_open
+                  0x004c94                  _uart3_close
+                  0x004c9c                  _uart3_peek_rx
+                  0x004ce6                  _uart3_rx_count
+                  0x004cf0                  _uart3_tx_free
+                  0x004cfe                  _uart3_getchar
+                  0x004d3a                  _uart3_get_byte
+                  0x004d78                  _uart3_putchar
+                  0x004db8                  _uart3_puts
+                  0x004dda                  _uart3_outchar
+                  0x004e18                  _uart3_inchar
+                  0x004e48                  _uart4_open
+                  0x004e7c                  _uart4_close
+                  0x004e84                  _uart4_peek_rx
+                  0x004ece                  _uart4_rx_count
+                  0x004ed8                  _uart4_tx_free
+                  0x004ee6                  _uart4_getchar
+                  0x004f22                  _uart4_get_byte
+                  0x004f60                  _uart4_putchar
+                  0x004fa0                  _uart4_puts
+                  0x004fc2                  _uart4_outchar
+                  0x005000                  _uart4_inchar
+                  0x005030                  _power
+                  0x005058                  _sup_led_off
+                  0x005072                  _sup_led_on
+                  0x00508c                  _sup_led_flash
+                  0x0050a6                  _sup_clk_off
+                  0x0050c0                  _sup_clk_on
+                  0x005112                  _task_supmcu_qa
+                  0x0051f6                  _cmd_explain
+                  0x005258                  _task_cmd_do
+                  0x005396                  _OSSched
+                  0x0054e6                  _OSInsPrioQ
+                  0x00555a                  _OSInsDelayQ
+                  0x0055f8                  _OSElapsedTime
+                  0x0056f4                  _OSDelPrioQ
+                  0x005764                  _OSDelDelayQ
+                  0x0057da                  _OSWaitEvent
+                  0x0058b2                  _OSCreateSem
+                  0x0058d4                  _OSWaitSem
+                  0x00590c                  _OSSignalSem
+                  0x005976                  _OSTaskUsed
+                  0x0059ac                  _OSDelTaskQ
+                  0x005a04                  _OSCreateTask
+                  0x005a5a                  _OSInitPrioTask
+                  0x005a8a                  _csk_mhx_open
+                  0x005ab6                  _csk_mhx_close
+                  0x005ade                  _csk_mhx_pwr_on
+                  0x005af4                  _csk_mhx_pwr_off
+                  0x005b08                  _csk_power_shutdown
+                  0x005b74                  _OSDelay
+                  0x005bd8                  _csk_usb_open
+                  0x005c04                  _csk_usb_close
+                  0x005c2c                  _csk_usb_present
+                  0x005c36                  _OSDispatch
+                  0x005c5a                  _OSCtxSw
+                  0x005c76                  _OSReturn
+                  0x005c84                  _csk_led_status_open
+                  0x005c9a                  _csk_led_status_close
+                  0x005cb0                  _csk_led_status_on
+                  0x005cbe                  _csk_led_status_off
+                  0x005ccc                  _uart1_msg_hhmmsstt
+                  0x005d0e                  _uart2_msg_hhmmsstt
+                  0x005d50                  _uart4_msg_hhmmsstt
+                  0x005d92                  _uart3_msg_hhmmsstt
+                  0x005dd4                  _OSStartTask
+                  0x005e0a                  _main
+                  0x005e3c                  _OSStopTask
+                  0x005e6c                  _csk_rand
+                  0x005e96                  _OSTimer
+                  0x005ec0                  _OSInit
+                  0x005ee4                  _OSGetTicks
+                  0x005ef6                  _OSSetTicks
+                  0x005f08                  _task_5sec
+                  0x005f20                  _csk_wdt_force
+                  0x005f28                  _csk_wdt_off
+                  0x005f32                  _OSDisableHook
+                  0x005f3a                  _OSEnableHook
+                  0x005f42                  _OSClrWDTHook
+                  0x005f4a                  _OSIdlingHook
 
 External Symbols in Program Memory (by name):
 
@@ -889,31 +896,34 @@ External Symbols in Program Memory (by name):
                   0x000b34                  _IdleI2C1
                   0x000b6e                  _MasterWriteI2C1
                   0x000b96                  _MastergetsI2C1
-                  0x005e34                  _OSClrWDTHook
-                  0x005862                  _OSCreateSem
-                  0x005926                  _OSCreateTask
-                  0x005b7c                  _OSCtxSw
-                  0x005714                  _OSDelDelayQ
-                  0x0056a4                  _OSDelPrioQ
-                  0x005a96                  _OSDelay
-                  0x005e24                  _OSDisableHook
-                  0x005b58                  _OSDispatch
-                  0x0055a8                  _OSElapsedTime
-                  0x005e2c                  _OSEnableHook
-                  0x005dd6                  _OSGetTicks
-                  0x005e3c                  _OSIdlingHook
-                  0x005db2                  _OSInit
-                  0x00597c                  _OSInitPrioTask
-                  0x00550a                  _OSInsDelayQ
-                  0x005496                  _OSInsPrioQ
-                  0x005b98                  _OSReturn
-                  0x005224                  _OSSched
-                  0x005de8                  _OSSetTicks
-                  0x0058bc                  _OSSignalSem
-                  0x005cf6                  _OSStartTask
-                  0x005d88                  _OSTimer
-                  0x00578a                  _OSWaitEvent
-                  0x005884                  _OSWaitSem
+                  0x005f42                  _OSClrWDTHook
+                  0x0058b2                  _OSCreateSem
+                  0x005a04                  _OSCreateTask
+                  0x005c5a                  _OSCtxSw
+                  0x005764                  _OSDelDelayQ
+                  0x0056f4                  _OSDelPrioQ
+                  0x0059ac                  _OSDelTaskQ
+                  0x005b74                  _OSDelay
+                  0x005f32                  _OSDisableHook
+                  0x005c36                  _OSDispatch
+                  0x0055f8                  _OSElapsedTime
+                  0x005f3a                  _OSEnableHook
+                  0x005ee4                  _OSGetTicks
+                  0x005f4a                  _OSIdlingHook
+                  0x005ec0                  _OSInit
+                  0x005a5a                  _OSInitPrioTask
+                  0x00555a                  _OSInsDelayQ
+                  0x0054e6                  _OSInsPrioQ
+                  0x005c76                  _OSReturn
+                  0x005396                  _OSSched
+                  0x005ef6                  _OSSetTicks
+                  0x00590c                  _OSSignalSem
+                  0x005dd4                  _OSStartTask
+                  0x005e3c                  _OSStopTask
+                  0x005976                  _OSTaskUsed
+                  0x005e96                  _OSTimer
+                  0x0057da                  _OSWaitEvent
+                  0x0058d4                  _OSWaitSem
                   0x000b1a                  _OpenI2C1
                   0x000a1c                  _OpenTimer2
                   0x000cac                  _OpenUART1
@@ -932,15 +942,15 @@ External Symbols in Program Memory (by name):
                   0x000f88                  _WriteUART4
                   0x00034c                  __DefaultInterrupt
                   0x0002aa                  __MI2C1Interrupt
-                  0x004768                  __T2Interrupt
-                  0x0047a2                  __U1RXInterrupt
-                  0x004786                  __U1TXInterrupt
-                  0x0047e8                  __U2RXInterrupt
-                  0x0047cc                  __U2TXInterrupt
-                  0x00483e                  __U3RXInterrupt
-                  0x004822                  __U3TXInterrupt
-                  0x004894                  __U4RXInterrupt
-                  0x004878                  __U4TXInterrupt
+                  0x00476c                  __T2Interrupt
+                  0x0047a6                  __U1RXInterrupt
+                  0x00478a                  __U1TXInterrupt
+                  0x0047ec                  __U2RXInterrupt
+                  0x0047d0                  __U2TXInterrupt
+                  0x004810                  __U3RXInterrupt
+                  0x004834                  __U3TXInterrupt
+                  0x00486c                  __U4RXInterrupt
+                  0x004850                  __U4TXInterrupt
                   0x0005a6                  ___divdi3
                   0x000750                  ___divsf3
                   0x00045e                  ___divsi3
@@ -980,14 +990,14 @@ External Symbols in Program Memory (by name):
                   0x00102e                  __sprintf_cdnopsuxX
                   0x00102e                  __sprintf_cdnopuxX
                   0x00102e                  __sprintf_s
-                  0x000fd4                  __sscanf_cdfFnopuxX
+                  0x001004                  __sscanf_cdfFnopuxX
                   0x0014b2                  __vfprintf_0
                   0x0014b2                  __vfprintf_cdnopsuxX
                   0x0014b2                  __vfprintf_cdnopuxX
                   0x0014b2                  __vfprintf_s
-                  0x0010be                  __vfscanf_cdfFnopuxX
-                  0x001e3e                  _atof
-                  0x001e42                  _atoi
+                  0x001146                  __vfscanf_cdfFnopuxX
+                  0x001ec2                  _atof
+                  0x001ec6                  _atoi
                   0x003608                  _bim_ee_i2c_off
                   0x0035ee                  _bim_ee_i2c_on
                   0x003434                  _bim_eth1_off
@@ -1023,7 +1033,7 @@ External Symbols in Program Memory (by name):
                   0x003400                  _bim_uart3_off
                   0x0033e6                  _bim_uart3_on
                   0x00368a                  _bim_wdt_force
-                  0x005374                  _cmd_explain
+                  0x0051f6                  _cmd_explain
                   0x003a1c                  _csk_io0_high
                   0x003a2a                  _csk_io0_low
                   0x003b2e                  _csk_io10_high
@@ -1120,24 +1130,24 @@ External Symbols in Program Memory (by name):
                   0x003b04                  _csk_io8_low
                   0x003b12                  _csk_io9_high
                   0x003b20                  _csk_io9_low
-                  0x005bbc                  _csk_led_status_close
-                  0x005be0                  _csk_led_status_off
-                  0x005bd2                  _csk_led_status_on
-                  0x005ba6                  _csk_led_status_open
-                  0x0059d8                  _csk_mhx_close
-                  0x0059ac                  _csk_mhx_open
-                  0x005a16                  _csk_mhx_pwr_off
-                  0x005a00                  _csk_mhx_pwr_on
-                  0x005a2a                  _csk_power_shutdown
-                  0x005d5e                  _csk_rand
-                  0x005b26                  _csk_usb_close
-                  0x005afa                  _csk_usb_open
-                  0x005b4e                  _csk_usb_present
-                  0x005e12                  _csk_wdt_force
-                  0x005e1a                  _csk_wdt_off
+                  0x005c9a                  _csk_led_status_close
+                  0x005cbe                  _csk_led_status_off
+                  0x005cb0                  _csk_led_status_on
+                  0x005c84                  _csk_led_status_open
+                  0x005ab6                  _csk_mhx_close
+                  0x005a8a                  _csk_mhx_open
+                  0x005af4                  _csk_mhx_pwr_off
+                  0x005ade                  _csk_mhx_pwr_on
+                  0x005b08                  _csk_power_shutdown
+                  0x005e6c                  _csk_rand
+                  0x005c04                  _csk_usb_close
+                  0x005bd8                  _csk_usb_open
+                  0x005c2c                  _csk_usb_present
+                  0x005f20                  _csk_wdt_force
+                  0x005f28                  _csk_wdt_off
                   0x001fa0                  _fflush
-                  0x001baa                  _fgetc
-                  0x000ff0                  _fputs
+                  0x001c2e                  _fgetc
+                  0x000fb2                  _fputs
                   0x003ff6                  _gps_NMEA_GMT_time_hhmmss
                   0x004062                  _gps_NMEA_rcv
                   0x004022                  _gps_NMEA_str
@@ -1149,76 +1159,76 @@ External Symbols in Program Memory (by name):
                   0x0002b2                  _i2c1_open
                   0x00031a                  _i2c1_read
                   0x0002d4                  _i2c1_write
-                  0x004684                  _init
+                  0x004688                  _init
                   0x00037a                  _isalpha
                   0x00035e                  _isspace
                   0x00036e                  _isupper
-                  0x005d2c                  _main
-                  0x00506e                  _power
-                  0x00100c                  _puts
+                  0x005e0a                  _main
+                  0x005030                  _power
+                  0x000fce                  _puts
                   0x001020                  _strlen
-                  0x000fb2                  _strncmp
-                  0x001e3c                  _strtod
-                  0x001c4e                  _strtof
-                  0x0050e4                  _sup_clk_off
-                  0x0050fe                  _sup_clk_on
-                  0x0050ca                  _sup_led_flash
-                  0x005096                  _sup_led_off
-                  0x0050b0                  _sup_led_on
-                  0x005dfa                  _task_5sec
+                  0x000fe2                  _strncmp
+                  0x001ec0                  _strtod
+                  0x001cd2                  _strtof
+                  0x0050a6                  _sup_clk_off
+                  0x0050c0                  _sup_clk_on
+                  0x00508c                  _sup_led_flash
+                  0x005058                  _sup_led_off
+                  0x005072                  _sup_led_on
+                  0x005f08                  _task_5sec
                   0x0036a4                  _task_bim_qa
-                  0x0053d6                  _task_cmd_do
-                  0x005150                  _task_supmcu_qa
+                  0x005258                  _task_cmd_do
+                  0x005112                  _task_supmcu_qa
                   0x000350                  _tolower
-                  0x004902                  _uart1_close
-                  0x0049a8                  _uart1_get_byte
-                  0x00496c                  _uart1_getchar
-                  0x004a86                  _uart1_inchar
-                  0x005bee                  _uart1_msg_hhmmsstt
-                  0x0048ce                  _uart1_open
-                  0x004a48                  _uart1_outchar
-                  0x00490a                  _uart1_peek_rx
-                  0x0049e6                  _uart1_putchar
-                  0x004a26                  _uart1_puts
-                  0x004954                  _uart1_rx_count
-                  0x00495e                  _uart1_tx_free
-                  0x004aea                  _uart2_close
-                  0x004b90                  _uart2_get_byte
-                  0x004b54                  _uart2_getchar
-                  0x004c6e                  _uart2_inchar
-                  0x005c30                  _uart2_msg_hhmmsstt
-                  0x004ab6                  _uart2_open
-                  0x004c30                  _uart2_outchar
-                  0x004af2                  _uart2_peek_rx
-                  0x004bce                  _uart2_putchar
-                  0x004c0e                  _uart2_puts
-                  0x004b3c                  _uart2_rx_count
-                  0x004b46                  _uart2_tx_free
-                  0x004cd2                  _uart3_close
-                  0x004d78                  _uart3_get_byte
-                  0x004d3c                  _uart3_getchar
-                  0x004e56                  _uart3_inchar
-                  0x005cb4                  _uart3_msg_hhmmsstt
-                  0x004c9e                  _uart3_open
-                  0x004e18                  _uart3_outchar
-                  0x004cda                  _uart3_peek_rx
-                  0x004db6                  _uart3_putchar
-                  0x004df6                  _uart3_puts
-                  0x004d24                  _uart3_rx_count
-                  0x004d2e                  _uart3_tx_free
-                  0x004eba                  _uart4_close
-                  0x004f60                  _uart4_get_byte
-                  0x004f24                  _uart4_getchar
-                  0x00503e                  _uart4_inchar
-                  0x005c72                  _uart4_msg_hhmmsstt
-                  0x004e86                  _uart4_open
-                  0x005000                  _uart4_outchar
-                  0x004ec2                  _uart4_peek_rx
-                  0x004f9e                  _uart4_putchar
-                  0x004fde                  _uart4_puts
-                  0x004f0c                  _uart4_rx_count
-                  0x004f16                  _uart4_tx_free
-                  0x001c10                  _ungetc
+                  0x0048c4                  _uart1_close
+                  0x00496a                  _uart1_get_byte
+                  0x00492e                  _uart1_getchar
+                  0x004a48                  _uart1_inchar
+                  0x005ccc                  _uart1_msg_hhmmsstt
+                  0x004890                  _uart1_open
+                  0x004a0a                  _uart1_outchar
+                  0x0048cc                  _uart1_peek_rx
+                  0x0049a8                  _uart1_putchar
+                  0x0049e8                  _uart1_puts
+                  0x004916                  _uart1_rx_count
+                  0x004920                  _uart1_tx_free
+                  0x004aac                  _uart2_close
+                  0x004b52                  _uart2_get_byte
+                  0x004b16                  _uart2_getchar
+                  0x004c30                  _uart2_inchar
+                  0x005d0e                  _uart2_msg_hhmmsstt
+                  0x004a78                  _uart2_open
+                  0x004bf2                  _uart2_outchar
+                  0x004ab4                  _uart2_peek_rx
+                  0x004b90                  _uart2_putchar
+                  0x004bd0                  _uart2_puts
+                  0x004afe                  _uart2_rx_count
+                  0x004b08                  _uart2_tx_free
+                  0x004c94                  _uart3_close
+                  0x004d3a                  _uart3_get_byte
+                  0x004cfe                  _uart3_getchar
+                  0x004e18                  _uart3_inchar
+                  0x005d92                  _uart3_msg_hhmmsstt
+                  0x004c60                  _uart3_open
+                  0x004dda                  _uart3_outchar
+                  0x004c9c                  _uart3_peek_rx
+                  0x004d78                  _uart3_putchar
+                  0x004db8                  _uart3_puts
+                  0x004ce6                  _uart3_rx_count
+                  0x004cf0                  _uart3_tx_free
+                  0x004e7c                  _uart4_close
+                  0x004f22                  _uart4_get_byte
+                  0x004ee6                  _uart4_getchar
+                  0x005000                  _uart4_inchar
+                  0x005d50                  _uart4_msg_hhmmsstt
+                  0x004e48                  _uart4_open
+                  0x004fc2                  _uart4_outchar
+                  0x004e84                  _uart4_peek_rx
+                  0x004f60                  _uart4_putchar
+                  0x004fa0                  _uart4_puts
+                  0x004ece                  _uart4_rx_count
+                  0x004ed8                  _uart4_tx_free
+                  0x001c94                  _ungetc
 
 Memory Configuration
 
@@ -1236,13 +1246,14 @@ CONFIG1          0x02abfe           0x000002
 
 Linker script and memory map
 
-LOAD build/default/production/_ext/1360937237/gps_nmea.o
 LOAD build/default/production/_ext/1360937237/init.o
 LOAD build/default/production/_ext/1360937237/main.o
 LOAD build/default/production/_ext/1360937237/task_5sec.o
 LOAD build/default/production/_ext/1360937237/task_cmd.o
 LOAD build/default/production/_ext/1360937237/task_supmcu_qa.o
 LOAD build/default/production/_ext/1655478246/pic24_i2c1.o
+LOAD build/default/production/_ext/1360937237/task_bim_qa.o
+LOAD build/default/production/_ext/1360937237/gps_nmea.o
 LOAD build/default/production/_ext/1810884970/csk_io.o
 LOAD build/default/production/_ext/1810884970/csk_led.o
 LOAD build/default/production/_ext/1810884970/csk_mhx.o
@@ -1262,7 +1273,6 @@ LOAD build/default/production/_ext/1297474772/salvohook_interrupt_MCC30_IRQ.o
 LOAD build/default/production/_ext/1297474772/salvohook_wdt.o
 LOAD build/default/production/_ext/2044256807/salvomem.o
 LOAD build/default/production/_ext/2044256807/salvotime.o
-LOAD build/default/production/_ext/1360937237/task_bim_qa.o
 LOAD C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a
@@ -1442,15 +1452,15 @@ LOAD c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libfx-coff.a
                   0x000f88                  WriteUART4
  .libperi         0x000fa4          0xe c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(DataRdyI2C1.o)
                   0x000fa4                  DataRdyI2C1
- .libc.strncmp    0x000fb2         0x22 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(strncmp.o)
-                  0x000fb2                  strncmp
+ .libc.fputs      0x000fb2         0x1c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(puts.o)
+                  0x000fb2                  fputs
+ .libc.puts       0x000fce         0x14 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(puts.o)
+                  0x000fce                  puts
+ .libc.strncmp    0x000fe2         0x22 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(strncmp.o)
+                  0x000fe2                  strncmp
  .libc._sscanf_cdfFnopuxX
-                  0x000fd4         0x1c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sscanf_cdfFnopuxX.XXo)
-                  0x000fd4                  _sscanf_cdfFnopuxX
- .libc.fputs      0x000ff0         0x1c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(puts.o)
-                  0x000ff0                  fputs
- .libc.puts       0x00100c         0x14 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(puts.o)
-                  0x00100c                  puts
+                  0x001004         0x1c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sscanf_cdfFnopuxX.XXo)
+                  0x001004                  _sscanf_cdfFnopuxX
  .libc.strlen     0x001020          0xe c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(strlen.o)
                   0x001020                  strlen
  .libc._sprintf_cdnopsuxX
@@ -1459,33 +1469,33 @@ LOAD c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libfx-coff.a
                   0x00102e                  _sprintf_s
                   0x00102e                  _sprintf_cdnopuxX
                   0x00102e                  _sprintf_cdnopsuxX
- .libc.wspace     0x00105a         0x1e c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo)
- .libc.range      0x001078         0x46 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo)
+ .libc.fputc      0x00105a         0x88 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fputc.o)
+                  0x00105a                  fputc
+ .libc.wspace     0x0010e2         0x1e c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo)
+ .libc.range      0x001100         0x46 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo)
  .libc._vfscanf_cdfFnopuxX
-                  0x0010be        0x36c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo)
-                  0x0010be                  _vfscanf_cdfFnopuxX
- .libc.fputc      0x00142a         0x88 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fputc.o)
-                  0x00142a                  fputc
+                  0x001146        0x36c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo)
+                  0x001146                  _vfscanf_cdfFnopuxX
  .libc._vfprintf_cdnopsuxX
                   0x0014b2        0x6f8 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doprnt_cdnopsuxX.XXo)
                   0x0014b2                  _vfprintf_cdnopuxX
                   0x0014b2                  _vfprintf_cdnopsuxX
                   0x0014b2                  _vfprintf_0
                   0x0014b2                  _vfprintf_s
- .libc.fgetc      0x001baa         0x66 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fgetc.o)
-                  0x001baa                  fgetc
- .libc.ungetc     0x001c10         0x3e c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(ungetc.o)
-                  0x001c10                  ungetc
- .libc.strtof     0x001c4e        0x1ee c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atof.o)
-                  0x001c4e                  strtof
- .libc.strtod     0x001e3c          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atof.o)
-                  0x001e3c                  strtod
- .libc.atof       0x001e3e          0x4 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atof.o)
-                  0x001e3e                  atof
- .libc.atoi       0x001e42         0x3e c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atoi.o)
-                  0x001e42                  atoi
- .libc._flsbuf    0x001e80         0x84 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(flsbuf.o)
-                  0x001e80                  _flsbuf
+ .libc._flsbuf    0x001baa         0x84 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(flsbuf.o)
+                  0x001baa                  _flsbuf
+ .libc.fgetc      0x001c2e         0x66 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fgetc.o)
+                  0x001c2e                  fgetc
+ .libc.ungetc     0x001c94         0x3e c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(ungetc.o)
+                  0x001c94                  ungetc
+ .libc.strtof     0x001cd2        0x1ee c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atof.o)
+                  0x001cd2                  strtof
+ .libc.strtod     0x001ec0          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atof.o)
+                  0x001ec0                  strtod
+ .libc.atof       0x001ec2          0x4 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atof.o)
+                  0x001ec2                  atof
+ .libc.atoi       0x001ec6         0x3e c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atoi.o)
+                  0x001ec6                  atoi
  .libc._filbuf    0x001f04         0x9c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(filbuf.o)
                   0x001f04                  _filbuf
  .libc.fflush     0x001fa0         0x54 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fflush.o)
@@ -1555,12 +1565,12 @@ __CONFIG1         0x02abfe          0x2
                   0x00001c          0x4 LONG 0x34c DEFINED (__Interrupt4)?ABSOLUTE (__Interrupt4):ABSOLUTE (__DefaultInterrupt)
                   0x00001e          0x4 LONG 0x34c DEFINED (__IC2Interrupt)?ABSOLUTE (__IC2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000020          0x4 LONG 0x34c DEFINED (__OC2Interrupt)?ABSOLUTE (__OC2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000022          0x4 LONG 0x4768 DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000022          0x4 LONG 0x476c DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000024          0x4 LONG 0x34c DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000026          0x4 LONG 0x34c DEFINED (__SPI1ErrInterrupt)?ABSOLUTE (__SPI1ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000028          0x4 LONG 0x34c DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00002a          0x4 LONG 0x47a2 DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00002c          0x4 LONG 0x4786 DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00002a          0x4 LONG 0x47a6 DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00002c          0x4 LONG 0x478a DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00002e          0x4 LONG 0x34c DEFINED (__ADC1Interrupt)?ABSOLUTE (__ADC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000030          0x4 LONG 0x34c DEFINED (__Interrupt14)?ABSOLUTE (__Interrupt14):ABSOLUTE (__DefaultInterrupt)
                   0x000032          0x4 LONG 0x34c DEFINED (__Interrupt15)?ABSOLUTE (__Interrupt15):ABSOLUTE (__DefaultInterrupt)
@@ -1578,8 +1588,8 @@ __CONFIG1         0x02abfe          0x2
                   0x00004a          0x4 LONG 0x34c DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00004c          0x4 LONG 0x34c DEFINED (__T5Interrupt)?ABSOLUTE (__T5Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00004e          0x4 LONG 0x34c DEFINED (__INT2Interrupt)?ABSOLUTE (__INT2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000050          0x4 LONG 0x47e8 DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000052          0x4 LONG 0x47cc DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000050          0x4 LONG 0x47ec DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000052          0x4 LONG 0x47d0 DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000054          0x4 LONG 0x34c DEFINED (__SPI2ErrInterrupt)?ABSOLUTE (__SPI2ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000056          0x4 LONG 0x34c DEFINED (__SPI2Interrupt)?ABSOLUTE (__SPI2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000058          0x4 LONG 0x34c DEFINED (__Interrupt34)?ABSOLUTE (__Interrupt34):ABSOLUTE (__DefaultInterrupt)
@@ -1630,14 +1640,14 @@ __CONFIG1         0x02abfe          0x2
                   0x0000b2          0x4 LONG 0x34c DEFINED (__Interrupt79)?ABSOLUTE (__Interrupt79):ABSOLUTE (__DefaultInterrupt)
                   0x0000b4          0x4 LONG 0x34c DEFINED (__Interrupt80)?ABSOLUTE (__Interrupt80):ABSOLUTE (__DefaultInterrupt)
                   0x0000b6          0x4 LONG 0x34c DEFINED (__U3ErrInterrupt)?ABSOLUTE (__U3ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000b8          0x4 LONG 0x483e DEFINED (__U3RXInterrupt)?ABSOLUTE (__U3RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000ba          0x4 LONG 0x4822 DEFINED (__U3TXInterrupt)?ABSOLUTE (__U3TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000b8          0x4 LONG 0x4810 DEFINED (__U3RXInterrupt)?ABSOLUTE (__U3RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000ba          0x4 LONG 0x4834 DEFINED (__U3TXInterrupt)?ABSOLUTE (__U3TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000bc          0x4 LONG 0x34c DEFINED (__SI2C3Interrupt)?ABSOLUTE (__SI2C3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000be          0x4 LONG 0x34c DEFINED (__MI2C3Interrupt)?ABSOLUTE (__MI2C3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000c0          0x4 LONG 0x34c DEFINED (__Interrupt86)?ABSOLUTE (__Interrupt86):ABSOLUTE (__DefaultInterrupt)
                   0x0000c2          0x4 LONG 0x34c DEFINED (__U4ErrInterrupt)?ABSOLUTE (__U4ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000c4          0x4 LONG 0x4894 DEFINED (__U4RXInterrupt)?ABSOLUTE (__U4RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000c6          0x4 LONG 0x4878 DEFINED (__U4TXInterrupt)?ABSOLUTE (__U4TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000c4          0x4 LONG 0x486c DEFINED (__U4RXInterrupt)?ABSOLUTE (__U4RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000c6          0x4 LONG 0x4850 DEFINED (__U4TXInterrupt)?ABSOLUTE (__U4TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000c8          0x4 LONG 0x34c DEFINED (__SPI3ErrInterrupt)?ABSOLUTE (__SPI3ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ca          0x4 LONG 0x34c DEFINED (__SPI3Interrupt)?ABSOLUTE (__SPI3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000cc          0x4 LONG 0x34c DEFINED (__OC9Interrupt)?ABSOLUTE (__OC9Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -1683,12 +1693,12 @@ __CONFIG1         0x02abfe          0x2
                   0x00011c          0x4 LONG 0x34c DEFINED (__AltInterrupt4)?ABSOLUTE (__AltInterrupt4):DEFINED (__Interrupt4)?ABSOLUTE (__Interrupt4):ABSOLUTE (__DefaultInterrupt)
                   0x00011e          0x4 LONG 0x34c DEFINED (__AltIC2Interrupt)?ABSOLUTE (__AltIC2Interrupt):DEFINED (__IC2Interrupt)?ABSOLUTE (__IC2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000120          0x4 LONG 0x34c DEFINED (__AltOC2Interrupt)?ABSOLUTE (__AltOC2Interrupt):DEFINED (__OC2Interrupt)?ABSOLUTE (__OC2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000122          0x4 LONG 0x4768 DEFINED (__AltT2Interrupt)?ABSOLUTE (__AltT2Interrupt):DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000122          0x4 LONG 0x476c DEFINED (__AltT2Interrupt)?ABSOLUTE (__AltT2Interrupt):DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000124          0x4 LONG 0x34c DEFINED (__AltT3Interrupt)?ABSOLUTE (__AltT3Interrupt):DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000126          0x4 LONG 0x34c DEFINED (__AltSPI1ErrInterrupt)?ABSOLUTE (__AltSPI1ErrInterrupt):DEFINED (__SPI1ErrInterrupt)?ABSOLUTE (__SPI1ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000128          0x4 LONG 0x34c DEFINED (__AltSPI1Interrupt)?ABSOLUTE (__AltSPI1Interrupt):DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00012a          0x4 LONG 0x47a2 DEFINED (__AltU1RXInterrupt)?ABSOLUTE (__AltU1RXInterrupt):DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00012c          0x4 LONG 0x4786 DEFINED (__AltU1TXInterrupt)?ABSOLUTE (__AltU1TXInterrupt):DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00012a          0x4 LONG 0x47a6 DEFINED (__AltU1RXInterrupt)?ABSOLUTE (__AltU1RXInterrupt):DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00012c          0x4 LONG 0x478a DEFINED (__AltU1TXInterrupt)?ABSOLUTE (__AltU1TXInterrupt):DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00012e          0x4 LONG 0x34c DEFINED (__AltADC1Interrupt)?ABSOLUTE (__AltADC1Interrupt):DEFINED (__ADC1Interrupt)?ABSOLUTE (__ADC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000130          0x4 LONG 0x34c DEFINED (__AltInterrupt14)?ABSOLUTE (__AltInterrupt14):DEFINED (__Interrupt14)?ABSOLUTE (__Interrupt14):ABSOLUTE (__DefaultInterrupt)
                   0x000132          0x4 LONG 0x34c DEFINED (__AltInterrupt15)?ABSOLUTE (__AltInterrupt15):DEFINED (__Interrupt15)?ABSOLUTE (__Interrupt15):ABSOLUTE (__DefaultInterrupt)
@@ -1706,8 +1716,8 @@ __CONFIG1         0x02abfe          0x2
                   0x00014a          0x4 LONG 0x34c DEFINED (__AltT4Interrupt)?ABSOLUTE (__AltT4Interrupt):DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00014c          0x4 LONG 0x34c DEFINED (__AltT5Interrupt)?ABSOLUTE (__AltT5Interrupt):DEFINED (__T5Interrupt)?ABSOLUTE (__T5Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00014e          0x4 LONG 0x34c DEFINED (__AltINT2Interrupt)?ABSOLUTE (__AltINT2Interrupt):DEFINED (__INT2Interrupt)?ABSOLUTE (__INT2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000150          0x4 LONG 0x47e8 DEFINED (__AltU2RXInterrupt)?ABSOLUTE (__AltU2RXInterrupt):DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000152          0x4 LONG 0x47cc DEFINED (__AltU2TXInterrupt)?ABSOLUTE (__AltU2TXInterrupt):DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000150          0x4 LONG 0x47ec DEFINED (__AltU2RXInterrupt)?ABSOLUTE (__AltU2RXInterrupt):DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000152          0x4 LONG 0x47d0 DEFINED (__AltU2TXInterrupt)?ABSOLUTE (__AltU2TXInterrupt):DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000154          0x4 LONG 0x34c DEFINED (__AltSPI2ErrInterrupt)?ABSOLUTE (__AltSPI2ErrInterrupt):DEFINED (__SPI2ErrInterrupt)?ABSOLUTE (__SPI2ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000156          0x4 LONG 0x34c DEFINED (__AltSPI2Interrupt)?ABSOLUTE (__AltSPI2Interrupt):DEFINED (__SPI2Interrupt)?ABSOLUTE (__SPI2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000158          0x4 LONG 0x34c DEFINED (__AltInterrupt34)?ABSOLUTE (__AltInterrupt34):DEFINED (__Interrupt34)?ABSOLUTE (__Interrupt34):ABSOLUTE (__DefaultInterrupt)
@@ -1758,14 +1768,14 @@ __CONFIG1         0x02abfe          0x2
                   0x0001b2          0x4 LONG 0x34c DEFINED (__AltInterrupt79)?ABSOLUTE (__AltInterrupt79):DEFINED (__Interrupt79)?ABSOLUTE (__Interrupt79):ABSOLUTE (__DefaultInterrupt)
                   0x0001b4          0x4 LONG 0x34c DEFINED (__AltInterrupt80)?ABSOLUTE (__AltInterrupt80):DEFINED (__Interrupt80)?ABSOLUTE (__Interrupt80):ABSOLUTE (__DefaultInterrupt)
                   0x0001b6          0x4 LONG 0x34c DEFINED (__AltU3ErrInterrupt)?ABSOLUTE (__AltU3ErrInterrupt):DEFINED (__U3ErrInterrupt)?ABSOLUTE (__U3ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0001b8          0x4 LONG 0x483e DEFINED (__AltU3RXInterrupt)?ABSOLUTE (__AltU3RXInterrupt):DEFINED (__U3RXInterrupt)?ABSOLUTE (__U3RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0001ba          0x4 LONG 0x4822 DEFINED (__AltU3TXInterrupt)?ABSOLUTE (__AltU3TXInterrupt):DEFINED (__U3TXInterrupt)?ABSOLUTE (__U3TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0001b8          0x4 LONG 0x4810 DEFINED (__AltU3RXInterrupt)?ABSOLUTE (__AltU3RXInterrupt):DEFINED (__U3RXInterrupt)?ABSOLUTE (__U3RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0001ba          0x4 LONG 0x4834 DEFINED (__AltU3TXInterrupt)?ABSOLUTE (__AltU3TXInterrupt):DEFINED (__U3TXInterrupt)?ABSOLUTE (__U3TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001bc          0x4 LONG 0x34c DEFINED (__AltSI2C3Interrupt)?ABSOLUTE (__AltSI2C3Interrupt):DEFINED (__SI2C3Interrupt)?ABSOLUTE (__SI2C3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001be          0x4 LONG 0x34c DEFINED (__AltMI2C3Interrupt)?ABSOLUTE (__AltMI2C3Interrupt):DEFINED (__MI2C3Interrupt)?ABSOLUTE (__MI2C3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001c0          0x4 LONG 0x34c DEFINED (__AltInterrupt86)?ABSOLUTE (__AltInterrupt86):DEFINED (__Interrupt86)?ABSOLUTE (__Interrupt86):ABSOLUTE (__DefaultInterrupt)
                   0x0001c2          0x4 LONG 0x34c DEFINED (__AltU4ErrInterrupt)?ABSOLUTE (__AltU4ErrInterrupt):DEFINED (__U4ErrInterrupt)?ABSOLUTE (__U4ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0001c4          0x4 LONG 0x4894 DEFINED (__AltU4RXInterrupt)?ABSOLUTE (__AltU4RXInterrupt):DEFINED (__U4RXInterrupt)?ABSOLUTE (__U4RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0001c6          0x4 LONG 0x4878 DEFINED (__AltU4TXInterrupt)?ABSOLUTE (__AltU4TXInterrupt):DEFINED (__U4TXInterrupt)?ABSOLUTE (__U4TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0001c4          0x4 LONG 0x486c DEFINED (__AltU4RXInterrupt)?ABSOLUTE (__AltU4RXInterrupt):DEFINED (__U4RXInterrupt)?ABSOLUTE (__U4RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0001c6          0x4 LONG 0x4850 DEFINED (__AltU4TXInterrupt)?ABSOLUTE (__AltU4TXInterrupt):DEFINED (__U4TXInterrupt)?ABSOLUTE (__U4TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001c8          0x4 LONG 0x34c DEFINED (__AltSPI3ErrInterrupt)?ABSOLUTE (__AltSPI3ErrInterrupt):DEFINED (__SPI3ErrInterrupt)?ABSOLUTE (__SPI3ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001ca          0x4 LONG 0x34c DEFINED (__AltSPI3Interrupt)?ABSOLUTE (__AltSPI3Interrupt):DEFINED (__SPI3Interrupt)?ABSOLUTE (__SPI3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001cc          0x4 LONG 0x34c DEFINED (__AltOC9Interrupt)?ABSOLUTE (__AltOC9Interrupt):DEFINED (__OC9Interrupt)?ABSOLUTE (__OC9Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -2798,61 +2808,61 @@ LOAD data_init
 LOAD default_isr
 
 __c30_signature
-                  0x000000        0x2be
+                  0x000000        0x2ca
  __c30_signature
-                  0x000000          0x6 build/default/production/_ext/1360937237/gps_nmea.o
+                  0x000000          0x6 build/default/production/_ext/1360937237/init.o
  __c30_signature
-                  0x000006          0x6 build/default/production/_ext/1360937237/init.o
+                  0x000006          0x6 build/default/production/_ext/1360937237/main.o
  __c30_signature
-                  0x00000c          0x6 build/default/production/_ext/1360937237/main.o
+                  0x00000c          0x6 build/default/production/_ext/1360937237/task_5sec.o
  __c30_signature
-                  0x000012          0x6 build/default/production/_ext/1360937237/task_5sec.o
+                  0x000012          0x6 build/default/production/_ext/1360937237/task_cmd.o
  __c30_signature
-                  0x000018          0x6 build/default/production/_ext/1360937237/task_cmd.o
+                  0x000018          0x6 build/default/production/_ext/1360937237/task_supmcu_qa.o
  __c30_signature
-                  0x00001e          0x6 build/default/production/_ext/1360937237/task_supmcu_qa.o
+                  0x00001e          0x6 build/default/production/_ext/1655478246/pic24_i2c1.o
  __c30_signature
-                  0x000024          0x6 build/default/production/_ext/1655478246/pic24_i2c1.o
+                  0x000024          0x6 build/default/production/_ext/1360937237/task_bim_qa.o
  __c30_signature
-                  0x00002a          0x6 build/default/production/_ext/1810884970/csk_io.o
+                  0x00002a          0x6 build/default/production/_ext/1360937237/gps_nmea.o
  __c30_signature
-                  0x000030          0x6 build/default/production/_ext/1810884970/csk_led.o
+                  0x000030          0x6 build/default/production/_ext/1810884970/csk_io.o
  __c30_signature
-                  0x000036          0x6 build/default/production/_ext/1810884970/csk_mhx.o
+                  0x000036          0x6 build/default/production/_ext/1810884970/csk_led.o
  __c30_signature
-                  0x00003c          0x6 build/default/production/_ext/1810884970/csk_power.o
+                  0x00003c          0x6 build/default/production/_ext/1810884970/csk_mhx.o
  __c30_signature
-                  0x000042          0x6 build/default/production/_ext/1810884970/csk_rand.o
+                  0x000042          0x6 build/default/production/_ext/1810884970/csk_power.o
  __c30_signature
-                  0x000048          0x6 build/default/production/_ext/1810884970/csk_usb.o
+                  0x000048          0x6 build/default/production/_ext/1810884970/csk_rand.o
  __c30_signature
-                  0x00004e          0x6 build/default/production/_ext/1810884970/csk_wdt.o
+                  0x00004e          0x6 build/default/production/_ext/1810884970/csk_usb.o
  __c30_signature
-                  0x000054          0x6 build/default/production/_ext/1655478246/pic24_uart1.o
+                  0x000054          0x6 build/default/production/_ext/1810884970/csk_wdt.o
  __c30_signature
-                  0x00005a          0x6 build/default/production/_ext/1655478246/pic24_uart1_msg_hhmmsstt.o
+                  0x00005a          0x6 build/default/production/_ext/1655478246/pic24_uart1.o
  __c30_signature
-                  0x000060          0x6 build/default/production/_ext/1655478246/pic24_uart2.o
+                  0x000060          0x6 build/default/production/_ext/1655478246/pic24_uart1_msg_hhmmsstt.o
  __c30_signature
-                  0x000066          0x6 build/default/production/_ext/1655478246/pic24_uart2_msg_hhmmsstt.o
+                  0x000066          0x6 build/default/production/_ext/1655478246/pic24_uart2.o
  __c30_signature
-                  0x00006c          0x6 build/default/production/_ext/1655478246/pic24_uart3.o
+                  0x00006c          0x6 build/default/production/_ext/1655478246/pic24_uart2_msg_hhmmsstt.o
  __c30_signature
-                  0x000072          0x6 build/default/production/_ext/1655478246/pic24_uart3_msg_hhmmsstt.o
+                  0x000072          0x6 build/default/production/_ext/1655478246/pic24_uart3.o
  __c30_signature
-                  0x000078          0x6 build/default/production/_ext/1655478246/pic24_uart4.o
+                  0x000078          0x6 build/default/production/_ext/1655478246/pic24_uart3_msg_hhmmsstt.o
  __c30_signature
-                  0x00007e          0x6 build/default/production/_ext/1655478246/pic24_uart4_msg_hhmmsstt.o
+                  0x00007e          0x6 build/default/production/_ext/1655478246/pic24_uart4.o
  __c30_signature
-                  0x000084          0x6 build/default/production/_ext/1297474772/salvohook_interrupt_MCC30_IRQ.o
+                  0x000084          0x6 build/default/production/_ext/1655478246/pic24_uart4_msg_hhmmsstt.o
  __c30_signature
-                  0x00008a          0x6 build/default/production/_ext/1297474772/salvohook_wdt.o
+                  0x00008a          0x6 build/default/production/_ext/1297474772/salvohook_interrupt_MCC30_IRQ.o
  __c30_signature
-                  0x000090          0x6 build/default/production/_ext/2044256807/salvomem.o
+                  0x000090          0x6 build/default/production/_ext/1297474772/salvohook_wdt.o
  __c30_signature
-                  0x000096          0x6 build/default/production/_ext/2044256807/salvotime.o
+                  0x000096          0x6 build/default/production/_ext/2044256807/salvomem.o
  __c30_signature
-                  0x00009c          0x6 build/default/production/_ext/1360937237/task_bim_qa.o
+                  0x00009c          0x6 build/default/production/_ext/2044256807/salvotime.o
  __c30_signature
                   0x0000a2          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotimer.o)
  __c30_signature
@@ -2868,319 +2878,323 @@ __c30_signature
  __c30_signature
                   0x0000c6          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotick.o)
  __c30_signature
-                  0x0000cc          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask.o)
+                  0x0000cc          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask2.o)
  __c30_signature
-                  0x0000d2          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoevent.o)
+                  0x0000d2          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask.o)
  __c30_signature
-                  0x0000d8          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqins.o)
+                  0x0000d8          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoevent.o)
  __c30_signature
-                  0x0000de          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqdel.o)
+                  0x0000de          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqins.o)
  __c30_signature
-                  0x0000e4          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvohook_idle.o)
+                  0x0000e4          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqdel.o)
  __c30_signature
-                  0x0000ea          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntTimer2.o)
+                  0x0000ea          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvohook_idle.o)
  __c30_signature
-                  0x0000f0          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenTimer2.o)
+                  0x0000f0          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask7.o)
  __c30_signature
-                  0x0000f6          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART1.o)
+                  0x0000f6          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntTimer2.o)
  __c30_signature
-                  0x0000fc          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART2.o)
+                  0x0000fc          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenTimer2.o)
  __c30_signature
-                  0x000102          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART3.o)
+                  0x000102          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART1.o)
  __c30_signature
-                  0x000108          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART4.o)
+                  0x000108          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART2.o)
  __c30_signature
-                  0x00010e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseI2C1.o)
+                  0x00010e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART3.o)
  __c30_signature
-                  0x000114          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntI2C1.o)
+                  0x000114          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART4.o)
  __c30_signature
-                  0x00011a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenI2C1.o)
+                  0x00011a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseI2C1.o)
  __c30_signature
-                  0x000120          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(StartI2C1.o)
+                  0x000120          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntI2C1.o)
  __c30_signature
-                  0x000126          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(IdleI2C1.o)
+                  0x000126          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenI2C1.o)
  __c30_signature
-                  0x00012c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(MasterWriteI2C1.o)
+                  0x00012c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(StartI2C1.o)
  __c30_signature
-                  0x000132          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(StopI2C1.o)
+                  0x000132          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(IdleI2C1.o)
  __c30_signature
-                  0x000138          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(MastergetsI2C1.o)
+                  0x000138          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(MasterWriteI2C1.o)
  __c30_signature
-                  0x00013e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(EnableWDT.o)
+                  0x00013e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(StopI2C1.o)
  __c30_signature
-                  0x000144          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseTimer2.o)
+                  0x000144          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(MastergetsI2C1.o)
  __c30_signature
-                  0x00014a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART1.o)
+                  0x00014a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(EnableWDT.o)
  __c30_signature
-                  0x000150          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART1.o)
+                  0x000150          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseTimer2.o)
  __c30_signature
-                  0x000156          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART1.o)
+                  0x000156          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART1.o)
  __c30_signature
-                  0x00015c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART1.o)
+                  0x00015c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART1.o)
  __c30_signature
-                  0x000162          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART1.o)
+                  0x000162          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART1.o)
  __c30_signature
-                  0x000168          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART2.o)
+                  0x000168          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART1.o)
  __c30_signature
-                  0x00016e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART2.o)
+                  0x00016e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART1.o)
  __c30_signature
-                  0x000174          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART2.o)
+                  0x000174          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART2.o)
  __c30_signature
-                  0x00017a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART2.o)
+                  0x00017a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART2.o)
  __c30_signature
-                  0x000180          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART2.o)
+                  0x000180          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART2.o)
  __c30_signature
-                  0x000186          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART3.o)
+                  0x000186          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART2.o)
  __c30_signature
-                  0x00018c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART3.o)
+                  0x00018c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART2.o)
  __c30_signature
-                  0x000192          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART3.o)
+                  0x000192          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART3.o)
  __c30_signature
-                  0x000198          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART3.o)
+                  0x000198          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART3.o)
  __c30_signature
-                  0x00019e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART3.o)
+                  0x00019e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART3.o)
  __c30_signature
-                  0x0001a4          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART4.o)
+                  0x0001a4          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART3.o)
  __c30_signature
-                  0x0001aa          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART4.o)
+                  0x0001aa          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART3.o)
  __c30_signature
-                  0x0001b0          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART4.o)
+                  0x0001b0          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART4.o)
  __c30_signature
-                  0x0001b6          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART4.o)
+                  0x0001b6          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART4.o)
  __c30_signature
-                  0x0001bc          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART4.o)
+                  0x0001bc          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART4.o)
  __c30_signature
-                  0x0001c2          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(DataRdyI2C1.o)
+                  0x0001c2          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART4.o)
  __c30_signature
-                  0x0001c8          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(crt0_standard.o)
+                  0x0001c8          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART4.o)
  __c30_signature
-                  0x0001ce          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(data_init_standard.o)
+                  0x0001ce          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(DataRdyI2C1.o)
  __c30_signature
-                  0x0001d4          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(divsi3.o)
+                  0x0001d4          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(crt0_standard.o)
  __c30_signature
-                  0x0001da          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(udivsi3.o)
+                  0x0001da          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(data_init_standard.o)
  __c30_signature
-                  0x0001e0          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(strncmp.o)
+                  0x0001e0          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(divsi3.o)
  __c30_signature
-                  0x0001e6          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sscanf_cdfFnopuxX.XXo)
+                  0x0001e6          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(udivsi3.o)
  __c30_signature
                   0x0001ec          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(puts.o)
  __c30_signature
-                  0x0001f2          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(strlen.o)
+                  0x0001f2          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(strncmp.o)
  __c30_signature
-                  0x0001f8          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sprintf_cdnopsuxX.XXo)
+                  0x0001f8          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sscanf_cdfFnopuxX.XXo)
  __c30_signature
-                  0x0001fe          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo)
+                  0x0001fe          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(strlen.o)
  __c30_signature
-                  0x000204          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fputc.o)
+                  0x000204          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(sprintf_cdnopsuxX.XXo)
  __c30_signature
-                  0x00020a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(_iob.o)
+                  0x00020a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fputc.o)
  __c30_signature
-                  0x000210          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doprnt_cdnopsuxX.XXo)
+                  0x000210          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(_iob.o)
  __c30_signature
-                  0x000216          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fgetc.o)
+                  0x000216          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo)
  __c30_signature
-                  0x00021c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(ungetc.o)
+                  0x00021c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doprnt_cdnopsuxX.XXo)
  __c30_signature
-                  0x000222          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atof.o)
+                  0x000222          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(flsbuf.o)
  __c30_signature
-                  0x000228          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atoi.o)
+                  0x000228          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fgetc.o)
  __c30_signature
-                  0x00022e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(flsbuf.o)
+                  0x00022e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(ungetc.o)
  __c30_signature
-                  0x000234          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(filbuf.o)
+                  0x000234          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atof.o)
  __c30_signature
-                  0x00023a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(errno.o)
+                  0x00023a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(atoi.o)
  __c30_signature
-                  0x000240          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fflush.o)
+                  0x000240          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(filbuf.o)
  __c30_signature
-                  0x000246          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(write.o)
+                  0x000246          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(errno.o)
  __c30_signature
-                  0x00024c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(read.o)
+                  0x00024c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(fflush.o)
  __c30_signature
-                  0x000252          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(c30_uart.o)
+                  0x000252          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(write.o)
  __c30_signature
-                  0x000258          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(divmoddi3.o)
+                  0x000258          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(read.o)
  __c30_signature
-                  0x00025e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(muldi3.o)
+                  0x00025e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(c30_uart.o)
  __c30_signature
-                  0x000264          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(mulsi3.o)
+                  0x000264          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(divmoddi3.o)
  __c30_signature
-                  0x00026a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(extendsfdf.o)
+                  0x00026a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(muldi3.o)
  __c30_signature
-                  0x000270          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(floatsisf.o)
+                  0x000270          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(mulsi3.o)
  __c30_signature
-                  0x000276          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(feqltle.o)
+                  0x000276          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(extendsfdf.o)
  __c30_signature
-                  0x00027c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(divsf3.o)
+                  0x00027c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(floatsisf.o)
  __c30_signature
-                  0x000282          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(mulsf3.o)
+                  0x000282          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(feqltle.o)
  __c30_signature
-                  0x000288          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(fgtge.o)
+                  0x000288          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(divsf3.o)
  __c30_signature
-                  0x00028e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(umuldi3.o)
+                  0x00028e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(mulsf3.o)
  __c30_signature
-                  0x000294          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(funpack.o)
+                  0x000294          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(fgtge.o)
  __c30_signature
-                  0x00029a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(floatdisf.o)
+                  0x00029a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(umuldi3.o)
  __c30_signature
-                  0x0002a0          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(fcompare.o)
+                  0x0002a0          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(funpack.o)
  __c30_signature
-                  0x0002a6          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(funpack2.o)
+                  0x0002a6          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(floatdisf.o)
  __c30_signature
-                  0x0002ac          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(futil.o)
+                  0x0002ac          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(fcompare.o)
  __c30_signature
-                  0x0002b2          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(fpack.o)
+                  0x0002b2          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(funpack2.o)
  __c30_signature
-                  0x0002b8          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(floatundisf.o)
+                  0x0002b8          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(futil.o)
+ __c30_signature
+                  0x0002be          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(fpack.o)
+ __c30_signature
+                  0x0002c4          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-coff.a(floatundisf.o)
 
-.ndata              0x0800        0x284
- .ndata             0x0800        0x284 build/default/production/_ext/1360937237/task_bim_qa.o
+.ndata              0x0800        0x28a
+ .ndata             0x0800        0x28a build/default/production/_ext/1360937237/task_bim_qa.o
                     0x0800                  STR_TINI_DIS
                     0x080f                  STR_TINI_ENAB
                     0x081e                  STR_TINI_ARM
                     0x082c                  STR_TINI_UNARM
                     0x083b                  STR_UART1_ON
-                    0x084d                  STR_UART1_OFF
-                    0x0860                  STR_UART2_ON
-                    0x0872                  STR_UART2_OFF
-                    0x0885                  STR_UART3_ON
-                    0x0897                  STR_UART3_OFF
-                    0x08aa                  STR_ETH1_ON
-                    0x08bc                  STR_ETH1_OFF
-                    0x08cf                  STR_ETH2_ON
-                    0x08e1                  STR_ETH2_OFF
-                    0x08f4                  STR_ETH3_ON
-                    0x0906                  STR_ETH3_OFF
-                    0x0919                  STR_ETH_RES
-                    0x0929                  STR_ETH_MODEOFF
-                    0x093b                  STR_ETH_MODE1
-                    0x094b                  STR_ETH_MODE0
-                    0x095b                  STR_ETH_MODE2
-                    0x096b                  STR_ETH_MODE3
-                    0x097b                  STR_ETH_I2CON
-                    0x098d                  STR_ETH_I2COFF
-                    0x099e                  STR_TEMP_ON
-                    0x09b1                  STR_TEMP_OFF
-                    0x09c5                  STR_TTEST_ON
-                    0x09da                  STR_TTEST_OFF
-                    0x09ee                  STR_TTEST_RES
-                    0x0a05                  STR_EE_I2CON
-                    0x0a19                  STR_EE_I2COFF
-                    0x0a2e                  STR_SKY_ON
-                    0x0a3e                  STR_SKY_OFF
-                    0x0a4f                  STR_IMU_ON
-                    0x0a61                  STR_IMU_OFF
-                    0x0a74                  STR_WDT_RES
+                    0x084e                  STR_UART1_OFF
+                    0x0862                  STR_UART2_ON
+                    0x0875                  STR_UART2_OFF
+                    0x0889                  STR_UART3_ON
+                    0x089c                  STR_UART3_OFF
+                    0x08b0                  STR_ETH1_ON
+                    0x08c2                  STR_ETH1_OFF
+                    0x08d5                  STR_ETH2_ON
+                    0x08e7                  STR_ETH2_OFF
+                    0x08fa                  STR_ETH3_ON
+                    0x090c                  STR_ETH3_OFF
+                    0x091f                  STR_ETH_RES
+                    0x092f                  STR_ETH_MODEOFF
+                    0x0941                  STR_ETH_MODE1
+                    0x0951                  STR_ETH_MODE0
+                    0x0961                  STR_ETH_MODE2
+                    0x0971                  STR_ETH_MODE3
+                    0x0981                  STR_ETH_I2CON
+                    0x0993                  STR_ETH_I2COFF
+                    0x09a4                  STR_TEMP_ON
+                    0x09b7                  STR_TEMP_OFF
+                    0x09cb                  STR_TTEST_ON
+                    0x09e0                  STR_TTEST_OFF
+                    0x09f4                  STR_TTEST_RES
+                    0x0a0b                  STR_EE_I2CON
+                    0x0a1f                  STR_EE_I2COFF
+                    0x0a34                  STR_SKY_ON
+                    0x0a44                  STR_SKY_OFF
+                    0x0a55                  STR_IMU_ON
+                    0x0a67                  STR_IMU_OFF
+                    0x0a7a                  STR_WDT_RES
 
-.nbss               0x0a84        0xb66
- .nbss              0x0a84        0x20c build/default/production/_ext/1655478246/pic24_uart1.o
-                    0x0a84                  rx1Count
-                    0x0a86                  rx1InP
-                    0x0a88                  rx1OutP
-                    0x0a8a                  rx1Buff
-                    0x0b8a                  tx1Count
-                    0x0b8c                  tx1InP
-                    0x0b8e                  tx1OutP
-                    0x0b90                  tx1Buff
- .nbss              0x0c90        0x20c build/default/production/_ext/1655478246/pic24_uart2.o
-                    0x0c90                  rx2Count
-                    0x0c92                  rx2InP
-                    0x0c94                  rx2OutP
-                    0x0c96                  rx2Buff
-                    0x0d96                  tx2Count
-                    0x0d98                  tx2InP
-                    0x0d9a                  tx2OutP
-                    0x0d9c                  tx2Buff
- .nbss              0x0e9c        0x20c build/default/production/_ext/1655478246/pic24_uart3.o
-                    0x0e9c                  rx3Count
-                    0x0e9e                  rx3InP
-                    0x0ea0                  rx3OutP
-                    0x0ea2                  rx3Buff
-                    0x0fa2                  tx3Count
-                    0x0fa4                  tx3InP
-                    0x0fa6                  tx3OutP
-                    0x0fa8                  tx3Buff
- .nbss              0x10a8        0x20c build/default/production/_ext/1655478246/pic24_uart4.o
-                    0x10a8                  rx4Count
-                    0x10aa                  rx4InP
-                    0x10ac                  rx4OutP
-                    0x10ae                  rx4Buff
-                    0x11ae                  tx4Count
-                    0x11b0                  tx4InP
-                    0x11b2                  tx4OutP
-                    0x11b4                  tx4Buff
- .nbss              0x12b4        0x13e build/default/production/_ext/1360937237/gps_nmea.o
-                    0x12b4                  NMEAStr
- .nbss              0x13f2        0x12e build/default/production/_ext/2044256807/salvomem.o
-                    0x13f2                  OScTcbP
-                    0x13f4                  OStcbArea
-                    0x1502                  OSeligQP
-                    0x1504                  OSecbArea
-                    0x1510                  OSsigQinP
-                    0x1512                  OSsigQoutP
-                    0x1514                  OSdelayQP
-                    0x1516                  OStimerTicks
-                    0x151a                  OSlostTicks
-                    0x151c                  OSframeP
- .nbss              0x1520         0xca build/default/production/_ext/1360937237/main.o
-                    0x1520                  csk_status
-                    0x1522                  strTmp
+.nbss               0x0a8a        0xb66
+ .nbss              0x0a8a        0x20c build/default/production/_ext/1655478246/pic24_uart1.o
+                    0x0a8a                  rx1Count
+                    0x0a8c                  rx1InP
+                    0x0a8e                  rx1OutP
+                    0x0a90                  rx1Buff
+                    0x0b90                  tx1Count
+                    0x0b92                  tx1InP
+                    0x0b94                  tx1OutP
+                    0x0b96                  tx1Buff
+ .nbss              0x0c96        0x20c build/default/production/_ext/1655478246/pic24_uart2.o
+                    0x0c96                  rx2Count
+                    0x0c98                  rx2InP
+                    0x0c9a                  rx2OutP
+                    0x0c9c                  rx2Buff
+                    0x0d9c                  tx2Count
+                    0x0d9e                  tx2InP
+                    0x0da0                  tx2OutP
+                    0x0da2                  tx2Buff
+ .nbss              0x0ea2        0x20c build/default/production/_ext/1655478246/pic24_uart3.o
+                    0x0ea2                  rx3Count
+                    0x0ea4                  rx3InP
+                    0x0ea6                  rx3OutP
+                    0x0ea8                  rx3Buff
+                    0x0fa8                  tx3Count
+                    0x0faa                  tx3InP
+                    0x0fac                  tx3OutP
+                    0x0fae                  tx3Buff
+ .nbss              0x10ae        0x20c build/default/production/_ext/1655478246/pic24_uart4.o
+                    0x10ae                  rx4Count
+                    0x10b0                  rx4InP
+                    0x10b2                  rx4OutP
+                    0x10b4                  rx4Buff
+                    0x11b4                  tx4Count
+                    0x11b6                  tx4InP
+                    0x11b8                  tx4OutP
+                    0x11ba                  tx4Buff
+ .nbss              0x12ba        0x13e build/default/production/_ext/1360937237/gps_nmea.o
+                    0x12ba                  NMEAStr
+ .nbss              0x13f8        0x12e build/default/production/_ext/2044256807/salvomem.o
+                    0x13f8                  OScTcbP
+                    0x13fa                  OStcbArea
+                    0x1508                  OSeligQP
+                    0x150a                  OSecbArea
+                    0x1516                  OSsigQinP
+                    0x1518                  OSsigQoutP
+                    0x151a                  OSdelayQP
+                    0x151c                  OStimerTicks
+                    0x1520                  OSlostTicks
+                    0x1522                  OSframeP
+ .nbss              0x1526         0xca build/default/production/_ext/1360937237/main.o
+                    0x1526                  csk_status
+                    0x1528                  strTmp
 
-.ndata              0x15ea         0x4a
- .ndata             0x15ea         0x4a build/default/production/_ext/1360937237/task_supmcu_qa.o
-                    0x15ea                  STR_LED_ON
-                    0x15f6                  STR_LED_OFF
-                    0x1603                  STR_LED_FLASH
-                    0x1612                  STR_CLK_OFF
-                    0x1621                  STR_CLK_ON
+.ndata              0x15f0         0x4a
+ .ndata             0x15f0         0x4a build/default/production/_ext/1360937237/task_supmcu_qa.o
+                    0x15f0                  STR_LED_ON
+                    0x15fc                  STR_LED_OFF
+                    0x1609                  STR_LED_FLASH
+                    0x1618                  STR_CLK_OFF
+                    0x1627                  STR_CLK_ON
 
-.nbss               0x1634         0x12
- .nbss              0x1634         0x10 build/default/production/_ext/2044256807/salvotime.o
- .nbss              0x1644          0x2 build/default/production/_ext/1360937237/task_supmcu_qa.o
+.nbss               0x163a         0x12
+ .nbss              0x163a         0x10 build/default/production/_ext/2044256807/salvotime.o
+ .nbss              0x164a          0x2 build/default/production/_ext/1360937237/task_supmcu_qa.o
 
-.ndata              0x1646          0x2
- .ndata             0x1646          0x2 build/default/production/_ext/1810884970/csk_rand.o
-                    0x1646                  seed
+.ndata              0x164c          0x2
+ .ndata             0x164c          0x2 build/default/production/_ext/1810884970/csk_rand.o
+                    0x164c                  seed
 
-.data.dpowers       0x1648         0xa0
- .data.dpowers      0x1648         0xa0 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doprnt_cdnopsuxX.XXo)
+.data.dpowers       0x164e         0xa0
+ .data.dpowers      0x164e         0xa0 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doprnt_cdnopsuxX.XXo)
 
-.data               0x16e8         0x2a
- .data              0x16e8         0x2a c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doprnt_cdnopsuxX.XXo)
+.data               0x16ee         0x2a
+ .data              0x16ee         0x2a c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doprnt_cdnopsuxX.XXo)
 
-.data._iob          0x1712         0x24
- .data._iob         0x1712         0x24 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(_iob.o)
-                    0x1712                  _iob
+.data._iob          0x1718         0x24
+ .data._iob         0x1718         0x24 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(_iob.o)
+                    0x1718                  _iob
 
-.bss.fp             0x1736          0x2
- .bss.fp            0x1736          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo)
+.data._Files        0x173c          0x2
+ .data._Files       0x173c          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(_iob.o)
+                    0x173c                  _Files
 
-.data._Files        0x1738          0x2
- .data._Files       0x1738          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(_iob.o)
-                    0x1738                  _Files
+.bss._outdone       0x173e          0x2
+ .bss._outdone      0x173e          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(_iob.o)
+                    0x173e                  _outdone
 
-.bss._outdone       0x173a          0x2
- .bss._outdone      0x173a          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(_iob.o)
-                    0x173a                  _outdone
+.bss._sibuf         0x1740          0x2
+ .bss._sibuf        0x1740          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(_iob.o)
+                    0x1740                  _sibuf
 
-.bss._sibuf         0x173c          0x2
- .bss._sibuf        0x173c          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(_iob.o)
-                    0x173c                  _sibuf
+.bss._sobuf         0x1742          0x2
+ .bss._sobuf        0x1742          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(_iob.o)
+                    0x1742                  _sobuf
 
-.bss._sobuf         0x173e          0x2
- .bss._sobuf        0x173e          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(_iob.o)
-                    0x173e                  _sobuf
+.bss.fp             0x1744          0x2
+ .bss.fp            0x1744          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(doscan_cdfFnopuxX.XXo)
 
-.bss.errno          0x1740          0x2
- .bss.errno         0x1740          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(errno.o)
-                    0x1740                  errno
+.bss.errno          0x1746          0x2
+ .bss.errno         0x1746          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-coff.a(errno.o)
+                    0x1746                  errno
 
 .data.__C30_UART
-                    0x1742          0x2
+                    0x1748          0x2
  .data.__C30_UART
-                    0x1742          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(c30_uart.o)
-                    0x1742                  __C30_UART
+                    0x1748          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-coff.a(c30_uart.o)
+                    0x1748                  __C30_UART
 
 .const              0x9ff4       0x1322 load address 0x001ff4  
  .const             0x9ff4        0xad8 build/default/production/_ext/1360937237/task_bim_qa.o
@@ -3340,151 +3354,156 @@ __c30_signature
                   0x004128                  gps_update
                   0x004366                  gps_read
 
-.dinit            0x004378        0x30c
- .dinit           0x004378        0x30c data_init
+.dinit            0x004378        0x310
+ .dinit           0x004378        0x310 data_init
 
-.text             0x004684       0x17be
- .text            0x004684        0x24a build/default/production/_ext/1360937237/init.o
-                  0x004684                  init
-                  0x004768                  _T2Interrupt
-                  0x004786                  _U1TXInterrupt
-                  0x0047a2                  _U1RXInterrupt
-                  0x0047cc                  _U2TXInterrupt
-                  0x0047e8                  _U2RXInterrupt
-                  0x004822                  _U3TXInterrupt
-                  0x00483e                  _U3RXInterrupt
-                  0x004878                  _U4TXInterrupt
-                  0x004894                  _U4RXInterrupt
- .text            0x0048ce        0x1e8 build/default/production/_ext/1655478246/pic24_uart1.o
-                  0x0048ce                  uart1_open
-                  0x004902                  uart1_close
-                  0x00490a                  uart1_peek_rx
-                  0x004954                  uart1_rx_count
-                  0x00495e                  uart1_tx_free
-                  0x00496c                  uart1_getchar
-                  0x0049a8                  uart1_get_byte
-                  0x0049e6                  uart1_putchar
-                  0x004a26                  uart1_puts
-                  0x004a48                  uart1_outchar
-                  0x004a86                  uart1_inchar
- .text            0x004ab6        0x1e8 build/default/production/_ext/1655478246/pic24_uart2.o
-                  0x004ab6                  uart2_open
-                  0x004aea                  uart2_close
-                  0x004af2                  uart2_peek_rx
-                  0x004b3c                  uart2_rx_count
-                  0x004b46                  uart2_tx_free
-                  0x004b54                  uart2_getchar
-                  0x004b90                  uart2_get_byte
-                  0x004bce                  uart2_putchar
-                  0x004c0e                  uart2_puts
-                  0x004c30                  uart2_outchar
-                  0x004c6e                  uart2_inchar
- .text            0x004c9e        0x1e8 build/default/production/_ext/1655478246/pic24_uart3.o
-                  0x004c9e                  uart3_open
-                  0x004cd2                  uart3_close
-                  0x004cda                  uart3_peek_rx
-                  0x004d24                  uart3_rx_count
-                  0x004d2e                  uart3_tx_free
-                  0x004d3c                  uart3_getchar
-                  0x004d78                  uart3_get_byte
-                  0x004db6                  uart3_putchar
-                  0x004df6                  uart3_puts
-                  0x004e18                  uart3_outchar
-                  0x004e56                  uart3_inchar
- .text            0x004e86        0x1e8 build/default/production/_ext/1655478246/pic24_uart4.o
-                  0x004e86                  uart4_open
-                  0x004eba                  uart4_close
-                  0x004ec2                  uart4_peek_rx
-                  0x004f0c                  uart4_rx_count
-                  0x004f16                  uart4_tx_free
-                  0x004f24                  uart4_getchar
-                  0x004f60                  uart4_get_byte
-                  0x004f9e                  uart4_putchar
-                  0x004fde                  uart4_puts
-                  0x005000                  uart4_outchar
-                  0x00503e                  uart4_inchar
- .text            0x00506e        0x1b6 build/default/production/_ext/1360937237/task_supmcu_qa.o
-                  0x00506e                  power
-                  0x005096                  sup_led_off
-                  0x0050b0                  sup_led_on
-                  0x0050ca                  sup_led_flash
-                  0x0050e4                  sup_clk_off
-                  0x0050fe                  sup_clk_on
-                  0x005150                  task_supmcu_qa
- .text            0x005224        0x150 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosched.o)
-                  0x005224                  OSSched
- .text            0x005374        0x122 build/default/production/_ext/1360937237/task_cmd.o
-                  0x005374                  cmd_explain
-                  0x0053d6                  task_cmd_do
- .text            0x005496        0x112 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqins.o)
-                  0x005496                  OSInsPrioQ
-                  0x00550a                  OSInsDelayQ
- .text            0x0055a8         0xfc build/default/production/_ext/2044256807/salvotime.o
-                  0x0055a8                  OSElapsedTime
- .text            0x0056a4         0xe6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqdel.o)
-                  0x0056a4                  OSDelPrioQ
-                  0x005714                  OSDelDelayQ
- .text            0x00578a         0xd8 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoevent.o)
-                  0x00578a                  OSWaitEvent
- .text            0x005862         0xc4 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosem.o)
-                  0x005862                  OSCreateSem
-                  0x005884                  OSWaitSem
-                  0x0058bc                  OSSignalSem
- .text            0x005926         0x86 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoinit2.o)
-                  0x005926                  OSCreateTask
-                  0x00597c                  OSInitPrioTask
- .text            0x0059ac         0x7e build/default/production/_ext/1810884970/csk_mhx.o
-                  0x0059ac                  csk_mhx_open
-                  0x0059d8                  csk_mhx_close
-                  0x005a00                  csk_mhx_pwr_on
-                  0x005a16                  csk_mhx_pwr_off
- .text            0x005a2a         0x6c build/default/production/_ext/1810884970/csk_power.o
-                  0x005a2a                  csk_power_shutdown
- .text            0x005a96         0x64 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvodelay.o)
-                  0x005a96                  OSDelay
- .text            0x005afa         0x5e build/default/production/_ext/1810884970/csk_usb.o
-                  0x005afa                  csk_usb_open
-                  0x005b26                  csk_usb_close
-                  0x005b4e                  csk_usb_present
- .text            0x005b58         0x4e C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoportmcc30.o)
-                  0x005b58                  OSDispatch
-                  0x005b7c                  OSCtxSw
-                  0x005b98                  OSReturn
- .text            0x005ba6         0x48 build/default/production/_ext/1810884970/csk_led.o
-                  0x005ba6                  csk_led_status_open
-                  0x005bbc                  csk_led_status_close
-                  0x005bd2                  csk_led_status_on
-                  0x005be0                  csk_led_status_off
- .text            0x005bee         0x42 build/default/production/_ext/1655478246/pic24_uart1_msg_hhmmsstt.o
-                  0x005bee                  uart1_msg_hhmmsstt
- .text            0x005c30         0x42 build/default/production/_ext/1655478246/pic24_uart2_msg_hhmmsstt.o
-                  0x005c30                  uart2_msg_hhmmsstt
- .text            0x005c72         0x42 build/default/production/_ext/1655478246/pic24_uart3_msg_hhmmsstt.o
-                  0x005c72                  uart4_msg_hhmmsstt
- .text            0x005cb4         0x42 build/default/production/_ext/1655478246/pic24_uart4_msg_hhmmsstt.o
-                  0x005cb4                  uart3_msg_hhmmsstt
- .text            0x005cf6         0x36 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask.o)
-                  0x005cf6                  OSStartTask
- .text            0x005d2c         0x32 build/default/production/_ext/1360937237/main.o
-                  0x005d2c                  main
- .text            0x005d5e         0x2a build/default/production/_ext/1810884970/csk_rand.o
-                  0x005d5e                  csk_rand
- .text            0x005d88         0x2a C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotimer.o)
-                  0x005d88                  OSTimer
- .text            0x005db2         0x24 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoinit.o)
-                  0x005db2                  OSInit
- .text            0x005dd6         0x24 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotick.o)
-                  0x005dd6                  OSGetTicks
-                  0x005de8                  OSSetTicks
- .text            0x005dfa         0x18 build/default/production/_ext/1360937237/task_5sec.o
-                  0x005dfa                  task_5sec
- .text            0x005e12         0x12 build/default/production/_ext/1810884970/csk_wdt.o
-                  0x005e12                  csk_wdt_force
-                  0x005e1a                  csk_wdt_off
- .text            0x005e24         0x10 build/default/production/_ext/1297474772/salvohook_interrupt_MCC30_IRQ.o
-                  0x005e24                  OSDisableHook
-                  0x005e2c                  OSEnableHook
- .text            0x005e34          0x8 build/default/production/_ext/1297474772/salvohook_wdt.o
-                  0x005e34                  OSClrWDTHook
- .text            0x005e3c          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvohook_idle.o)
-                  0x005e3c                  OSIdlingHook
+.text             0x004688       0x18c8
+ .text            0x004688        0x208 build/default/production/_ext/1360937237/init.o
+                  0x004688                  init
+                  0x00476c                  _T2Interrupt
+                  0x00478a                  _U1TXInterrupt
+                  0x0047a6                  _U1RXInterrupt
+                  0x0047d0                  _U2TXInterrupt
+                  0x0047ec                  _U2RXInterrupt
+                  0x004810                  _U3RXInterrupt
+                  0x004834                  _U3TXInterrupt
+                  0x004850                  _U4TXInterrupt
+                  0x00486c                  _U4RXInterrupt
+ .text            0x004890        0x1e8 build/default/production/_ext/1655478246/pic24_uart1.o
+                  0x004890                  uart1_open
+                  0x0048c4                  uart1_close
+                  0x0048cc                  uart1_peek_rx
+                  0x004916                  uart1_rx_count
+                  0x004920                  uart1_tx_free
+                  0x00492e                  uart1_getchar
+                  0x00496a                  uart1_get_byte
+                  0x0049a8                  uart1_putchar
+                  0x0049e8                  uart1_puts
+                  0x004a0a                  uart1_outchar
+                  0x004a48                  uart1_inchar
+ .text            0x004a78        0x1e8 build/default/production/_ext/1655478246/pic24_uart2.o
+                  0x004a78                  uart2_open
+                  0x004aac                  uart2_close
+                  0x004ab4                  uart2_peek_rx
+                  0x004afe                  uart2_rx_count
+                  0x004b08                  uart2_tx_free
+                  0x004b16                  uart2_getchar
+                  0x004b52                  uart2_get_byte
+                  0x004b90                  uart2_putchar
+                  0x004bd0                  uart2_puts
+                  0x004bf2                  uart2_outchar
+                  0x004c30                  uart2_inchar
+ .text            0x004c60        0x1e8 build/default/production/_ext/1655478246/pic24_uart3.o
+                  0x004c60                  uart3_open
+                  0x004c94                  uart3_close
+                  0x004c9c                  uart3_peek_rx
+                  0x004ce6                  uart3_rx_count
+                  0x004cf0                  uart3_tx_free
+                  0x004cfe                  uart3_getchar
+                  0x004d3a                  uart3_get_byte
+                  0x004d78                  uart3_putchar
+                  0x004db8                  uart3_puts
+                  0x004dda                  uart3_outchar
+                  0x004e18                  uart3_inchar
+ .text            0x004e48        0x1e8 build/default/production/_ext/1655478246/pic24_uart4.o
+                  0x004e48                  uart4_open
+                  0x004e7c                  uart4_close
+                  0x004e84                  uart4_peek_rx
+                  0x004ece                  uart4_rx_count
+                  0x004ed8                  uart4_tx_free
+                  0x004ee6                  uart4_getchar
+                  0x004f22                  uart4_get_byte
+                  0x004f60                  uart4_putchar
+                  0x004fa0                  uart4_puts
+                  0x004fc2                  uart4_outchar
+                  0x005000                  uart4_inchar
+ .text            0x005030        0x1c6 build/default/production/_ext/1360937237/task_supmcu_qa.o
+                  0x005030                  power
+                  0x005058                  sup_led_off
+                  0x005072                  sup_led_on
+                  0x00508c                  sup_led_flash
+                  0x0050a6                  sup_clk_off
+                  0x0050c0                  sup_clk_on
+                  0x005112                  task_supmcu_qa
+ .text            0x0051f6        0x1a0 build/default/production/_ext/1360937237/task_cmd.o
+                  0x0051f6                  cmd_explain
+                  0x005258                  task_cmd_do
+ .text            0x005396        0x150 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosched.o)
+                  0x005396                  OSSched
+ .text            0x0054e6        0x112 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqins.o)
+                  0x0054e6                  OSInsPrioQ
+                  0x00555a                  OSInsDelayQ
+ .text            0x0055f8         0xfc build/default/production/_ext/2044256807/salvotime.o
+                  0x0055f8                  OSElapsedTime
+ .text            0x0056f4         0xe6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqdel.o)
+                  0x0056f4                  OSDelPrioQ
+                  0x005764                  OSDelDelayQ
+ .text            0x0057da         0xd8 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoevent.o)
+                  0x0057da                  OSWaitEvent
+ .text            0x0058b2         0xc4 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosem.o)
+                  0x0058b2                  OSCreateSem
+                  0x0058d4                  OSWaitSem
+                  0x00590c                  OSSignalSem
+ .text            0x005976         0x8e C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask7.o)
+                  0x005976                  OSTaskUsed
+                  0x0059ac                  OSDelTaskQ
+ .text            0x005a04         0x86 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoinit2.o)
+                  0x005a04                  OSCreateTask
+                  0x005a5a                  OSInitPrioTask
+ .text            0x005a8a         0x7e build/default/production/_ext/1810884970/csk_mhx.o
+                  0x005a8a                  csk_mhx_open
+                  0x005ab6                  csk_mhx_close
+                  0x005ade                  csk_mhx_pwr_on
+                  0x005af4                  csk_mhx_pwr_off
+ .text            0x005b08         0x6c build/default/production/_ext/1810884970/csk_power.o
+                  0x005b08                  csk_power_shutdown
+ .text            0x005b74         0x64 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvodelay.o)
+                  0x005b74                  OSDelay
+ .text            0x005bd8         0x5e build/default/production/_ext/1810884970/csk_usb.o
+                  0x005bd8                  csk_usb_open
+                  0x005c04                  csk_usb_close
+                  0x005c2c                  csk_usb_present
+ .text            0x005c36         0x4e C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoportmcc30.o)
+                  0x005c36                  OSDispatch
+                  0x005c5a                  OSCtxSw
+                  0x005c76                  OSReturn
+ .text            0x005c84         0x48 build/default/production/_ext/1810884970/csk_led.o
+                  0x005c84                  csk_led_status_open
+                  0x005c9a                  csk_led_status_close
+                  0x005cb0                  csk_led_status_on
+                  0x005cbe                  csk_led_status_off
+ .text            0x005ccc         0x42 build/default/production/_ext/1655478246/pic24_uart1_msg_hhmmsstt.o
+                  0x005ccc                  uart1_msg_hhmmsstt
+ .text            0x005d0e         0x42 build/default/production/_ext/1655478246/pic24_uart2_msg_hhmmsstt.o
+                  0x005d0e                  uart2_msg_hhmmsstt
+ .text            0x005d50         0x42 build/default/production/_ext/1655478246/pic24_uart3_msg_hhmmsstt.o
+                  0x005d50                  uart4_msg_hhmmsstt
+ .text            0x005d92         0x42 build/default/production/_ext/1655478246/pic24_uart4_msg_hhmmsstt.o
+                  0x005d92                  uart3_msg_hhmmsstt
+ .text            0x005dd4         0x36 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask.o)
+                  0x005dd4                  OSStartTask
+ .text            0x005e0a         0x32 build/default/production/_ext/1360937237/main.o
+                  0x005e0a                  main
+ .text            0x005e3c         0x30 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask2.o)
+                  0x005e3c                  OSStopTask
+ .text            0x005e6c         0x2a build/default/production/_ext/1810884970/csk_rand.o
+                  0x005e6c                  csk_rand
+ .text            0x005e96         0x2a C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotimer.o)
+                  0x005e96                  OSTimer
+ .text            0x005ec0         0x24 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoinit.o)
+                  0x005ec0                  OSInit
+ .text            0x005ee4         0x24 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotick.o)
+                  0x005ee4                  OSGetTicks
+                  0x005ef6                  OSSetTicks
+ .text            0x005f08         0x18 build/default/production/_ext/1360937237/task_5sec.o
+                  0x005f08                  task_5sec
+ .text            0x005f20         0x12 build/default/production/_ext/1810884970/csk_wdt.o
+                  0x005f20                  csk_wdt_force
+                  0x005f28                  csk_wdt_off
+ .text            0x005f32         0x10 build/default/production/_ext/1297474772/salvohook_interrupt_MCC30_IRQ.o
+                  0x005f32                  OSDisableHook
+                  0x005f3a                  OSEnableHook
+ .text            0x005f42          0x8 build/default/production/_ext/1297474772/salvohook_wdt.o
+                  0x005f42                  OSClrWDTHook
+ .text            0x005f4a          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvohook_idle.o)
+                  0x005f4a                  OSIdlingHook

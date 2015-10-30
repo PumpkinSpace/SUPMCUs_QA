@@ -16,7 +16,7 @@ $Date: 2011-09-17 22:12:29-07 $
 ******************************************************************************/
 #ifndef __main_h
 #define __main_h
-
+//#define STR_APP_NAME   "Test & Validation software"
 
 // Symbols, etc.
 #if defined(SUPMCU_GPSRM1_REVA) \

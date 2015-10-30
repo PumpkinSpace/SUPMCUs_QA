@@ -318,9 +318,9 @@ section                    address   length (PC units)   length (bytes) (dec)
 .const                      0x2b84               0xf08          0x168c  (5772)
 .text                       0x3a8c               0x95c           0xe0a  (3594)
 .dinit                      0x43e8               0x360           0x510  (1296)
-.text                       0x4748              0x1b0a          0x288f  (10383)
+.text                       0x4748              0x1b1a          0x28a7  (10407)
 
-                     Total program memory used (bytes):         0x907b  (36987) 14%
+                     Total program memory used (bytes):         0x9093  (37011) 14%
 
 
 Data Memory  [Origin = 0x800, Length = 0x4000]
@@ -758,8 +758,8 @@ External Symbols in Program Memory (by address):
                   0x004866                  __U1RXInterrupt
                   0x004890                  __U2TXInterrupt
                   0x0048ac                  __U2RXInterrupt
-                  0x0048e6                  __U3TXInterrupt
-                  0x004902                  __U3RXInterrupt
+                  0x0048e6                  __U3RXInterrupt
+                  0x004920                  __U3TXInterrupt
                   0x00493c                  __U4TXInterrupt
                   0x004958                  __U4RXInterrupt
                   0x004992                  _gps_led_gps
@@ -823,57 +823,57 @@ External Symbols in Program Memory (by address):
                   0x00539a                  _sup_clk_off
                   0x0053b4                  _sup_clk_on
                   0x005406                  _task_supmcu_qa
-                  0x0054da                  _OSSched
-                  0x00562a                  _cmd_explain
-                  0x00568c                  _task_cmd_do
-                  0x00574c                  _OSInsPrioQ
-                  0x0057c0                  _OSInsDelayQ
-                  0x00585e                  _OSElapsedTime
-                  0x00595a                  _OSDelPrioQ
-                  0x0059ca                  _OSDelDelayQ
-                  0x005a40                  _task_monitor
-                  0x005b24                  _OSWaitEvent
-                  0x005bfc                  _OSCreateSem
-                  0x005c1e                  _OSWaitSem
-                  0x005c56                  _OSSignalSem
-                  0x005cc0                  _OSCreateTask
-                  0x005d16                  _OSInitPrioTask
-                  0x005d46                  _csk_mhx_open
-                  0x005d72                  _csk_mhx_close
-                  0x005d9a                  _csk_mhx_pwr_on
-                  0x005db0                  _csk_mhx_pwr_off
-                  0x005dc4                  _new_prop_Vinti
-                  0x005dde                  _task_new
-                  0x005e3a                  _csk_power_shutdown
-                  0x005ea6                  _OSDelay
-                  0x005f0a                  _csk_usb_open
-                  0x005f36                  _csk_usb_close
-                  0x005f5e                  _csk_usb_present
-                  0x005f68                  _OSDispatch
-                  0x005f8c                  _OSCtxSw
-                  0x005fa8                  _OSReturn
-                  0x005fb6                  _csk_led_status_open
-                  0x005fcc                  _csk_led_status_close
-                  0x005fe2                  _csk_led_status_on
-                  0x005ff0                  _csk_led_status_off
-                  0x005ffe                  _uart1_msg_hhmmsstt
-                  0x006040                  _uart2_msg_hhmmsstt
-                  0x006082                  _uart4_msg_hhmmsstt
-                  0x0060c4                  _uart3_msg_hhmmsstt
-                  0x006106                  _OSStartTask
-                  0x00613c                  _main
-                  0x00616e                  _csk_rand
-                  0x006198                  _OSTimer
-                  0x0061c2                  _OSInit
-                  0x0061e6                  _OSGetTicks
-                  0x0061f8                  _OSSetTicks
-                  0x00620a                  _task_5sec
-                  0x006222                  _csk_wdt_force
-                  0x00622a                  _csk_wdt_off
-                  0x006234                  _OSDisableHook
-                  0x00623c                  _OSEnableHook
-                  0x006244                  _OSClrWDTHook
-                  0x00624c                  _OSIdlingHook
+                  0x0054ea                  _OSSched
+                  0x00563a                  _cmd_explain
+                  0x00569c                  _task_cmd_do
+                  0x00575c                  _OSInsPrioQ
+                  0x0057d0                  _OSInsDelayQ
+                  0x00586e                  _OSElapsedTime
+                  0x00596a                  _OSDelPrioQ
+                  0x0059da                  _OSDelDelayQ
+                  0x005a50                  _task_monitor
+                  0x005b34                  _OSWaitEvent
+                  0x005c0c                  _OSCreateSem
+                  0x005c2e                  _OSWaitSem
+                  0x005c66                  _OSSignalSem
+                  0x005cd0                  _OSCreateTask
+                  0x005d26                  _OSInitPrioTask
+                  0x005d56                  _csk_mhx_open
+                  0x005d82                  _csk_mhx_close
+                  0x005daa                  _csk_mhx_pwr_on
+                  0x005dc0                  _csk_mhx_pwr_off
+                  0x005dd4                  _new_prop_Vinti
+                  0x005dee                  _task_new
+                  0x005e4a                  _csk_power_shutdown
+                  0x005eb6                  _OSDelay
+                  0x005f1a                  _csk_usb_open
+                  0x005f46                  _csk_usb_close
+                  0x005f6e                  _csk_usb_present
+                  0x005f78                  _OSDispatch
+                  0x005f9c                  _OSCtxSw
+                  0x005fb8                  _OSReturn
+                  0x005fc6                  _csk_led_status_open
+                  0x005fdc                  _csk_led_status_close
+                  0x005ff2                  _csk_led_status_on
+                  0x006000                  _csk_led_status_off
+                  0x00600e                  _uart1_msg_hhmmsstt
+                  0x006050                  _uart2_msg_hhmmsstt
+                  0x006092                  _uart4_msg_hhmmsstt
+                  0x0060d4                  _uart3_msg_hhmmsstt
+                  0x006116                  _OSStartTask
+                  0x00614c                  _main
+                  0x00617e                  _csk_rand
+                  0x0061a8                  _OSTimer
+                  0x0061d2                  _OSInit
+                  0x0061f6                  _OSGetTicks
+                  0x006208                  _OSSetTicks
+                  0x00621a                  _task_5sec
+                  0x006232                  _csk_wdt_force
+                  0x00623a                  _csk_wdt_off
+                  0x006244                  _OSDisableHook
+                  0x00624c                  _OSEnableHook
+                  0x006254                  _OSClrWDTHook
+                  0x00625c                  _OSIdlingHook
 
 External Symbols in Program Memory (by name):
 
@@ -898,31 +898,31 @@ External Symbols in Program Memory (by name):
                   0x00104a                  _IdleI2C1
                   0x001084                  _MasterWriteI2C1
                   0x0010ac                  _MastergetsI2C1
-                  0x006244                  _OSClrWDTHook
-                  0x005bfc                  _OSCreateSem
-                  0x005cc0                  _OSCreateTask
-                  0x005f8c                  _OSCtxSw
-                  0x0059ca                  _OSDelDelayQ
-                  0x00595a                  _OSDelPrioQ
-                  0x005ea6                  _OSDelay
-                  0x006234                  _OSDisableHook
-                  0x005f68                  _OSDispatch
-                  0x00585e                  _OSElapsedTime
-                  0x00623c                  _OSEnableHook
-                  0x0061e6                  _OSGetTicks
-                  0x00624c                  _OSIdlingHook
-                  0x0061c2                  _OSInit
-                  0x005d16                  _OSInitPrioTask
-                  0x0057c0                  _OSInsDelayQ
-                  0x00574c                  _OSInsPrioQ
-                  0x005fa8                  _OSReturn
-                  0x0054da                  _OSSched
-                  0x0061f8                  _OSSetTicks
-                  0x005c56                  _OSSignalSem
-                  0x006106                  _OSStartTask
-                  0x006198                  _OSTimer
-                  0x005b24                  _OSWaitEvent
-                  0x005c1e                  _OSWaitSem
+                  0x006254                  _OSClrWDTHook
+                  0x005c0c                  _OSCreateSem
+                  0x005cd0                  _OSCreateTask
+                  0x005f9c                  _OSCtxSw
+                  0x0059da                  _OSDelDelayQ
+                  0x00596a                  _OSDelPrioQ
+                  0x005eb6                  _OSDelay
+                  0x006244                  _OSDisableHook
+                  0x005f78                  _OSDispatch
+                  0x00586e                  _OSElapsedTime
+                  0x00624c                  _OSEnableHook
+                  0x0061f6                  _OSGetTicks
+                  0x00625c                  _OSIdlingHook
+                  0x0061d2                  _OSInit
+                  0x005d26                  _OSInitPrioTask
+                  0x0057d0                  _OSInsDelayQ
+                  0x00575c                  _OSInsPrioQ
+                  0x005fb8                  _OSReturn
+                  0x0054ea                  _OSSched
+                  0x006208                  _OSSetTicks
+                  0x005c66                  _OSSignalSem
+                  0x006116                  _OSStartTask
+                  0x0061a8                  _OSTimer
+                  0x005b34                  _OSWaitEvent
+                  0x005c2e                  _OSWaitSem
                   0x001030                  _OpenI2C1
                   0x000f32                  _OpenTimer2
                   0x0011c2                  _OpenUART1
@@ -946,8 +946,8 @@ External Symbols in Program Memory (by name):
                   0x00484a                  __U1TXInterrupt
                   0x0048ac                  __U2RXInterrupt
                   0x004890                  __U2TXInterrupt
-                  0x004902                  __U3RXInterrupt
-                  0x0048e6                  __U3TXInterrupt
+                  0x0048e6                  __U3RXInterrupt
+                  0x004920                  __U3TXInterrupt
                   0x004958                  __U4RXInterrupt
                   0x00493c                  __U4TXInterrupt
                   0x000888                  ___adddf3
@@ -1017,7 +1017,7 @@ External Symbols in Program Memory (by name):
                   0x0015e2                  __vfscanf_cdfFnopuxX
                   0x0029ce                  _atof
                   0x0029d2                  _atoi
-                  0x00562a                  _cmd_explain
+                  0x00563a                  _cmd_explain
                   0x003a8c                  _csk_io0_high
                   0x003a9a                  _csk_io0_low
                   0x003b9e                  _csk_io10_high
@@ -1114,21 +1114,21 @@ External Symbols in Program Memory (by name):
                   0x003b74                  _csk_io8_low
                   0x003b82                  _csk_io9_high
                   0x003b90                  _csk_io9_low
-                  0x005fcc                  _csk_led_status_close
-                  0x005ff0                  _csk_led_status_off
-                  0x005fe2                  _csk_led_status_on
-                  0x005fb6                  _csk_led_status_open
-                  0x005d72                  _csk_mhx_close
-                  0x005d46                  _csk_mhx_open
-                  0x005db0                  _csk_mhx_pwr_off
-                  0x005d9a                  _csk_mhx_pwr_on
-                  0x005e3a                  _csk_power_shutdown
-                  0x00616e                  _csk_rand
-                  0x005f36                  _csk_usb_close
-                  0x005f0a                  _csk_usb_open
-                  0x005f5e                  _csk_usb_present
-                  0x006222                  _csk_wdt_force
-                  0x00622a                  _csk_wdt_off
+                  0x005fdc                  _csk_led_status_close
+                  0x006000                  _csk_led_status_off
+                  0x005ff2                  _csk_led_status_on
+                  0x005fc6                  _csk_led_status_open
+                  0x005d82                  _csk_mhx_close
+                  0x005d56                  _csk_mhx_open
+                  0x005dc0                  _csk_mhx_pwr_off
+                  0x005daa                  _csk_mhx_pwr_on
+                  0x005e4a                  _csk_power_shutdown
+                  0x00617e                  _csk_rand
+                  0x005f46                  _csk_usb_close
+                  0x005f1a                  _csk_usb_open
+                  0x005f6e                  _csk_usb_present
+                  0x006232                  _csk_wdt_force
+                  0x00623a                  _csk_wdt_off
                   0x002b30                  _fflush
                   0x00273a                  _fgetc
                   0x001506                  _fputs
@@ -1158,9 +1158,9 @@ External Symbols in Program Memory (by name):
                   0x00037a                  _isalpha
                   0x00035e                  _isspace
                   0x00036e                  _isupper
-                  0x00613c                  _main
+                  0x00614c                  _main
                   0x001562                  _memcpy
-                  0x005dc4                  _new_prop_Vinti
+                  0x005dd4                  _new_prop_Vinti
                   0x005324                  _power
                   0x001522                  _puts
                   0x001570                  _strlen
@@ -1172,18 +1172,18 @@ External Symbols in Program Memory (by name):
                   0x005380                  _sup_led_flash
                   0x00534c                  _sup_led_off
                   0x005366                  _sup_led_on
-                  0x00620a                  _task_5sec
-                  0x00568c                  _task_cmd_do
+                  0x00621a                  _task_5sec
+                  0x00569c                  _task_cmd_do
                   0x004a84                  _task_gps_qa
-                  0x005a40                  _task_monitor
-                  0x005dde                  _task_new
+                  0x005a50                  _task_monitor
+                  0x005dee                  _task_new
                   0x005406                  _task_supmcu_qa
                   0x000350                  _tolower
                   0x004bb8                  _uart1_close
                   0x004c5e                  _uart1_get_byte
                   0x004c22                  _uart1_getchar
                   0x004d3c                  _uart1_inchar
-                  0x005ffe                  _uart1_msg_hhmmsstt
+                  0x00600e                  _uart1_msg_hhmmsstt
                   0x004b84                  _uart1_open
                   0x004cfe                  _uart1_outchar
                   0x004bc0                  _uart1_peek_rx
@@ -1195,7 +1195,7 @@ External Symbols in Program Memory (by name):
                   0x004e46                  _uart2_get_byte
                   0x004e0a                  _uart2_getchar
                   0x004f24                  _uart2_inchar
-                  0x006040                  _uart2_msg_hhmmsstt
+                  0x006050                  _uart2_msg_hhmmsstt
                   0x004d6c                  _uart2_open
                   0x004ee6                  _uart2_outchar
                   0x004da8                  _uart2_peek_rx
@@ -1207,7 +1207,7 @@ External Symbols in Program Memory (by name):
                   0x00502e                  _uart3_get_byte
                   0x004ff2                  _uart3_getchar
                   0x00510c                  _uart3_inchar
-                  0x0060c4                  _uart3_msg_hhmmsstt
+                  0x0060d4                  _uart3_msg_hhmmsstt
                   0x004f54                  _uart3_open
                   0x0050ce                  _uart3_outchar
                   0x004f90                  _uart3_peek_rx
@@ -1219,7 +1219,7 @@ External Symbols in Program Memory (by name):
                   0x005216                  _uart4_get_byte
                   0x0051da                  _uart4_getchar
                   0x0052f4                  _uart4_inchar
-                  0x006082                  _uart4_msg_hhmmsstt
+                  0x006092                  _uart4_msg_hhmmsstt
                   0x00513c                  _uart4_open
                   0x0052b6                  _uart4_outchar
                   0x005178                  _uart4_peek_rx
@@ -1683,8 +1683,8 @@ __CONFIG1         0x02abfe          0x2
                   0x0000b2          0x4 LONG 0x34c DEFINED (__Interrupt79)?ABSOLUTE (__Interrupt79):ABSOLUTE (__DefaultInterrupt)
                   0x0000b4          0x4 LONG 0x34c DEFINED (__Interrupt80)?ABSOLUTE (__Interrupt80):ABSOLUTE (__DefaultInterrupt)
                   0x0000b6          0x4 LONG 0x34c DEFINED (__U3ErrInterrupt)?ABSOLUTE (__U3ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000b8          0x4 LONG 0x4902 DEFINED (__U3RXInterrupt)?ABSOLUTE (__U3RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000ba          0x4 LONG 0x48e6 DEFINED (__U3TXInterrupt)?ABSOLUTE (__U3TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000b8          0x4 LONG 0x48e6 DEFINED (__U3RXInterrupt)?ABSOLUTE (__U3RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000ba          0x4 LONG 0x4920 DEFINED (__U3TXInterrupt)?ABSOLUTE (__U3TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000bc          0x4 LONG 0x34c DEFINED (__SI2C3Interrupt)?ABSOLUTE (__SI2C3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000be          0x4 LONG 0x34c DEFINED (__MI2C3Interrupt)?ABSOLUTE (__MI2C3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000c0          0x4 LONG 0x34c DEFINED (__Interrupt86)?ABSOLUTE (__Interrupt86):ABSOLUTE (__DefaultInterrupt)
@@ -1811,8 +1811,8 @@ __CONFIG1         0x02abfe          0x2
                   0x0001b2          0x4 LONG 0x34c DEFINED (__AltInterrupt79)?ABSOLUTE (__AltInterrupt79):DEFINED (__Interrupt79)?ABSOLUTE (__Interrupt79):ABSOLUTE (__DefaultInterrupt)
                   0x0001b4          0x4 LONG 0x34c DEFINED (__AltInterrupt80)?ABSOLUTE (__AltInterrupt80):DEFINED (__Interrupt80)?ABSOLUTE (__Interrupt80):ABSOLUTE (__DefaultInterrupt)
                   0x0001b6          0x4 LONG 0x34c DEFINED (__AltU3ErrInterrupt)?ABSOLUTE (__AltU3ErrInterrupt):DEFINED (__U3ErrInterrupt)?ABSOLUTE (__U3ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0001b8          0x4 LONG 0x4902 DEFINED (__AltU3RXInterrupt)?ABSOLUTE (__AltU3RXInterrupt):DEFINED (__U3RXInterrupt)?ABSOLUTE (__U3RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0001ba          0x4 LONG 0x48e6 DEFINED (__AltU3TXInterrupt)?ABSOLUTE (__AltU3TXInterrupt):DEFINED (__U3TXInterrupt)?ABSOLUTE (__U3TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0001b8          0x4 LONG 0x48e6 DEFINED (__AltU3RXInterrupt)?ABSOLUTE (__AltU3RXInterrupt):DEFINED (__U3RXInterrupt)?ABSOLUTE (__U3RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0001ba          0x4 LONG 0x4920 DEFINED (__AltU3TXInterrupt)?ABSOLUTE (__AltU3TXInterrupt):DEFINED (__U3TXInterrupt)?ABSOLUTE (__U3TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001bc          0x4 LONG 0x34c DEFINED (__AltSI2C3Interrupt)?ABSOLUTE (__AltSI2C3Interrupt):DEFINED (__SI2C3Interrupt)?ABSOLUTE (__SI2C3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001be          0x4 LONG 0x34c DEFINED (__AltMI2C3Interrupt)?ABSOLUTE (__AltMI2C3Interrupt):DEFINED (__MI2C3Interrupt)?ABSOLUTE (__MI2C3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001c0          0x4 LONG 0x34c DEFINED (__AltInterrupt86)?ABSOLUTE (__AltInterrupt86):DEFINED (__Interrupt86)?ABSOLUTE (__Interrupt86):ABSOLUTE (__DefaultInterrupt)
@@ -3397,7 +3397,7 @@ __c30_signature
 .dinit            0x0043e8        0x360
  .dinit           0x0043e8        0x360 data_init
 
-.text             0x004748       0x1b0a
+.text             0x004748       0x1b1a
  .text            0x004748        0x24a build/default/production/_ext/1360937237/init.o
                   0x004748                  init
                   0x00482c                  _T2Interrupt
@@ -3405,8 +3405,8 @@ __c30_signature
                   0x004866                  _U1RXInterrupt
                   0x004890                  _U2TXInterrupt
                   0x0048ac                  _U2RXInterrupt
-                  0x0048e6                  _U3TXInterrupt
-                  0x004902                  _U3RXInterrupt
+                  0x0048e6                  _U3RXInterrupt
+                  0x004920                  _U3TXInterrupt
                   0x00493c                  _U4TXInterrupt
                   0x004958                  _U4RXInterrupt
  .text            0x004992        0x1f2 build/default/production/_ext/1360937237/task_gps_qa.o
@@ -3468,7 +3468,7 @@ __c30_signature
                   0x005294                  uart4_puts
                   0x0052b6                  uart4_outchar
                   0x0052f4                  uart4_inchar
- .text            0x005324        0x1b6 build/default/production/_ext/1360937237/task_supmcu_qa.o
+ .text            0x005324        0x1c6 build/default/production/_ext/1360937237/task_supmcu_qa.o
                   0x005324                  power
                   0x00534c                  sup_led_off
                   0x005366                  sup_led_on
@@ -3476,85 +3476,85 @@ __c30_signature
                   0x00539a                  sup_clk_off
                   0x0053b4                  sup_clk_on
                   0x005406                  task_supmcu_qa
- .text            0x0054da        0x150 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosched.o)
-                  0x0054da                  OSSched
- .text            0x00562a        0x122 build/default/production/_ext/1360937237/task_cmd.o
-                  0x00562a                  cmd_explain
-                  0x00568c                  task_cmd_do
- .text            0x00574c        0x112 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqins.o)
-                  0x00574c                  OSInsPrioQ
-                  0x0057c0                  OSInsDelayQ
- .text            0x00585e         0xfc build/default/production/_ext/2044256807/salvotime.o
-                  0x00585e                  OSElapsedTime
- .text            0x00595a         0xe6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqdel.o)
-                  0x00595a                  OSDelPrioQ
-                  0x0059ca                  OSDelDelayQ
- .text            0x005a40         0xe4 build/default/production/_ext/1360937237/task_monitor.o
-                  0x005a40                  task_monitor
- .text            0x005b24         0xd8 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoevent.o)
-                  0x005b24                  OSWaitEvent
- .text            0x005bfc         0xc4 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosem.o)
-                  0x005bfc                  OSCreateSem
-                  0x005c1e                  OSWaitSem
-                  0x005c56                  OSSignalSem
- .text            0x005cc0         0x86 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoinit2.o)
-                  0x005cc0                  OSCreateTask
-                  0x005d16                  OSInitPrioTask
- .text            0x005d46         0x7e build/default/production/_ext/1810884970/csk_mhx.o
-                  0x005d46                  csk_mhx_open
-                  0x005d72                  csk_mhx_close
-                  0x005d9a                  csk_mhx_pwr_on
-                  0x005db0                  csk_mhx_pwr_off
- .text            0x005dc4         0x76 build/default/production/_ext/1360937237/task_new.o
-                  0x005dc4                  new_prop_Vinti
-                  0x005dde                  task_new
- .text            0x005e3a         0x6c build/default/production/_ext/1810884970/csk_power.o
-                  0x005e3a                  csk_power_shutdown
- .text            0x005ea6         0x64 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvodelay.o)
-                  0x005ea6                  OSDelay
- .text            0x005f0a         0x5e build/default/production/_ext/1810884970/csk_usb.o
-                  0x005f0a                  csk_usb_open
-                  0x005f36                  csk_usb_close
-                  0x005f5e                  csk_usb_present
- .text            0x005f68         0x4e C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoportmcc30.o)
-                  0x005f68                  OSDispatch
-                  0x005f8c                  OSCtxSw
-                  0x005fa8                  OSReturn
- .text            0x005fb6         0x48 build/default/production/_ext/1810884970/csk_led.o
-                  0x005fb6                  csk_led_status_open
-                  0x005fcc                  csk_led_status_close
-                  0x005fe2                  csk_led_status_on
-                  0x005ff0                  csk_led_status_off
- .text            0x005ffe         0x42 build/default/production/_ext/1655478246/pic24_uart1_msg_hhmmsstt.o
-                  0x005ffe                  uart1_msg_hhmmsstt
- .text            0x006040         0x42 build/default/production/_ext/1655478246/pic24_uart2_msg_hhmmsstt.o
-                  0x006040                  uart2_msg_hhmmsstt
- .text            0x006082         0x42 build/default/production/_ext/1655478246/pic24_uart3_msg_hhmmsstt.o
-                  0x006082                  uart4_msg_hhmmsstt
- .text            0x0060c4         0x42 build/default/production/_ext/1655478246/pic24_uart4_msg_hhmmsstt.o
-                  0x0060c4                  uart3_msg_hhmmsstt
- .text            0x006106         0x36 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask.o)
-                  0x006106                  OSStartTask
- .text            0x00613c         0x32 build/default/production/_ext/1360937237/main.o
-                  0x00613c                  main
- .text            0x00616e         0x2a build/default/production/_ext/1810884970/csk_rand.o
-                  0x00616e                  csk_rand
- .text            0x006198         0x2a C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotimer.o)
-                  0x006198                  OSTimer
- .text            0x0061c2         0x24 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoinit.o)
-                  0x0061c2                  OSInit
- .text            0x0061e6         0x24 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotick.o)
-                  0x0061e6                  OSGetTicks
-                  0x0061f8                  OSSetTicks
- .text            0x00620a         0x18 build/default/production/_ext/1360937237/task_5sec.o
-                  0x00620a                  task_5sec
- .text            0x006222         0x12 build/default/production/_ext/1810884970/csk_wdt.o
-                  0x006222                  csk_wdt_force
-                  0x00622a                  csk_wdt_off
- .text            0x006234         0x10 build/default/production/_ext/1297474772/salvohook_interrupt_MCC30_IRQ.o
-                  0x006234                  OSDisableHook
-                  0x00623c                  OSEnableHook
- .text            0x006244          0x8 build/default/production/_ext/1297474772/salvohook_wdt_MCC30_clrwdt.o
-                  0x006244                  OSClrWDTHook
- .text            0x00624c          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvohook_idle.o)
-                  0x00624c                  OSIdlingHook
+ .text            0x0054ea        0x150 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosched.o)
+                  0x0054ea                  OSSched
+ .text            0x00563a        0x122 build/default/production/_ext/1360937237/task_cmd.o
+                  0x00563a                  cmd_explain
+                  0x00569c                  task_cmd_do
+ .text            0x00575c        0x112 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqins.o)
+                  0x00575c                  OSInsPrioQ
+                  0x0057d0                  OSInsDelayQ
+ .text            0x00586e         0xfc build/default/production/_ext/2044256807/salvotime.o
+                  0x00586e                  OSElapsedTime
+ .text            0x00596a         0xe6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoqdel.o)
+                  0x00596a                  OSDelPrioQ
+                  0x0059da                  OSDelDelayQ
+ .text            0x005a50         0xe4 build/default/production/_ext/1360937237/task_monitor.o
+                  0x005a50                  task_monitor
+ .text            0x005b34         0xd8 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoevent.o)
+                  0x005b34                  OSWaitEvent
+ .text            0x005c0c         0xc4 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvosem.o)
+                  0x005c0c                  OSCreateSem
+                  0x005c2e                  OSWaitSem
+                  0x005c66                  OSSignalSem
+ .text            0x005cd0         0x86 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoinit2.o)
+                  0x005cd0                  OSCreateTask
+                  0x005d26                  OSInitPrioTask
+ .text            0x005d56         0x7e build/default/production/_ext/1810884970/csk_mhx.o
+                  0x005d56                  csk_mhx_open
+                  0x005d82                  csk_mhx_close
+                  0x005daa                  csk_mhx_pwr_on
+                  0x005dc0                  csk_mhx_pwr_off
+ .text            0x005dd4         0x76 build/default/production/_ext/1360937237/task_new.o
+                  0x005dd4                  new_prop_Vinti
+                  0x005dee                  task_new
+ .text            0x005e4a         0x6c build/default/production/_ext/1810884970/csk_power.o
+                  0x005e4a                  csk_power_shutdown
+ .text            0x005eb6         0x64 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvodelay.o)
+                  0x005eb6                  OSDelay
+ .text            0x005f1a         0x5e build/default/production/_ext/1810884970/csk_usb.o
+                  0x005f1a                  csk_usb_open
+                  0x005f46                  csk_usb_close
+                  0x005f6e                  csk_usb_present
+ .text            0x005f78         0x4e C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoportmcc30.o)
+                  0x005f78                  OSDispatch
+                  0x005f9c                  OSCtxSw
+                  0x005fb8                  OSReturn
+ .text            0x005fc6         0x48 build/default/production/_ext/1810884970/csk_led.o
+                  0x005fc6                  csk_led_status_open
+                  0x005fdc                  csk_led_status_close
+                  0x005ff2                  csk_led_status_on
+                  0x006000                  csk_led_status_off
+ .text            0x00600e         0x42 build/default/production/_ext/1655478246/pic24_uart1_msg_hhmmsstt.o
+                  0x00600e                  uart1_msg_hhmmsstt
+ .text            0x006050         0x42 build/default/production/_ext/1655478246/pic24_uart2_msg_hhmmsstt.o
+                  0x006050                  uart2_msg_hhmmsstt
+ .text            0x006092         0x42 build/default/production/_ext/1655478246/pic24_uart3_msg_hhmmsstt.o
+                  0x006092                  uart4_msg_hhmmsstt
+ .text            0x0060d4         0x42 build/default/production/_ext/1655478246/pic24_uart4_msg_hhmmsstt.o
+                  0x0060d4                  uart3_msg_hhmmsstt
+ .text            0x006116         0x36 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotask.o)
+                  0x006116                  OSStartTask
+ .text            0x00614c         0x32 build/default/production/_ext/1360937237/main.o
+                  0x00614c                  main
+ .text            0x00617e         0x2a build/default/production/_ext/1810884970/csk_rand.o
+                  0x00617e                  csk_rand
+ .text            0x0061a8         0x2a C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotimer.o)
+                  0x0061a8                  OSTimer
+ .text            0x0061d2         0x24 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvoinit.o)
+                  0x0061d2                  OSInit
+ .text            0x0061f6         0x24 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvotick.o)
+                  0x0061f6                  OSGetTicks
+                  0x006208                  OSSetTicks
+ .text            0x00621a         0x18 build/default/production/_ext/1360937237/task_5sec.o
+                  0x00621a                  task_5sec
+ .text            0x006232         0x12 build/default/production/_ext/1810884970/csk_wdt.o
+                  0x006232                  csk_wdt_force
+                  0x00623a                  csk_wdt_off
+ .text            0x006244         0x10 build/default/production/_ext/1297474772/salvohook_interrupt_MCC30_IRQ.o
+                  0x006244                  OSDisableHook
+                  0x00624c                  OSEnableHook
+ .text            0x006254          0x8 build/default/production/_ext/1297474772/salvohook_wdt_MCC30_clrwdt.o
+                  0x006254                  OSClrWDTHook
+ .text            0x00625c          0x6 C:\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30sit.a(salvohook_idle.o)
+                  0x00625c                  OSIdlingHook

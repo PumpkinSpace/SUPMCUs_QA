@@ -38,9 +38,12 @@ $Date: 2011-09-17 16:24:44-07 $
 
 #include "salvo.h"
 
+//#if defined(SUPMCU_GPSRM1_REVA) \
+    ||  defined(SUPMCU_GPSRM1_REVB) \
+    ||  defined(SUPMCU_GPSRM1_REVC)
+//#include "gps_nmea.h"
+//#endif
 #include "gps_nmea.h"
-
-
 // Ensure that correct ICD port is selected.  
 _CONFIG1( ICS_PGx1 & JTAGEN_OFF )
 
@@ -72,11 +75,11 @@ void init(void) {
 
   // Minimal set of I/O ... only necessary control signals are configured as outputs.
   TRISA = 0xFFFF;
-  TRISB = ~(                                                        BIT5                         ); // TX3
-  TRISC = ~(                                                                            BIT1     ); // -OE_USB
-  TRISD = ~(                                         BIT8+          BIT5+          BIT2+BIT1     ); // HS3, HS4 & HS5, TX2
-  TRISE = ~(                                         BIT8+               BIT4+BIT3+BIT2          ); // IO.30, -ON_SD, -ON_MHX & -OE_MHX
-  TRISF = ~(                                                        BIT5+     BIT3               ); // TX1 & TX0
+  TRISB = ~( BIT5); // TX3
+  TRISC = ~( BIT1); // -OE_USB
+  TRISD = ~( BIT8+BIT5+BIT2+BIT1); // HS3, HS4 & HS5, TX2
+  TRISE = ~( BIT8+BIT4+BIT3+BIT2); // IO.30, -ON_SD, -ON_MHX & -OE_MHX
+  TRISF = ~( BIT5+BIT3); // TX1 & TX0
 
   PORTA = 0x0000;
   PORTB = 0x0000+BIT5;              // TX3 initially HIGH
@@ -233,6 +236,10 @@ void __attribute__ ((interrupt,no_auto_psv)) _U2TXInterrupt(void) {
   csk_uart1_outchar();
 }
 
+/*#if defined(SUPMCU_GPSRM1_REVA) \
+    ||  defined(SUPMCU_GPSRM1_REVB) \
+    ||  defined(SUPMCU_GPSRM1_REVC)
+*/
 void __attribute__ ((interrupt,no_auto_psv)) _U2RXInterrupt(void) {
   if(gps_enabled()) {
     // PIC24 requires explicit clear of UART Rx interrupt flag!
@@ -242,12 +249,6 @@ void __attribute__ ((interrupt,no_auto_psv)) _U2RXInterrupt(void) {
   else {
     csk_uart1_inchar(ReadUART2());
   }
-}
-
-
-// UART3 (CSK UART2) is second possible way to talk to OEM615  ...
-void __attribute__ ((interrupt,no_auto_psv)) _U3TXInterrupt(void) {
-  csk_uart2_outchar();
 }
 
 void __attribute__ ((interrupt,no_auto_psv)) _U3RXInterrupt(void) {
@@ -262,6 +263,11 @@ void __attribute__ ((interrupt,no_auto_psv)) _U3RXInterrupt(void) {
   }
 }
 
+
+// UART3 (CSK UART2) is second possible way to talk to OEM615  ...
+void __attribute__ ((interrupt,no_auto_psv)) _U3TXInterrupt(void) {
+  csk_uart2_outchar();
+}
 
 // UART4 (CSK UART3) is third possible way to talk to OEM615  ...
 void __attribute__ ((interrupt,no_auto_psv)) _U4TXInterrupt(void) {
@@ -279,4 +285,32 @@ void __attribute__ ((interrupt,no_auto_psv)) _U4RXInterrupt(void) {
     csk_uart3_inchar(ReadUART4());
   }
 }
+/*
+#else 
+void __attribute__ ((interrupt,no_auto_psv)) _U2RXInterrupt(void) {
+    //U2RX_Clear_Intr_Status_Bit;  // sa samo dvojkom primam 1 msg i posle nista
+    csk_uart1_inchar(ReadUART2());
+}
 
+void __attribute__ ((interrupt,no_auto_psv)) _U3RXInterrupt(void) {
+//    U3RX_Clear_Intr_Status_Bit;  //sa samo trojkom primim 1 msg i posle nista
+    csk_uart2_inchar(ReadUART3());
+}
+
+// UART3 (CSK UART2) is second possible way to talk to OEM615  ...
+void __attribute__ ((interrupt,no_auto_psv)) _U3TXInterrupt(void) {
+  csk_uart2_outchar();
+}
+
+// UART4 (CSK UART3) is third possible way to talk to OEM615  ...
+void __attribute__ ((interrupt,no_auto_psv)) _U4TXInterrupt(void) {
+  csk_uart3_outchar();
+}
+
+void __attribute__ ((interrupt,no_auto_psv)) _U4RXInterrupt(void) {
+  //  U4RX_Clear_Intr_Status_Bit;  // sa samo cetvorkom isto kao prethodne dve
+    csk_uart3_inchar(ReadUART4());
+}
+#endif
+
+*/

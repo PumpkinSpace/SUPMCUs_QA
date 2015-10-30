@@ -14,6 +14,8 @@
         <itemPath>../inc/task_supmcu_qa.h</itemPath>
         <itemPath>../inc/tasks.h</itemPath>
         <itemPath>../inc/task_bim_qa.h</itemPath>
+        <itemPath>../inc/task_5sec.h</itemPath>
+        <itemPath>../inc/gps_nmea.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Pumpkin CubeSatKit" projectFiles="true">
         <itemPath>C:/Pumpkin/CubeSatKit/PIC24/inc/csk_uart.h</itemPath>
@@ -34,7 +36,6 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="Project" projectFiles="true">
-        <itemPath>../src/gps_nmea.c</itemPath>
         <itemPath>../src/init.c</itemPath>
         <itemPath>../src/main.c</itemPath>
         <itemPath>../src/task_5sec.c</itemPath>
@@ -42,6 +43,7 @@
         <itemPath>../src/task_supmcu_qa.c</itemPath>
         <itemPath>C:/Pumpkin/Library/PIC24/Src/pic24_i2c1.c</itemPath>
         <itemPath>../src/task_bim_qa.c</itemPath>
+        <itemPath>../src/gps_nmea.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Pumpkin CubeSatKit" projectFiles="true">
         <itemPath>C:/Pumpkin/CubeSatKit/PIC24/src/csk_io.c</itemPath>

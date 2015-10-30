@@ -102,17 +102,20 @@ void task_cmd_do(void) {
           sup_clk_on(TRUE, tolower(cmd)-'0');
           break;
 
-/*        case 'b':
+      /*  case 'b':
+            #define I2C_ADDR 0x52
             user_debug_msg(STR_TASK_CMD_DO "b: Starting BIM QA.");
             OSStartTask(TASK_BIM_QA_P);
             break;
         
         case 'g':
+            #define I2C_ADDR 0x51
             user_debug_msg(STR_TASK_CMD_DO "g: Starting GPSRM QA.");
             OSStartTask(TASK_GPS_QA_P);
             break;
         
         case 'p':
+            #define I2C_ADDR 0x53
             user_debug_msg(STR_TASK_CMD_DO "p: Starting PIM QA.");
             OSStartTask(TASK_PIM_QA_P);
             break;
@@ -143,7 +146,22 @@ void task_cmd_do(void) {
 
         // Finish test.
         // First, shut down the GPS receiver and stop trying to talk to it
-#if defined(SUPMCU_GPSRM1_REVA) \
+#if     defined(SUPMCU_BIM1_REVA) \
+        || defined(SUPMCU_BIM1_REVB)
+          case 'f':
+          csk_uart1_puts("Stopping QA \r\n");
+          csk_uart2_puts("Stopping QA \r\n");
+          csk_uart3_puts("Stopping QA \r\n");
+              OSStopTask(TASK_BIM_QA_P);
+              OSStopTask(TASK_SUPMCU_QA_P);
+              break;
+#elif     defined(SUPMCU_PIM1_REVA) \
+        || defined(SUPMCU_PIM1_REVB)
+          case 'f':
+              OSStopTask(TASK_PIM_QA_P);
+              OSStopTask(TASK_SUPMCU_QA_P);
+              break;
+#elif     defined(SUPMCU_GPSRM1_REVA) \
   ||  defined(SUPMCU_GPSRM1_REVB) \
   ||  defined(SUPMCU_GPSRM1_REVB)
         case 'f':
