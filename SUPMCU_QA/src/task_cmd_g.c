@@ -41,7 +41,7 @@ z: go to sleep
 ****                                                     ****
 ************************************************************/
 void   cmd_explain ( void ) {
-  user_debug_msg(STR_CMD_EXPLAIN "Commands: {h|?, f, r, v, t|y|u|i|o|p, 0-9|x}"); 
+  user_debug_msg(STR_CMD_EXPLAIN "Commands: {h|?, f, r, v, b, p ,g, t|y|u|i|o|p, 0-9|x}"); 
   printf("\t\t\t\th|?: this help screen.\r\n");
   printf("\t\t\t\tf:   finish test.\r\n");
   printf("\t\t\t\tr:   restart application.\r\n");
@@ -106,22 +106,31 @@ void task_cmd_do(void) {
         case 'b':
             I2C_ADDR = 0x52;
             BOARD = 2;
+            sprintf(strTmp, "task_cmd_do:   Sending to I2C address 0x%x", I2C_ADDR);
+            user_debug_msg(strTmp);
             user_debug_msg(STR_TASK_CMD_DO "b: Starting BIM QA.");
-            OSStartTask(TASK_BIM_QA_P);
+            OS_Delay(150);
+            OSStartTask(TASK_SUPMCU_QA_P);
             break;
         
         case 'g':
             I2C_ADDR = 0x51;
             BOARD = 1;
+            sprintf(strTmp,  "task_cmd_do:   Sending to I2C address 0x%x", I2C_ADDR);
+            user_debug_msg(strTmp);
             user_debug_msg(STR_TASK_CMD_DO "g: Starting GPSRM QA.");
-            OSStartTask(TASK_GPS_QA_P);
+            OS_Delay(150);
+            OSStartTask(TASK_SUPMCU_QA_P);
             break;
         
         case 'p':
             I2C_ADDR = 0x53;
             BOARD = 3;
+            sprintf(strTmp, "task_cmd_do:   Sending to I2C address 0x%x", I2C_ADDR);
+            user_debug_msg(strTmp);
             user_debug_msg(STR_TASK_CMD_DO "p: Starting PIM QA.");
-            OSStartTask(TASK_PIM_QA_P);
+            OS_Delay(150);
+            OSStartTask(TASK_SUPMCU_QA_P);
             break;
          
         case 'x':
@@ -151,9 +160,7 @@ void task_cmd_do(void) {
         // Finish test.
         // First, shut down the GPS receiver and stop trying to talk to it
        case 'f':
-          csk_uart1_puts("Stopping QA \r\n");
-          csk_uart2_puts("Stopping QA \r\n");
-          csk_uart3_puts("Stopping QA \r\n");
+          user_debug_msg(STR_TASK_CMD_DO "f: Stop QA");
           OSStopTask(TASK_SUPMCU_QA_P);
           if (BOARD == 2)
               OSStopTask(TASK_BIM_QA_P);              

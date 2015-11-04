@@ -129,8 +129,8 @@ task_supmcu_qa()
 ******************************************************************************/
 void task_supmcu_qa(void) {
   static int i;
- // user_debug_msg(STR_TASK_SUPMCU_QA "Stopped.");
-  //OS_Stop();
+  //user_debug_msg(STR_TASK_SUPMCU_QA "Stopped.");
+  OS_Stop();
   user_debug_msg(STR_TASK_SUPMCU_QA  "Starting.");
 
   //user_debug_msg(STR_TASK_SUPMCU_QA "Starting.");
@@ -170,8 +170,12 @@ void task_supmcu_qa(void) {
   sup_clk_off(TRUE);
    OS_Delay(150); OS_Delay(200); 
 
+   /***********************************************************************************/
+   /**************************************************************************************/
+   /***************************************************************************************/
+   // CHANGE BACK TO I<16
   // Verify that Clk Out works over the specified ranges.
-  for(i=0; i<16; i++) {
+  for(i=0; i<2; i++) {  //i<16
    sup_clk_on(TRUE, (15-i));
    OS_Delay(150); OS_Delay(200); 
   }

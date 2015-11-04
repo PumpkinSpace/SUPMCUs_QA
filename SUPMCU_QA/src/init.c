@@ -206,7 +206,7 @@ void init(void) {
   
   
   csk_usb_open();
-  i2c1_open();
+ 
   
   csk_uart0_puts(STR_CRLF STR_CRLF);
   csk_uart0_puts("Pumpkin " STR_CSK_TARGET " " STR_APP_NAME "." STR_CRLF);
@@ -214,11 +214,12 @@ void init(void) {
   csk_uart0_puts(STR_WARNING "." STR_CRLF);
   // Ask the user what board he's like to test and wait for a response
   csk_uart0_puts("Choose the module: " STR_CRLF);
-  csk_uart0_puts("Press G for GPS " STR_CRLF);
-  csk_uart0_puts("Press B for BIM " STR_CRLF);
-  csk_uart0_puts("Press P for PIM " STR_CRLF);
-  OS_Delay(250); OS_Delay(250);
-  OS_Delay(250); OS_Delay(250);
+  csk_uart0_puts("Press g to test the GPS board " STR_CRLF);
+  csk_uart0_puts("Press b to test the BIM board" STR_CRLF);
+  csk_uart0_puts("Press p to test the PIM board" STR_CRLF);
+
+   i2c1_open();
+  
   //sprintf(strTmp,"Sending to I2C address 0x%x \n",I2C_ADDR);
  // csk_uart0_puts(strTmp STR_CRLF);
     

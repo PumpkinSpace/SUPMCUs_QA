@@ -20,6 +20,7 @@ extern void bim_tini_dis(unsigned int);
 extern void bim_tini_enab(unsigned int);
 extern void bim_tini_arm(unsigned int);
 extern void bim_tini_unarm(unsigned int);
+extern void bim_tini_fire(unsigned int);
 
 extern void bim_uart1_on(unsigned int);
 extern void bim_uart1_off(unsigned int);

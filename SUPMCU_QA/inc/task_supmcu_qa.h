@@ -39,7 +39,7 @@ extern void sup_clk_on(unsigned int, unsigned int);
 #endif
 */
 // Symbols, etc.
-#define STR_TASK_SUPMCU_QA "task_supmcu_qa: " STR_1TAB
+#define STR_TASK_SUPMCU_QA "task_sup_qa: " STR_1TAB
 
 
 #ifdef	__cplusplus

@@ -33,7 +33,7 @@ $Date: 2015-10-26 17:05:02-08 $
 // Note that we only send the string up to the LF (and not the terminating NULL), 
 //  therefore the -1 adjust to sizeof(string).
 // GPS MCU LED command strings
-unsigned char STR_LED_GPS[] =   {"SUP:LED GPS\n"};
+unsigned char STR_LED_GPS[] =   {"GPS:LED GPS\n"};
 
 // GPS (i.e., OEM615) receiver power command strings
 unsigned char STR_POW_OFF[] =   {"GPS:POWer OFF\n"};
@@ -53,13 +53,13 @@ unsigned char STR_LOG_BESTXYZA[] =   {"GPS:LOGPOS 1,BESTXYZA\n"};
 unsigned char STR_LOG_BESTXYZB[] =   {"GPS:LOGPOS 1,BESTXYZB\n"};
 
 // GPS (i.e., OEM615) receiver logging command strings
-unsigned char STR_LOG_OFF[] =   {"GPS:LOG OFF\n"};
-unsigned char STR_LOG_GGA[] =   {"GPS:LOG GGA\n"};
-unsigned char str_log_gsa[] =   {"GPS:LOG GSA\n"};
-unsigned char str_log_gsv[] =   {"GPS:LOG GSV\n"};
-unsigned char str_log_rmc[] =   {"GPS:LOG RMC\n"};
-unsigned char str_log_vtg[] =   {"GPS:LOG VTG\n"};
-unsigned char str_log_zda[] =   {"GPS:LOG ZDA\n"};
+unsigned char STR_LOG_OFF[] =   {"GPS:LOG 1,OFF\n"};
+unsigned char STR_LOG_GGA[] =   {"GPS:LOG 1,GGA\n"};
+unsigned char str_log_gsa[] =   {"GPS:LOG 1,GSA\n"};
+unsigned char str_log_gsv[] =   {"GPS:LOG 1,GSV\n"};
+unsigned char str_log_rmc[] =   {"GPS:LOG 1,RMC\n"};
+unsigned char str_log_vtg[] =   {"GPS:LOG 1,VTG\n"};
+unsigned char str_log_zda[] =   {"GPS:LOG 1,ZDA\n"};
 
 
 /******************************************************************************
@@ -193,7 +193,7 @@ Interfaces to the GPSRM 1 as part of test.
 ******************************************************************************/
 void task_gps_qa(void) {
   
-  user_debug_msg(STR_TASK_GPS_QA "Stopped.");
+  //user_debug_msg(STR_TASK_GPS_QA "Stopped.");
   OS_Stop();
 
   user_debug_msg(STR_TASK_GPS_QA  "Starting.");
@@ -205,7 +205,7 @@ void task_gps_qa(void) {
   gps_res_off(FALSE);
   gps_pow_off(FALSE);
   gps_pass_off(FALSE);
-  gps_log_off(FALSE);
+  gps_log_off(FALSE); // NOT RECOGNIZED
 
   // Instructions to technician
   user_debug_msg(STR_TASK_GPS_QA  "Note: Ref. designators are on GPSRM module!");
@@ -218,23 +218,31 @@ void task_gps_qa(void) {
   // Verify GPS power can be forced ON and OFF. Requires that GPSRM be plugged into the bus such that
   //  it does not receive USB power ... easily done with an H1/H2 connector pair with H1.32 (+5V_USB) 
   //  cut off
-  gps_led_gps(FALSE);
+ // gps_led_gps(FALSE);
+  // OS_Delay(250); OS_Delay(250);
   gps_pow_on(TRUE);
+   OS_Delay(250); OS_Delay(250);
   gps_res_off(FALSE);
+   OS_Delay(250); OS_Delay(250);
   user_debug_msg(STR_TASK_GPS_QA  "Verify: GPSRM LED (D2) is ON."); 
   OS_Delay(250); OS_Delay(250);
   OS_Delay(250); OS_Delay(250);
 
   gps_res_on(FALSE);
+   OS_Delay(250); OS_Delay(250);
   gps_pow_off(TRUE);
+   OS_Delay(250); OS_Delay(250);
   user_debug_msg(STR_TASK_GPS_QA  "Verify: GPSRM LED (D2) is OFF."); 
   OS_Delay(250); OS_Delay(250);
   OS_Delay(250); OS_Delay(250);
 
   // OK, done with that, continue with GPS powered and indicated.
   gps_res_off(FALSE);
+   OS_Delay(250); OS_Delay(250);
   gps_pow_on(FALSE);
-  gps_led_gps(TRUE);
+   OS_Delay(250); OS_Delay(250);
+ // gps_led_gps(TRUE);
+//   OS_Delay(250); OS_Delay(250);
 
   // Verify that the -RESET signal can be used to force the OEM615 into reset ...
   //  (Cover must not be on OEM615 during this test).

@@ -39,6 +39,7 @@ unsigned char STR_TINI_DIS[]    =   {"BIM:TINI DISA\n"};
 unsigned char STR_TINI_ENAB[]   =   {"BIM:TINI ENAB\n"};
 unsigned char STR_TINI_ARM[]    =   {"BIM:TINI ARM\n"};
 unsigned char STR_TINI_UNARM[]  =   {"BIM:TINI UNAR\n"};
+unsigned char STR_TINI_FIRE[]   =   {"BIM:TINI FIRE,7\n"};
 
 // BIM uart commands
 unsigned char STR_UART1_ON[]    =   {"BIM:UART:POW ON,1\n"};
@@ -127,6 +128,13 @@ void bim_tini_unarm(unsigned int show) {
   }
 } 
 
+void bim_tini_fire(unsigned int show) {
+   i2c1_write(I2C_ADDR, STR_TINI_FIRE, sizeof(STR_TINI_FIRE)-1); 
+  if(show) { 
+    user_debug_msg(STR_TASK_BIM_QA  "BIM TiNi Firing."); 
+  } 
+}
+
 /******************************************************************************
 ****                                                                       ****
 **                                                                           **
@@ -164,7 +172,7 @@ void bim_uart2_on(unsigned int show) {
 void bim_uart2_off(unsigned int show) {
   i2c1_write(I2C_ADDR, STR_UART2_OFF, sizeof(STR_UART2_OFF)-1); 
   if(show) { 
-    user_debug_msg(STR_TASK_BIM_QA  "BIM UART1 turn OFF."); 
+    user_debug_msg(STR_TASK_BIM_QA  "BIM UART2 turn OFF."); 
   }
 } 
 void bim_uart3_on(unsigned int show) {
@@ -430,16 +438,13 @@ Interfaces to the GPSRM 1 as part of test.
 ******************************************************************************/
 void task_bim_qa(void) {
     
-  user_debug_msg(STR_TASK_BIM_QA "Stopped.");
+ // user_debug_msg(STR_TASK_BIM_QA "Stopped.");
   OS_Stop();
   user_debug_msg(STR_TASK_BIM_QA  "Starting.");
 
 #if 1
   OS_Delay(250); OS_Delay(250);
-  OS_Delay(250); OS_Delay(250);
-  OS_Delay(250); OS_Delay(250);
-  OS_Delay(250); OS_Delay(250);
- 
+
   // Init everything -- don't show messages yet
   bim_tini_dis(FALSE);
   bim_uart1_off(FALSE);
@@ -458,7 +463,7 @@ void task_bim_qa(void) {
  
 
   // Instructions to technician
-  user_debug_msg(STR_TASK_BIM_QA  "Connect: Skycube, Ethernet switch and temperature sensors to the BIM for verification.");
+  //user_debug_msg(STR_TASK_BIM_QA  "Connect: Skycube, Ethernet switch and temperature sensors to the BIM for verification.");
   user_debug_msg(STR_TASK_BIM_QA  "Monitor: BIM via Pumpkin USB Debug Adapter.");
 
   // Verify the UART1 connection - 5V supply and LED3
@@ -466,22 +471,43 @@ void task_bim_qa(void) {
   bim_uart1_on(TRUE);
   user_debug_msg(STR_TASK_BIM_QA  "Verify: LED3 is ON.");
   OS_Delay(250); OS_Delay(250);
-  OS_Delay(250); OS_Delay(250);
+  bim_uart1_off(TRUE);
   user_debug_msg(STR_TASK_BIM_QA  "Verify: LED3 is OFF.");
+  OS_Delay(250);
+  
+  // Verify TiNi
+  user_debug_msg(STR_TASK_BIM_QA  "Verify: LED5 is OFF.");
+  bim_tini_enab(TRUE);
+  OS_Delay(150);
+  bim_tini_arm(TRUE);
+  OS_Delay(150);
+  bim_tini_fire(TRUE);
+  OS_Delay(150);
+  user_debug_msg(STR_TASK_BIM_QA  "Verify: TINI Fire 7s: LED5 is orange.");
+  OS_Delay(250); OS_Delay(250);
+  bim_tini_dis(FALSE);
+  bim_tini_unarm(FALSE);
+  user_debug_msg(STR_TASK_BIM_QA  "Verify: LED5 is OFF.");
+  OS_Delay(250);
+  
+  
+  user_debug_msg(STR_TASK_BIM_QA  "For the following tests:");
+  user_debug_msg(STR_TASK_BIM_QA  "Connect: 6-8 V power supply.");
+  OS_Delay(250); OS_Delay(250); OS_Delay(250);
   
   // Verify VBATT available as power source and enable through UART2 - check LED2
   user_debug_msg(STR_TASK_BIM_QA  "Verify: VBATT available.");
   bim_uart2_on(TRUE);
   user_debug_msg(STR_TASK_BIM_QA  "Verify: LED2 is ON.");
   OS_Delay(250); OS_Delay(250);
-  OS_Delay(250); OS_Delay(250);
   bim_uart2_off(TRUE);
   user_debug_msg(STR_TASK_BIM_QA  "Verify: LED2 is OFF.");
+  OS_Delay(250);
   
     // Verify Skycube (UART3) interface and LED6
   user_debug_msg(STR_TASK_BIM_QA  "Verify: Skycube is connected.");
   bim_sky_on(TRUE);
-  user_debug_msg(STR_TASK_BIM_QA  "Verify: Skycube turned ON.");
+  user_debug_msg(STR_TASK_BIM_QA  "Verify: Skycube power ON.");
   bim_uart3_on(TRUE);
   user_debug_msg(STR_TASK_BIM_QA  "Verify: LED6 is ON.");
   OS_Delay(250); OS_Delay(250);
@@ -489,7 +515,13 @@ void task_bim_qa(void) {
   bim_uart3_off(TRUE);
   user_debug_msg(STR_TASK_BIM_QA  "Verify: LED6 is OFF.");
   bim_sky_off(TRUE);
-  user_debug_msg(STR_TASK_BIM_QA  "Verify: Skycube turned OFF.");
+  user_debug_msg(STR_TASK_BIM_QA  "Verify: Skycube power OFF.");
+  OS_Delay(250);
+  
+  
+  user_debug_msg(STR_TASK_BIM_QA  "For the following test:");
+  user_debug_msg(STR_TASK_BIM_QA  "Connect: Temperature sensors.");
+  OS_Delay(250); OS_Delay(250);
   
   // Verify temperature sensors
   user_debug_msg(STR_TASK_BIM_QA  "Verify: Temperature sensors are connected.");
@@ -501,24 +533,17 @@ void task_bim_qa(void) {
   bim_temp_off(TRUE);
   bim_ttest_off(TRUE);
   user_debug_msg(STR_TASK_BIM_QA  "Verify: Task_temp stopped.");
+  OS_Delay(250);
 
-  // Verify TiNi
-  user_debug_msg(STR_TASK_BIM_QA  "Verify: LED5 is OFF.");
-  bim_tini_enab(TRUE);
-  user_debug_msg(STR_TASK_BIM_QA  "Verify: LED5 is orange.");
-  OS_Delay(250); OS_Delay(250);
-  OS_Delay(250); OS_Delay(250);
-  bim_tini_dis(TRUE);
-  user_debug_msg(STR_TASK_BIM_QA  "Verify: LED5 is OFF.");
-  
   // Verify IMU
   user_debug_msg(STR_TASK_BIM_QA  "Verify: IMU is connected.");
   bim_imu_on(TRUE);
-  user_debug_msg(STR_TASK_BIM_QA  "Verify: IMU is on.");
+  user_debug_msg(STR_TASK_BIM_QA  "Verify: IMU power on.");
   OS_Delay(250); OS_Delay(250);
   OS_Delay(250); OS_Delay(250);
   bim_imu_off(TRUE);
-  user_debug_msg(STR_TASK_BIM_QA  "Verify: IMU is off.");
+  user_debug_msg(STR_TASK_BIM_QA  "Verify: IMU power off.");
+  OS_Delay(250);
   
   // Verify the ethernet commands
   user_debug_msg(STR_TASK_BIM_QA  "Verify: Ethernet switch is installed.");
@@ -538,6 +563,7 @@ void task_bim_qa(void) {
   OS_Delay(250); OS_Delay(250);
   OS_Delay(250); OS_Delay(250);
   bim_eth3_off(TRUE);
+  OS_Delay(250);
   
   // switching ethernet modes
   OS_Delay(250); OS_Delay(250);
@@ -563,7 +589,7 @@ void task_bim_qa(void) {
   bim_eth3_off(TRUE);
   bim_eth_mode_off(TRUE);
   user_debug_msg(STR_TASK_BIM_QA  "Verify: Ethernet modes OFF.");
-  
+  OS_Delay(250);
   
   // Verify EEPROM commands
   bim_ee_i2c_on(TRUE);
@@ -572,7 +598,7 @@ void task_bim_qa(void) {
   OS_Delay(250); OS_Delay(250);
   bim_ee_i2c_off(TRUE);
   user_debug_msg(STR_TASK_BIM_QA  "Verify: EEPROM I2C disabled.");
-  
+  OS_Delay(250);
 #endif
   while(1) { 
     OS_Delay(250);

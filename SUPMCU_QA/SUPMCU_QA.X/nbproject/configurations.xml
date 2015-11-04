@@ -14,6 +14,8 @@
         <itemPath>../inc/task_new.h</itemPath>
         <itemPath>../inc/task_supmcu_qa.h</itemPath>
         <itemPath>../inc/tasks.h</itemPath>
+        <itemPath>../inc/task_bim_qa.h</itemPath>
+        <itemPath>../inc/task_pim_qa.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="Pumpkin CubeSatKit" projectFiles="true">
         <itemPath>C:/Pumpkin/CubeSatKit/PIC24/inc/csk_uart.h</itemPath>
@@ -105,7 +107,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>XC16</languageToolchain>
-        <languageToolchainVersion>1.23</languageToolchainVersion>
+        <languageToolchainVersion>1.24</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <compileType>
@@ -278,8 +280,6 @@
       <C30-AR>
         <property key="additional-options-chop-files" value="false"/>
       </C30-AR>
-      <C30-AS>
-      </C30-AS>
       <C30-LD>
         <property key="additional-options-use-response-files" value="false"/>
         <property key="boot-eeprom" value="no_eeprom"/>
@@ -381,6 +381,7 @@
         <property key="UART 3" value="true"/>
         <property key="UART 4" value="true"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="false"/>
