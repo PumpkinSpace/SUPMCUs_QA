@@ -15,6 +15,12 @@ extern "C" {
 // Function declarations
 extern void task_pim_qa(void );
 
+extern void pim_port1_en(unsigned int);
+extern void pim_port1_dis(unsigned int);
+extern void pim_port2_en(unsigned int);
+extern void pim_port2_dis(unsigned int);
+extern void pim_port3_en(unsigned int);
+extern void pim_port3_dis(unsigned int);
 extern void pim_port4_en(unsigned int);
 extern void pim_port4_dis(unsigned int);
 // Symbols, etc.

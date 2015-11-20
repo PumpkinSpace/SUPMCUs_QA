@@ -69,13 +69,13 @@ Simple task that runs every 5s.
 ****                                                                       ****
 ******************************************************************************/
 void task_new(void) {
-  #if 0
+  #if 1
   static unsigned int i;
   #endif
 
   user_debug_msg(STR_TASK_NEW "Starting.");
   
-  #if 0
+  #if 1
   // wait 2min until we're into the NMEA-scanning portion of the test code ... 
   for(i=0;i<120;i++) {
     OS_Delay(100);

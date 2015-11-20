@@ -101,35 +101,35 @@ bim_tini_unarm(unsigned int);
 ******************************************************************************/
 
 void bim_tini_enab(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_TINI_ENAB, sizeof(STR_TINI_ENAB)-1); 
+  i2c1_write(I2C_ADDR.b, STR_TINI_ENAB, sizeof(STR_TINI_ENAB)-1); 
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "BIM TiNi enable."); 
   }
 } 
 
 void bim_tini_dis(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_TINI_DIS, sizeof(STR_TINI_DIS)-1); 
+  i2c1_write(I2C_ADDR.b, STR_TINI_DIS, sizeof(STR_TINI_DIS)-1); 
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "BIM TiNi disable."); 
   }
 } 
 
 void bim_tini_arm(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_TINI_ARM, sizeof(STR_TINI_ARM)-1); 
+  i2c1_write(I2C_ADDR.b, STR_TINI_ARM, sizeof(STR_TINI_ARM)-1); 
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "BIM TiNi arm."); 
   }
 } 
 
 void bim_tini_unarm(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_TINI_UNARM, sizeof(STR_TINI_UNARM)-1); 
+  i2c1_write(I2C_ADDR.b, STR_TINI_UNARM, sizeof(STR_TINI_UNARM)-1); 
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "BIM TiNi unarm."); 
   }
 } 
 
 void bim_tini_fire(unsigned int show) {
-   i2c1_write(I2C_ADDR, STR_TINI_FIRE, sizeof(STR_TINI_FIRE)-1); 
+   i2c1_write(I2C_ADDR.b, STR_TINI_FIRE, sizeof(STR_TINI_FIRE)-1); 
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "BIM TiNi Firing."); 
   } 
@@ -149,41 +149,41 @@ bim_uart3_off(unsigned int);
 ******************************************************************************/
 
 void bim_uart1_on(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_UART1_ON, sizeof(STR_UART1_ON)-1); 
+  i2c1_write(I2C_ADDR.b, STR_UART1_ON, sizeof(STR_UART1_ON)-1); 
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "BIM UART 1 turn ON."); 
   }
 } 
 
 void bim_uart1_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_UART1_OFF, sizeof(STR_UART1_OFF)-1); 
+  i2c1_write(I2C_ADDR.b, STR_UART1_OFF, sizeof(STR_UART1_OFF)-1); 
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "BIM UART1 turn OFF."); 
   }
 } 
 
 void bim_uart2_on(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_UART2_ON, sizeof(STR_UART2_ON)-1); 
+  i2c1_write(I2C_ADDR.b, STR_UART2_ON, sizeof(STR_UART2_ON)-1); 
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "BIM UART 2 turn ON."); 
   }
 } 
 
 void bim_uart2_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_UART2_OFF, sizeof(STR_UART2_OFF)-1); 
+  i2c1_write(I2C_ADDR.b, STR_UART2_OFF, sizeof(STR_UART2_OFF)-1); 
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "BIM UART2 turn OFF."); 
   }
 } 
 void bim_uart3_on(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_UART3_ON, sizeof(STR_UART3_ON)-1); 
+  i2c1_write(I2C_ADDR.b, STR_UART3_ON, sizeof(STR_UART3_ON)-1); 
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "BIM UART 3 turn ON."); 
   }
 } 
 
 void bim_uart3_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_UART3_OFF, sizeof(STR_UART3_OFF)-1); 
+  i2c1_write(I2C_ADDR.b, STR_UART3_OFF, sizeof(STR_UART3_OFF)-1); 
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "BIM UART3 turn OFF."); 
   }
@@ -207,98 +207,98 @@ bim_eth_i2c_off(unsigned int);
 ****                                                                       ****
 ******************************************************************************/
 void bim_eth1_on(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_ETH1_ON, sizeof(STR_ETH1_ON)-1);  
+  i2c1_write(I2C_ADDR.b, STR_ETH1_ON, sizeof(STR_ETH1_ON)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Ethernet turn on, 1.0V supply.");
   }
 } 
 
 void bim_eth1_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_ETH1_OFF, sizeof(STR_ETH1_OFF)-1);  
+  i2c1_write(I2C_ADDR.b, STR_ETH1_OFF, sizeof(STR_ETH1_OFF)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Ethernet turn off, 1.0V supply.");
   }
 } 
 
 void bim_eth2_on(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_ETH2_ON, sizeof(STR_ETH2_ON)-1);  
+  i2c1_write(I2C_ADDR.b, STR_ETH2_ON, sizeof(STR_ETH2_ON)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Ethernet turn on, 1.8V supply.");
   }
 } 
 
 void bim_eth2_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_ETH2_OFF, sizeof(STR_ETH2_OFF)-1);  
+  i2c1_write(I2C_ADDR.b, STR_ETH2_OFF, sizeof(STR_ETH2_OFF)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Ethernet turn off, 1.8V supply.");
   }
 } 
 
 void bim_eth3_on(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_ETH3_ON, sizeof(STR_ETH3_ON)-1);  
+  i2c1_write(I2C_ADDR.b, STR_ETH3_ON, sizeof(STR_ETH3_ON)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Ethernet turn on, 3.3V supply.");
   }
 } 
 
 void bim_eth3_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_ETH3_OFF, sizeof(STR_ETH3_OFF)-1);  
+  i2c1_write(I2C_ADDR.b, STR_ETH3_OFF, sizeof(STR_ETH3_OFF)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Ethernet turn off, 3.3V supply.");
   }
 } 
 
 void bim_eth_i2c_on(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_ETH_I2CON, sizeof(STR_ETH_I2CON)-1);  
+  i2c1_write(I2C_ADDR.b, STR_ETH_I2CON, sizeof(STR_ETH_I2CON)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Ethernet I2C turn ON.");
   }
 } 
 
 void bim_eth_i2c_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_ETH_I2COFF, sizeof(STR_ETH_I2COFF)-1);  
+  i2c1_write(I2C_ADDR.b, STR_ETH_I2COFF, sizeof(STR_ETH_I2COFF)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Ethernet I2C turn OFF.");
   }
 } 
 
 void bim_eth_res(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_ETH_RES, sizeof(STR_ETH_RES)-1);  
+  i2c1_write(I2C_ADDR.b, STR_ETH_RES, sizeof(STR_ETH_RES)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Ethernet resetting now...");
   }
 } 
 
 void bim_eth_mode1(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_ETH_MODE1, sizeof(STR_ETH_MODE1)-1);  
+  i2c1_write(I2C_ADDR.b, STR_ETH_MODE1, sizeof(STR_ETH_MODE1)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Ethernet mode 1 turn on.");
   }
 } 
 
 void bim_eth_mode0(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_ETH_MODE0, sizeof(STR_ETH_MODE0)-1);  
+  i2c1_write(I2C_ADDR.b, STR_ETH_MODE0, sizeof(STR_ETH_MODE0)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Ethernet mode 0 turn on.");
   }
 } 
 
 void bim_eth_mode2(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_ETH_MODE2, sizeof(STR_ETH_MODE2)-1);  
+  i2c1_write(I2C_ADDR.b, STR_ETH_MODE2, sizeof(STR_ETH_MODE2)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Ethernet mode 2 turn on.");
   }
 } 
 
 void bim_eth_mode3(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_ETH_MODE3, sizeof(STR_ETH_MODE3)-1);  
+  i2c1_write(I2C_ADDR.b, STR_ETH_MODE3, sizeof(STR_ETH_MODE3)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Ethernet mode 3 turn on.");
   }
 } 
 
 void bim_eth_mode_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_ETH_MODEOFF, sizeof(STR_ETH_MODEOFF)-1);  
+  i2c1_write(I2C_ADDR.b, STR_ETH_MODEOFF, sizeof(STR_ETH_MODEOFF)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Ethernet modes turned off.");
   }
@@ -315,28 +315,28 @@ void bim_eth_mode_off(unsigned int show) {
 ****                                                                       ****
 ******************************************************************************/
 void bim_temp_on(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_TEMP_ON, sizeof(STR_TEMP_ON)-1);  
+  i2c1_write(I2C_ADDR.b, STR_TEMP_ON, sizeof(STR_TEMP_ON)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Temperature sensors turning on.");
   }
 } 
 
 void bim_temp_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_TEMP_OFF, sizeof(STR_TEMP_OFF)-1);  
+  i2c1_write(I2C_ADDR.b, STR_TEMP_OFF, sizeof(STR_TEMP_OFF)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Temperature sensors turning off.");
   }
 } 
 
 void bim_ttest_on(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_TTEST_ON, sizeof(STR_TTEST_ON)-1);  
+  i2c1_write(I2C_ADDR.b, STR_TTEST_ON, sizeof(STR_TTEST_ON)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Run temperature test task.");
   }
 } 
 
 void bim_ttest_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_TTEST_OFF, sizeof(STR_TTEST_OFF)-1);  
+  i2c1_write(I2C_ADDR.b, STR_TTEST_OFF, sizeof(STR_TTEST_OFF)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "End temperature test task.");
   }
@@ -351,14 +351,14 @@ bim_ee_i2c_off(unsigned int);
 ****                                                                       ****
 ******************************************************************************/
 void bim_ee_i2c_on(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_EE_I2CON, sizeof(STR_EE_I2CON)-1);  
+  i2c1_write(I2C_ADDR.b, STR_EE_I2CON, sizeof(STR_EE_I2CON)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "EEPROM I2C is turning ON.");
   }
 } 
 
 void bim_ee_i2c_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_EE_I2COFF, sizeof(STR_EE_I2COFF)-1);  
+  i2c1_write(I2C_ADDR.b, STR_EE_I2COFF, sizeof(STR_EE_I2COFF)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "EEPROM I2C is turning OFF.");
   }
@@ -374,14 +374,14 @@ bim_sky_off(unsigned int);
 ******************************************************************************/
 
 void bim_sky_on(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_SKY_ON, sizeof(STR_SKY_ON)-1);  
+  i2c1_write(I2C_ADDR.b, STR_SKY_ON, sizeof(STR_SKY_ON)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Skycube is turned ON.");
   }
 } 
 
 void bim_sky_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_SKY_OFF, sizeof(STR_SKY_OFF)-1);  
+  i2c1_write(I2C_ADDR.b, STR_SKY_OFF, sizeof(STR_SKY_OFF)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Skycube is turned OFF.");
   }
@@ -396,14 +396,14 @@ bim_imu_off(unsigned int);
 ****                                                                       ****
 ******************************************************************************/
 void bim_imu_on(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_IMU_ON, sizeof(STR_IMU_ON)-1);  
+  i2c1_write(I2C_ADDR.b, STR_IMU_ON, sizeof(STR_IMU_ON)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "IMU is turned ON.");
   }
 } 
 
 void bim_imu_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_IMU_OFF, sizeof(STR_IMU_OFF)-1);  
+  i2c1_write(I2C_ADDR.b, STR_IMU_OFF, sizeof(STR_IMU_OFF)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "IMU is turned OFF.");
   }
@@ -418,7 +418,7 @@ bim_wdt_force(unsigned int);
 ******************************************************************************/
 
 void bim_wdt_force(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_WDT_RES, sizeof(STR_WDT_RES)-1);  
+  i2c1_write(I2C_ADDR.b, STR_WDT_RES, sizeof(STR_WDT_RES)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_BIM_QA  "Forcing WDT reset...");
   }
@@ -602,14 +602,6 @@ void task_bim_qa(void) {
 #endif
   while(1) { 
     OS_Delay(250);
-
-    // Hit it with a burst of commands, just to exercise the counters ...
-    /* aek 20141027
-    gps_led_on(FALSE);
-    gps_led_gps(FALSE);
-    gps_led_on(FALSE);
-    gps_led_gps(FALSE);
-    */
   }
 } /* task_gps_qa() */
 

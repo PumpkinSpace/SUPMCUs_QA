@@ -38,11 +38,6 @@ $Date: 2011-09-17 16:24:44-07 $
 
 #include "salvo.h"
 
-//#if defined(SUPMCU_GPSRM1_REVA) \
-    ||  defined(SUPMCU_GPSRM1_REVB) \
-    ||  defined(SUPMCU_GPSRM1_REVC)
-//#include "gps_nmea.h"
-//#endif
 #include "gps_nmea.h"
 // Ensure that correct ICD port is selected.  
 _CONFIG1( ICS_PGx1 & JTAGEN_OFF )
@@ -214,9 +209,11 @@ void init(void) {
   csk_uart0_puts(STR_WARNING "." STR_CRLF);
   // Ask the user what board he's like to test and wait for a response
   csk_uart0_puts("Choose the module: " STR_CRLF);
-  csk_uart0_puts("Press g to test the GPS board " STR_CRLF);
-  csk_uart0_puts("Press b to test the BIM board" STR_CRLF);
-  csk_uart0_puts("Press p to test the PIM board" STR_CRLF);
+  csk_uart0_puts("Press a to test all boards simultaneously" STR_CRLF);
+  csk_uart0_puts("Press g to test the GPS" STR_CRLF);
+  csk_uart0_puts("Press b to test the BIM" STR_CRLF);
+  csk_uart0_puts("Press p to test the PIM" STR_CRLF);
+  csk_uart0_puts("Press s to test the SIM" STR_CRLF);
 
    i2c1_open();
   

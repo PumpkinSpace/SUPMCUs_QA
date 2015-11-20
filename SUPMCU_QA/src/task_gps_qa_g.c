@@ -48,9 +48,9 @@ unsigned char STR_PASS_OFF[] =  {"GPS:PASS OFF\n"};
 unsigned char STR_PASS_ON[]  =  {"GPS:PASS ON\n"};
 
 //GPS (i.e., OEM615) receiver log position command
-unsigned char STR_LOG_BESTPOS[]  =   {"GPS:LOGPOS 1,BESTPOS\n"};
-unsigned char STR_LOG_BESTXYZA[] =   {"GPS:LOGPOS 1,BESTXYZA\n"};
-unsigned char STR_LOG_BESTXYZB[] =   {"GPS:LOGPOS 1,BESTXYZB\n"};
+unsigned char STR_LOG_BESTPOS[]  =   {"GPS:LOGPOS BESTPOS\n"};
+unsigned char STR_LOG_BESTXYZA[] =   {"GPS:LOGPOS BESTXYZA\n"};
+unsigned char STR_LOG_BESTXYZB[] =   {"GPS:LOGPOS BESTXYZB\n"};
 
 // GPS (i.e., OEM615) receiver logging command strings
 unsigned char STR_LOG_OFF[] =   {"GPS:LOG 1,OFF\n"};
@@ -74,7 +74,7 @@ gps_led_flash()
 ******************************************************************************/
 
 void gps_led_gps(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_LED_GPS, sizeof(STR_LED_GPS)-1); 
+  i2c1_write(I2C_ADDR.g, STR_LED_GPS, sizeof(STR_LED_GPS)-1); 
   if(show) { 
     user_debug_msg(STR_TASK_GPS_QA  "GPSRM LED (D2) now indicates power to GPS."); 
   }
@@ -91,7 +91,7 @@ gps_pow_on()
 ****                                                                       ****
 ******************************************************************************/
 void gps_pow_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_POW_OFF, sizeof(STR_POW_OFF)-1);  
+  i2c1_write(I2C_ADDR.g, STR_POW_OFF, sizeof(STR_POW_OFF)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_GPS_QA  "Verify: TP41 (+5V_GPS) is 0V.");
     user_debug_msg(STR_TASK_GPS_QA  "Verify: TP42 (3V3_GPS) is 0V.");
@@ -99,7 +99,7 @@ void gps_pow_off(unsigned int show) {
 } /* gps_pow_off() */
 
 void gps_pow_on(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_POW_ON, sizeof(STR_POW_ON)-1);  
+  i2c1_write(I2C_ADDR.g, STR_POW_ON, sizeof(STR_POW_ON)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_GPS_QA  "Verify: TP41 (+5V_GPS) is +5.0V.");
     user_debug_msg(STR_TASK_GPS_QA  "Verify: TP42 (3V3_GPS) is +3.3V.");
@@ -117,14 +117,14 @@ gps_res_on()
 ****                                                                       ****
 ******************************************************************************/
 void gps_res_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_RES_OFF, sizeof(STR_RES_OFF)-1);  
+  i2c1_write(I2C_ADDR.g, STR_RES_OFF, sizeof(STR_RES_OFF)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_GPS_QA  "OEM615 -RESET is inactive (i.e., HIGH).");
   }
 } /* gps_res_off() */
 
 void gps_res_on(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_RES_ON, sizeof(STR_RES_ON)-1);  
+  i2c1_write(I2C_ADDR.g, STR_RES_ON, sizeof(STR_RES_ON)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_GPS_QA "OEM615 -RESET is active (i.e., LOW).");
   }
@@ -141,14 +141,14 @@ gps_pass_on()
 ****                                                                       ****
 ******************************************************************************/
 void gps_pass_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_PASS_OFF, sizeof(STR_PASS_OFF)-1);  
+  i2c1_write(I2C_ADDR.g, STR_PASS_OFF, sizeof(STR_PASS_OFF)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_GPS_QA  "OEM615 passthrough is disabled.");
   }
 } /* gps_pass_off() */
 
 void gps_pass_on(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_PASS_ON, sizeof(STR_PASS_ON)-1);  
+  i2c1_write(I2C_ADDR.g, STR_PASS_ON, sizeof(STR_PASS_ON)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_GPS_QA "OEM615 passthrough is enabled.");
   }
@@ -165,14 +165,14 @@ gps_log_gga()
 ****                                                                       ****
 ******************************************************************************/
 void gps_log_off(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_LOG_OFF, sizeof(STR_LOG_OFF)-1);  
+  i2c1_write(I2C_ADDR.g, STR_LOG_OFF, sizeof(STR_LOG_OFF)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_GPS_QA  "OEM615 logging is disabled.");
   }
 } /* gps_log_off() */
 
 void gps_log_gga(unsigned int show) {
-  i2c1_write(I2C_ADDR, STR_LOG_GGA, sizeof(STR_LOG_GGA)-1);  
+  i2c1_write(I2C_ADDR.g, STR_LOG_GGA, sizeof(STR_LOG_GGA)-1);  
   if(show) { 
     user_debug_msg(STR_TASK_GPS_QA  "OEM615 logging of GGA is enabled.");
   }
@@ -221,9 +221,9 @@ void task_gps_qa(void) {
  // gps_led_gps(FALSE);
   // OS_Delay(250); OS_Delay(250);
   gps_pow_on(TRUE);
-   OS_Delay(250); OS_Delay(250);
+  OS_Delay(250); OS_Delay(250);
   gps_res_off(FALSE);
-   OS_Delay(250); OS_Delay(250);
+  OS_Delay(250); OS_Delay(250);
   user_debug_msg(STR_TASK_GPS_QA  "Verify: GPSRM LED (D2) is ON."); 
   OS_Delay(250); OS_Delay(250);
   OS_Delay(250); OS_Delay(250);
@@ -260,13 +260,14 @@ void task_gps_qa(void) {
   gps_res_off(TRUE);
   gps_log_off(FALSE);
 #endif
+  gps_pass_on(TRUE);
   //gps_log_gga(TRUE);
 
   // Everything looks pretty good -- go ahead and let the OEM615 run without interference,
   //  so that it can acquire a lock. The direct USB connection to the OEM615 can be made at this time ...
   //user_debug_msg(STR_TASK_TEST "OEM615 will now acquire GPS satellites ...");
   //user_debug_msg(STR_TASK_TEST "Connect NovAtel CDU software to GPSRM\r\n\t\t\t\t via GPS (micro) USB connector.");
-  gps_pass_on(TRUE);
+
   user_debug_msg(STR_TASK_GPS_QA  "Verify: GPS is talking.");
   
   user_debug_msg(STR_TASK_GPS_QA  "Connect: CLK Out (J6) to freq. counter.");

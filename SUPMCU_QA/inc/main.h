@@ -40,6 +40,12 @@ $Date: 2011-09-17 22:12:29-07 $
 #define SYSTEM_TIMER_RELOAD    328
 #define NOP                    _NOP()
 
+// macros defining which module is being tested; ALL tests all modules
+#define SIM         0
+#define GPS         1
+#define BIM         2
+#define PIM         3
+#define ALL         0xFF
 // Function declarations.
 extern void init_devices(void);
 
@@ -52,12 +58,25 @@ typedef struct {
   unsigned int exercise_io_running:1;
 } csk_status_t;
 
+
+
 // Extern variable declarations.
 extern csk_status_t csk_status;
 extern char strTmp[];
-extern int BOARD;
-extern int I2C_ADDR;
+extern int MODULE;
 
+struct i2c_addr{
+    unsigned char b;
+    unsigned char g;
+    unsigned char p;
+    unsigned char s;
+    //int b;
+    //int p;
+    //int g;
+    //int s;
+};
+extern struct i2c_addr I2C_ADDR;
+//extern int I2C_ADDR;
 
 #endif /* __main_h */
 

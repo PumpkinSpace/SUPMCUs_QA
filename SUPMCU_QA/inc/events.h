@@ -16,4 +16,4 @@ $Date: 2010-01-29 20:04:22-08 $
 ******************************************************************************/
 #define RSRC_USB_MHX_IF_P         OSECBP(1) // Resource: USB/MHX interface
 #define SEM_CMD_CHAR_P            OSECBP(2) // Sem: a command char has been received
-
+//#define BINSEM_SCPI_RCVD_P        OSECBP(3) // SCPI telemetry is available for reading

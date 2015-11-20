@@ -1,3 +1,6 @@
+// C headers
+#include <stdint.h>
+#include <stdio.h>
 #include "main.h"
 #include "gps_nmea.h"
 
@@ -13,9 +16,7 @@
 #include "salvo.h"
 
 
-// C headers
-#include <stdint.h>
-#include <stdio.h>
+
 
 
    

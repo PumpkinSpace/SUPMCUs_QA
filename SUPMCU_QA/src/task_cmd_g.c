@@ -46,9 +46,11 @@ void   cmd_explain ( void ) {
   printf("\t\t\t\tf:   finish test.\r\n");
   printf("\t\t\t\tr:   restart application.\r\n");
   printf("\t\t\t\tv:   display firmware version.\r\n");
+  printf("\t\t\t\tb:   Start QA for all boards simultaneously.\r\n");
   printf("\t\t\t\tb:   Start BIM QA.\r\n");
   printf("\t\t\t\tp:   Start PIM QA.\r\n");
   printf("\t\t\t\tg:   Start GPSRM QA.\r\n");
+  printf("\t\t\t\ts:   Start SIM QA.\r\n");
   printf("\t\t\t\tt:   disable all OEM615 COM1 logging.\r\n");
   printf("\t\t\t\ty:   enable OEM615 COM1 GGA logging.\r\n");
   printf("\t\t\t\tu:   enable OEM615 COM1 GSA logging.\r\n");
@@ -102,11 +104,31 @@ void task_cmd_do(void) {
         case '9':
           sup_clk_on(TRUE, tolower(cmd)-'0');
           break;
+          
+        case 'j':
+         //   I2C_ADDR = 0x52;
+            MODULE = GPS;
+            //sprintf(strTmp, "task_cmd_do:   Sending to I2C addresses: 0x%x, 0x%x, 0x%x, 0x%x", I2C_ADDR.b,I2C_ADDR.g,I2C_ADDR.p,I2C_ADDR.s);
+            user_debug_msg(strTmp);
+            user_debug_msg(STR_TASK_CMD_DO "s: Selftest telemetry.");
+            OS_Delay(150);
+            OSStartTask(TASK_TELEMETRY_P);
+            break;    
+          
+        case 'a':
+         //   I2C_ADDR = 0x52;
+            MODULE = ALL;
+            //sprintf(strTmp, "task_cmd_do:   Sending to I2C addresses: 0x%x, 0x%x, 0x%x, 0x%x", I2C_ADDR.b,I2C_ADDR.g,I2C_ADDR.p,I2C_ADDR.s);
+            user_debug_msg(strTmp);
+            user_debug_msg(STR_TASK_CMD_DO "a: Starting QA.");
+            OS_Delay(150);
+            OSStartTask(TASK_SUPMCU_QA_P);
+            break;  
 
         case 'b':
-            I2C_ADDR = 0x52;
-            BOARD = 2;
-            sprintf(strTmp, "task_cmd_do:   Sending to I2C address 0x%x", I2C_ADDR);
+         //   I2C_ADDR = 0x52;
+            MODULE = BIM;
+            //sprintf(strTmp, "task_cmd_do:   Sending to I2C address 0x%x", I2C_ADDR.b);
             user_debug_msg(strTmp);
             user_debug_msg(STR_TASK_CMD_DO "b: Starting BIM QA.");
             OS_Delay(150);
@@ -114,9 +136,9 @@ void task_cmd_do(void) {
             break;
         
         case 'g':
-            I2C_ADDR = 0x51;
-            BOARD = 1;
-            sprintf(strTmp,  "task_cmd_do:   Sending to I2C address 0x%x", I2C_ADDR);
+           // I2C_ADDR = 0x51;
+            MODULE = GPS;
+            //sprintf(strTmp,  "task_cmd_do:   Sending to I2C address 0x%x", I2C_ADDR.g);
             user_debug_msg(strTmp);
             user_debug_msg(STR_TASK_CMD_DO "g: Starting GPSRM QA.");
             OS_Delay(150);
@@ -124,11 +146,21 @@ void task_cmd_do(void) {
             break;
         
         case 'p':
-            I2C_ADDR = 0x53;
-            BOARD = 3;
-            sprintf(strTmp, "task_cmd_do:   Sending to I2C address 0x%x", I2C_ADDR);
+          //  I2C_ADDR = 0x53;
+            MODULE = PIM;
+            //sprintf(strTmp, "task_cmd_do:   Sending to I2C address 0x%x", I2C_ADDR.p);
             user_debug_msg(strTmp);
             user_debug_msg(STR_TASK_CMD_DO "p: Starting PIM QA.");
+            OS_Delay(150);
+            OSStartTask(TASK_SUPMCU_QA_P);
+            break;
+            
+        case 's':
+          //  I2C_ADDR = 0x50;
+            MODULE = SIM;
+            //sprintf(strTmp, "task_cmd_do:   Sending to I2C address 0x%x", I2C_ADDR.s);
+            user_debug_msg(strTmp);
+            user_debug_msg(STR_TASK_CMD_DO "p: Starting SIM QA.");
             OS_Delay(150);
             OSStartTask(TASK_SUPMCU_QA_P);
             break;
@@ -162,13 +194,16 @@ void task_cmd_do(void) {
        case 'f':
           user_debug_msg(STR_TASK_CMD_DO "f: Stop QA");
           OSStopTask(TASK_SUPMCU_QA_P);
-          if (BOARD == 2)
+          if (MODULE == 2)
               OSStopTask(TASK_BIM_QA_P);              
               
-          else if(BOARD==3)
+          else if (MODULE == 0)
+              OSStopTask(TASK_SIM_QA_P);  
+          
+          else if(MODULE==3)
               OSStopTask(TASK_PIM_QA_P);
               
-          else if (BOARD==1){
+          else if (MODULE==1){
               // Stop all logging (not a bad idea before shutting down the OEM615)
               csk_uart1_puts("UNLOGALL COM1 TRUE\r\n");
               csk_uart2_puts("UNLOGALL COM1 TRUE\r\n");

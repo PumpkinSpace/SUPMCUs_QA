@@ -20,24 +20,7 @@ extern void sup_led_on(unsigned int);
 extern void sup_led_flash(unsigned int);
 extern void sup_clk_off(unsigned int);
 extern void sup_clk_on(unsigned int, unsigned int);
-
-
-/*// Supmcu's I2C address
-#if defined(SUPMCU_GPSRM1_REVA) \
-   || defined(SUPMCU_GPSRM1_REVB) \
-   || defined(SUPMCU_GPSRM1_REVC) 
-#define I2C_ADDR 0x51
-#elif defined(SUPMCU_BIM1_REVA) \
-     || defined(SUPMCU_BIM1_REVB)
-#define I2C_ADDR 0x52
-#elif defined(SUPMCU_PIM1_REVA) \
-      || defined(SUPMCU_PIM1_REVB)
-#define I2C_ADDR 0x53
-#elif defined(SUPMCU_SIM1_REVA) \
-      || defined(SUPMCU_SIM1_REVB)
-#define I2C_ADDR 0x54
-#endif
-*/
+extern void i2c_write_all(unsigned char[]);
 // Symbols, etc.
 #define STR_TASK_SUPMCU_QA "task_sup_qa: " STR_1TAB
 

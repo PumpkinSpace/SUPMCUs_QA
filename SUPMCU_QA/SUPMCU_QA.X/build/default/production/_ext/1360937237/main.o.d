@@ -11,7 +11,9 @@ build/default/production/_ext/1360937237/main.o:  \
 ../inc/task_gps_qa.h  \
 ../inc/task_bim_qa.h  \
  ../inc/task_pim_qa.h  \
+../inc/task_sim_qa.h  \
 ../inc/tasks.h  \
+ ../inc/telemetry.h  \
 C:/Pumpkin/Salvo/Inc/salvo.h  \
  C:/Pumpkin/Salvo/Inc/salvover.h  \
 C:/Pumpkin/Salvo/Inc/salvodef.h  \

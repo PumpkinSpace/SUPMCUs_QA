@@ -186,15 +186,15 @@ void task_supmcu_qa(void) {
   user_debug_msg(STR_TASK_SUPMCU_QA "Record: Max. frequency of CLK Out (J6).");
   OS_Delay(250);
   
-  
-if (BOARD == 1)
+
+if (BOARD == 0)
+    OSStartTask(TASK_SIM_QA_P);
+else if (BOARD == 1)
     OSStartTask( TASK_GPS_QA_P);
 else if (BOARD == 2)
     OSStartTask( TASK_BIM_QA_P);
 else if (BOARD == 3)
     OSStartTask( TASK_PIM_QA_P);
-//else if (BOARD == 4)
-  //  OSStartTask( TASK_SIM_QA_P);
 else
    user_debug_msg(STR_TASK_SUPMCU_QA "Unrecognized SUPMCU");
 
